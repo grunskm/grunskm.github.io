@@ -33,11 +33,11 @@ function setup() {
   noCursor();
   timeDay = 0;
   frameRate(60);
-  createCanvas(elevation[1].width,windowHeight);
+  createCanvas(windowWidth,windowHeight);
   ratio = width/elevation[1].width;
-  initializePanels();
   imageW = width;
   imageH = elevation[1].height*ratio;
+  initializePanels();
 }
 
 function draw() {
@@ -59,6 +59,7 @@ function draw() {
    panel[0].display();
    panel[1].display();
    panel[2].display();
+   
   push();
   fill(255);
   rect(50,10,150,35);
@@ -77,11 +78,11 @@ function draw() {
   }else if(timeDay==2){
     text("12:00 AM"+fps,60,40);
   }
-   fill(255,0,0);
-   textSize(15);
-  point(mouseX,mouseY);
-  text(mouseX,mouseX,mouseY-20);
-  text(mouseY,mouseX-40,mouseY);
+//    fill(255,0,0);
+//    textSize(15);
+//   point(mouseX,mouseY);
+//   text(mouseX,mouseX,mouseY-20);
+//   text(mouseY,mouseX-40,mouseY);
   pop();
 }
 
