@@ -3,26 +3,35 @@ function BackButton(x,y,w,h){
 	this.y = y;
 	this.w = w;
 	this.h = h;
+	this.textfill=150;
 	
 	this.display = function(){
 	push();
 	fill(170,70,20);
 	rect(this.x,this.y,this.w,this.h);
-	fill(150);
+	fill(this.textfill);
 	textSize(20);
 	text("BACK",this.x+30,this.y+this.h-5);
 	pop();
 	}
 	
 	this.hover = function(){
-	push();
-	fill(200,200,40);
-	rect(this.x,this.y,this.w,this.h);
-	pop();
+		if(mouseX>this.x && 
+       		mouseX<this.x+this.w && 
+       		mouseY>this.y && 
+       		mouseY<this.y+this.h){
+					this.textfill = 225;
+				}else{this.textfill = 150;}
 	}
 	
 	this.click = function(){
-	currentPage = new HomePage();
+		if(mouseX>this.x && 
+       		mouseX<this.x+this.w && 
+       		mouseY>this.y && 
+       		mouseY<this.y+this.h){
+			currentPage = new HomePage();
+			currentPage.resize();
+		}
 	}
 }
 
@@ -68,10 +77,10 @@ function TextObject(x,y,t0,t1,t2,t3,t4,t5,t6,t7){
 
 	
 	this.hover = function(){
-		if(mouseX>this.x){
+		if(mouseX>this.x-20){
 			this.x = width*0.5;
 		}else if(mouseX < this.x){
-			this.x = width*0.98;
+			this.x = width*0.95;
 		}
 	}
 }

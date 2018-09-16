@@ -49,6 +49,7 @@ function Fluffs(){
 	pop();
 	///////////////////////////////// display back button
 	this.backButton.display();
+	this.backButton.hover();
 
 	}
 

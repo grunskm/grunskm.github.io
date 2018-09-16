@@ -11,21 +11,28 @@ var count = 0;
 
 function preload(){
   //load all relevent images
+  //var myfont = loadFont("https://fonts.googleapis.com/css?family=Roboto+Mono");
+  
   for(i=0;i<8;i++){
   	homeImg.push(loadImage("assets/homeImg/homeImg"+i+".png"));
   }
+  
   for(i=0;i<10;i++){
    fluffImg.push(loadImage("assets/fluffs/fluff"+i+".jpg"));
   }
+  
   for(i=0;i<2;i++){
   ghostImg.push(loadImage("assets/ghosts/ghost"+i+".png"));
   }
+  
   ghostWall = loadImage("assets/ghosts/wall.png");
 }
 
 function setup() {
 noStroke();
+canvas = createCanvas(windowWidth,windowHeight);
 currentPage = new HomePage();
+currentPage.resize();
 currentPage.display();
 }
 
