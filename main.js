@@ -7,12 +7,12 @@ var pageCount = 8;
 var pageName;
 var canvas;
 var count = 0;
+var lines;
 
 
 function preload(){
   //load all relevent images
-  //var myfont = loadFont("https://fonts.googleapis.com/css?family=Roboto+Mono");
-  
+  lines = loadStrings('assets/text.txt'); 
   for(i=0;i<8;i++){
   	homeImg.push(loadImage("assets/homeImg/homeImg"+i+".png"));
   }

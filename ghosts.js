@@ -4,6 +4,7 @@ function Ghosts(x,y){
 	this.imgx = width*0.25;
 	this.imgy = height/2;
 	this.wallh = windowHeight;
+	this.p;
 
 	
 	this.n = 0;
@@ -22,6 +23,7 @@ function Ghosts(x,y){
 			imageMode(CENTER);
 			image(ghostImg[0],this.imgx,this.imgy);
 			image(ghostImg[1],this.imgx*2,this.imgy);
+			text(lines,mouseX,mouseY);
 			
 			this.backButton.display();
 			this.backButton.hover();
