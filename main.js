@@ -10,23 +10,23 @@ var count = 0;
 var lines;
 
 
-function preload(){
-  //load all relevent images
-  lines = loadStrings('assets/text.txt'); 
-  for(i=0;i<8;i++){
-  	homeImg.push(loadImage("assets/homeImg/homeImg"+i+".png"));
-  }
-  
-  for(i=0;i<10;i++){
-   fluffImg.push(loadImage("assets/fluffs/fluff"+i+".jpg"));
-  }
-  
-  for(i=0;i<2;i++){
-  ghostImg.push(loadImage("assets/ghosts/ghost"+i+".png"));
-  }
-  
-  ghostWall = loadImage("assets/ghosts/wall.png");
-}
+// function preload(){
+//   //load all relevent images
+//   lines = loadStrings('assets/text.txt'); 
+//   for(i=0;i<8;i++){
+//   	homeImg.push(loadImage("assets/homeImg/homeImg"+i+".png"));
+//   }
+//   
+//   for(i=0;i<10;i++){
+//    fluffImg.push(loadImage("assets/fluffs/fluff"+i+".jpg"));
+//   }
+//   
+//   for(i=0;i<2;i++){
+//   ghostImg.push(loadImage("assets/ghosts/ghost"+i+".png"));
+//   }
+//   
+//   ghostWall = loadImage("assets/ghosts/wall.png");
+// }
 
 function setup() {
 noStroke();
