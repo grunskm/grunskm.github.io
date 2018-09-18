@@ -31,19 +31,20 @@ function preload(){
 function setup() {
 noStroke();
 canvas = createCanvas(windowWidth,windowHeight);
-currentPage = new HomePage();
+currentPage = new HoldingPage();
+//currentPage = new HomePage();
 currentPage.resize();
 currentPage.display();
 }
 
 function draw(){
-	if(count>0){
-		count++;
-		currentPage.display();
-	}
-	if(count>50){
-		count = 0;
-	}
+// 	if(count>0){
+// 		count++;
+// 		currentPage.display();
+// 	}
+// 	if(count>50){
+// 		count = 0;
+// 	}
 }
 
 function mouseMoved() {
