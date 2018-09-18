@@ -27,6 +27,9 @@ function HoldingPage(){
   
   this.resize = function(){
  	canvas.size(windowWidth,windowHeight);
+ 	  for(i=0;i<30;i++){
+  	this.ball.push(new Ball(random(0,width),random(0,height),random(-2,2),random(-2,2)));
+  	}
   }
   
   function Ball(x,y,sx,sy){

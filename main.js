@@ -33,8 +33,8 @@ noStroke();
 canvas = createCanvas(windowWidth,windowHeight);
 currentPage = new HoldingPage();
 //currentPage = new HomePage();
-currentPage.resize();
-currentPage.display();
+// currentPage.resize();
+// currentPage.display();
 }
 
 function draw(){
