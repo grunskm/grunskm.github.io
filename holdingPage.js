@@ -1,5 +1,8 @@
 function HoldingPage(){
   this.ball = [];
+  this.r;
+  this.g;
+  this.b;
   for(i=0;i<30;i++){
   	this.ball.push(new Ball(random(0,width),random(0,height),random(-2,2),random(-2,2)));
   }
@@ -9,12 +12,17 @@ function HoldingPage(){
   		this.ball[i].bounce();
   		}
   		textSize(30);
+  		if(frameCount%10===0){this.r=random(0,255);this.g=random(0,255);this.b=random(0,255);}
+  		fill(this.r,this.g,this.b);
   		text("WEBSITE COMING SOON",this.ball[0].x,this.ball[1].y);
   		text("I PROMISE",mouseX,mouseY);
   }
   
   this.click = function(){
 	background(random(0,255),random(0,255),random(0,255));
+	  for(i=0;i<30;i++){
+  			this.ball[i]= new Ball(random(0,width),random(0,height),random(-2,2),random(-2,2));
+  		}
   }
   
   this.resize = function(){
