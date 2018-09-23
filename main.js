@@ -1,71 +1,53 @@
-var currentPage;
-var homeImg = [];
-var fluffImg = [];
-var ghostImg = [];
-var ghostWall;
-var pageCount = 8;
-var pageName;
 var canvas;
-var count = 0;
-var lines;
+var notoReg;
+var notoItal;
+var image =[];
+var n = 0;
+var test;
 
+function preload(){
+ notoReg = loadFont("NotoSans-Regular.ttf");
+ notoItal = loadFont("NotoSans-Italic.ttf");
+ 
+ for(i=0;i<3;i++){
+ image[i] = loadImage("assets/image"+i+".png");
+ }
+ test = loadImage("assets/image0.png");
 
-// function preload(){
-//   //load all relevent images
-//   lines = loadStrings('assets/text.txt'); 
-//   for(i=0;i<8;i++){
-//   	homeImg.push(loadImage("assets/homeImg/homeImg"+i+".png"));
-//   }
-//   
-//   for(i=0;i<10;i++){
-//    fluffImg.push(loadImage("assets/fluffs/fluff"+i+".jpg"));
-//   }
-//   
-//   for(i=0;i<2;i++){
-//   ghostImg.push(loadImage("assets/ghosts/ghost"+i+".png"));
-//   }
-//   
-//   ghostWall = loadImage("assets/ghosts/wall.png");
-// }
+}
 
 function setup() {
-noStroke();
-canvas = createCanvas(windowWidth,windowHeight);
-currentPage = new HoldingPage();
-//currentPage = new HomePage();
-// currentPage.resize();
-// currentPage.display();
+  textFont(notoReg);
+  textSize(40);
+  canvas = createCanvas(windowWidth, windowHeight);
+  ellipseMode(CENTER);
+  imageMode(CENTER);
 }
 
-function draw(){
-// 	if(count>0){
-// 		count++;
-// 		currentPage.display();
-// 	}
-// 	if(count>50){
-// 		count = 0;
-// 	}
-}
+function draw() {
+background(255);
+fill(0);
 
-function mouseMoved() {
-count = 1;
-if(currentPage!=undefined){
-	currentPage.display();
- }
+image(image[n],width/2,height/2);
+fill(255);
+if(mouseX<width/2){
+textFont(notoItal);
+}else{textFont(notoReg);}
+text("Website Coming Soon",mouseX, mouseY);
 }
 
 function mousePressed(){
-currentPage.click();
-currentPage.display();
+n++;
+if(n>=3){
+n=0;
 }
-
-function keyPressed(){
-currentPage.click();
-currentPage.display();
 }
 
 window.onresize = function(){
-currentPage.resize();
-currentPage.display();
-//print("resize");
+canvas.size(windowWidth,windowHeight);
+
+}
+
+function update(){
+
 }
