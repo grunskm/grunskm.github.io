@@ -112,7 +112,7 @@ function Slide(){
 
 	this.resize = function(){
 
-		if(width>1080){
+		if(width>1090){
 			this.imgHeight = 600;
 			this.imgWidth = (this.imgHeight/img[n].height)*img[n].width;
 			
