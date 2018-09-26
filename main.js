@@ -43,6 +43,7 @@ function setup() {
 }
 
 function mouseMoved() {
+slide1.resize();
 slide1.display();
 }
 
@@ -124,9 +125,9 @@ function Slide(){
 			this.imgWidth = width;
 			this.imgHeight = (this.imgWidth/img[n].width)*img[n].height;
 			this.imgx = width/2;
-			this.imgy = height/2;
-			this.titlex = 50;
-			this.titley = this.imgHeight+80;
+			this.imgy = this.imgHeight/2+30;
+			this.titlex = 30;
+			this.titley = this.imgHeight+100;
 			canvas.size(this.imgWidth,this.imgHeight*1.5);
 		}
 	}
