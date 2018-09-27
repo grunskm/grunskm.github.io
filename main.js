@@ -124,9 +124,9 @@ function Slide(){
 	}
 	
 	this.loadImg = function(){
-		if(n<title.length-1){
+		if(n<title.length-1 && img.length<title.length){
 		 img[n+1] = loadImage("assets/image"+(n+1)+".png"); 
-		 print(img.length);
+		 print("image"+(n+1)+" loaded");
 		}
 	}
  }
