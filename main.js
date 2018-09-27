@@ -22,18 +22,19 @@ var caption = [
 ]
 
 function preload(){
+    img[0] = loadImage("assets/image0.png");
  notoReg = loadFont("NotoSans-Regular.ttf");
  notoItal = loadFont("NotoSans-Italic.ttf");
  
 //  for(i=0;i<6;i++){
 //  img[i] = loadImage("assets/image"+i+".png");
 //  }
- img[0] = loadImage("assets/image0.png");
   //img[1] = loadImage("assets/image1.png");
 
 }
 
 function setup() {
+
   canvas = createCanvas(windowWidth, windowHeight);
   slide1 = new Slide();
 
@@ -49,6 +50,17 @@ function mouseMoved() {
 	if(frameCount>10){
 		slide1.display();
 	}
+}
+
+function keyPressed(){
+				n++;
+				if(n>=img.length){
+					n=0
+				}
+
+				slide1.resize();
+				slide1.display();
+				slide1.loadImg();
 }
 
 function mousePressed(){
