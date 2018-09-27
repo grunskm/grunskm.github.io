@@ -25,26 +25,30 @@ function preload(){
  notoReg = loadFont("NotoSans-Regular.ttf");
  notoItal = loadFont("NotoSans-Italic.ttf");
  
- for(i=0;i<6;i++){
- img[i] = loadImage("assets/image"+i+".png");
- }
- test = loadImage("assets/image0.png");
+//  for(i=0;i<6;i++){
+//  img[i] = loadImage("assets/image"+i+".png");
+//  }
+ img[0] = loadImage("assets/image0.png");
+  //img[1] = loadImage("assets/image1.png");
 
 }
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   slide1 = new Slide();
-  slide1.resize();
+
   textSize(20);
   ellipseMode(CENTER);
   imageMode(CENTER);
+  slide1.resize();
   slide1.display();
+  slide1.loadImg();
 }
 
 function mouseMoved() {
-slide1.resize();
-slide1.display();
+	if(frameCount>10){
+		slide1.display();
+	}
 }
 
 function mousePressed(){
@@ -52,8 +56,10 @@ function mousePressed(){
 				if(n>=img.length){
 					n=0
 				}
+
 				slide1.resize();
 				slide1.display();
+				slide1.loadImg();
 }
 
 window.onresize = function(){
@@ -80,21 +86,6 @@ function Slide(){
 	this.display = function(){
 	
 		background(240);
-		
-// 		if(this.move!=0){
-// 			if(this.x<=this.imgx){
-// 			}else if(this.x)
-// 			this.move+= this.x;
-// 			this.x -= this.move;
-// 			
-// 			if(this.imgx<-100){
-// 				this.imgx = width;
-// 				n++;
-// 				if(n>=3){
-// 					n=0
-// 				}
-// 			}
-// 		}
 		
 		image(img[n],this.imgx,this.imgy,this.imgWidth,this.imgHeight);
 		
@@ -132,7 +123,10 @@ function Slide(){
 		}
 	}
 	
-// 	this.slide = function(){
-// 		this.x += -10;		
-// 	}
+	this.loadImg = function(){
+		if(n<title.length-1){
+		 img[n+1] = loadImage("assets/image"+(n+1)+".png"); 
+		 print(img.length);
+		}
+	}
  }
