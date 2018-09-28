@@ -71,20 +71,20 @@ function mousePressed(){
 				slide1.resize();
 				slide1.display();
 				slide1.loadImg();
-				}
+		}
 }
 
-// function touchEnded(){
-// 	if(width<height){
-// 				n++;
-// 				if(n>=img.length){
-// 					n=0
-// 				}
-// 				slide1.resize();
-// 				slide1.display();
-// 				slide1.loadImg();
-// 				} else{}	
-// }
+function touchEnded(){
+	if(width<height){
+				n++;
+				if(n>=img.length){
+					n=0
+				}
+				slide1.resize();
+				slide1.display();
+				slide1.loadImg();
+				} else{}	
+}
 
 window.onresize = function(){
 canvas.size(windowWidth,windowHeight);
