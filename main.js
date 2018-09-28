@@ -63,17 +63,27 @@ function keyPressed(){
 }
 
 function mousePressed(){
-	if(img.length>1){
+	if(width>height){
 				n++;
 				if(n>=img.length){
 					n=0
 				}
-
 				slide1.resize();
 				slide1.display();
 				slide1.loadImg();
-				return False;
+				} else{}	
+}
+
+function touchEnded(){
+	if(width<height){
+				n++;
+				if(n>=img.length){
+					n=0
 				}
+				slide1.resize();
+				slide1.display();
+				slide1.loadImg();
+				} else{}	
 }
 
 window.onresize = function(){
