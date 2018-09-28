@@ -71,7 +71,7 @@ function mousePressed(){
 				slide1.resize();
 				slide1.display();
 				slide1.loadImg();
-				} else{}	
+				}
 }
 
 function touchEnded(){
