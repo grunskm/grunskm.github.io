@@ -63,6 +63,7 @@ function keyPressed(){
 }
 
 function mousePressed(){
+	if(img.length>1){
 				n++;
 				if(n>=img.length){
 					n=0
@@ -71,6 +72,8 @@ function mousePressed(){
 				slide1.resize();
 				slide1.display();
 				slide1.loadImg();
+				return False;
+				}
 }
 
 window.onresize = function(){
