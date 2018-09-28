@@ -5,24 +5,23 @@ var img =[];
 var n = 0;
 var slide1;
 var title = [ 
-"XX_Flowers_XX",
-"Snake",
-"Signature",
-"Focus Holes",
+"Sacs a Ordures",
 "Computer Drawing of a New Painting",
-"Sacs a Ordures"
+"XX_Flowers_XX",
+"Gumdrops",
+"Dark Square"
 ];
 var caption = [
-"Plaster, decorated napkin, oil paint",
 "Plaster, tissue paper, ink",
-"Plaster, ink",
+"Plaster, paper towel, ink",
 "Plaster, decorated napkin, oil paint",
 "Plaster, paper towel, ink",
-"Plaster, tissue paper, ink",
+"Plaster, toilet paper, ink",
+"Plaster, decorated napkin, oil paint",
 ]
 
 function preload(){
-    img[0] = loadImage("assets/image0.png");
+    img[0] = loadImage("assets/image0.jpg");
  notoReg = loadFont("NotoSans-Regular.ttf");
  notoItal = loadFont("NotoSans-Italic.ttf");
  
@@ -119,7 +118,7 @@ function Slide(){
 			this.imgHeight = height*0.75;
 			this.imgWidth = (this.imgHeight/img[n].height)*img[n].width;
 			
-			this.imgx = this.imgWidth/2+150;
+			this.imgx = width*0.35;
 			this.imgy = height/2;
 			this.titlex = width-400;
 			this.titley = height*0.9;
@@ -137,7 +136,7 @@ function Slide(){
 	
 	this.loadImg = function(){
 		if(n<title.length-1 && img.length<title.length){
-		 img[n+1] = loadImage("assets/image"+(n+1)+".png"); 
+		 img[n+1] = loadImage("assets/image"+(n+1)+".jpg"); 
 		 print("image"+(n+1)+" loaded");
 		}
 	}
