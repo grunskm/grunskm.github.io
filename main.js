@@ -149,19 +149,17 @@ function Slide(){
 	}
 	this.touch = function(){
 			if(width<height){
-				if(this.hold ===0){
+				if(frameCount>200){
 					n++;
 					if(n>=img.length){
 						n=0
 					}
-					this.hold = 1;
 					slide1.resize();
 					slide1.display();
 					slide1.loadImg();
-				}else if(this.hold ==1){
-					this.hold = 0;
+					frameCount = 0;
 				}
-				} 	
+			} 	
 	}
 	
 	this.loadImg = function(){
