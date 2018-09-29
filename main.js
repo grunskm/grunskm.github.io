@@ -14,7 +14,9 @@ var title = [
 "Neves",
 "Focus Holes",
 "Excess",
-"DGYHU"
+"DGYHU",
+"Oh Baby",
+"Jacks"
 ];
 var caption = [
 "Plaster, tissue paper, ink",
@@ -25,7 +27,9 @@ var caption = [
 "Plaster, paper towel, ink",
 "Plaster, decorated napkin, oil paint",
 "Plaster, paper towel, ink",
-"Plaster, toilet paper, ink"
+"Plaster, toilet paper, ink",
+"Plaster, decorated napkin, ink, oil paint",
+"Plaster, tissue paper, acrylic paint, ink",
 ]
 
 function preload(){
@@ -75,24 +79,12 @@ function keyPressed(){
 }
 
 function mousePressed(){
-	if(width>height){
-		if(count>20){
-				n++;
-				count = 0;
-				if(n>=img.length){
-					n=0
-				}
-				canvas.size(windowWidth,windowHeight);
-				slide1.resize();
-				slide1.display();
-				slide1.loadImg();
-		}
-	}
+	slide1.click();
 }
 
-function touchEnded(){
-	slide1.touch();
-}
+// function touchEnded(){
+// 	slide1.touch();
+// }
 
 window.onresize = function(){
 canvas.size(windowWidth,windowHeight);
@@ -160,7 +152,7 @@ function Slide(){
 		}
 	}
 	
-	this.touch = function(){
+	this.click = function(){
 
 			if(width<height){
 				if(count>20){
@@ -174,8 +166,21 @@ function Slide(){
 					count = 0;
 					print(count);
 				}
-			} 	
- 	}
+			}else if(width>height){
+						if(count>20){
+							n++;
+							count = 0;
+							if(n>=img.length){
+								n=0
+							}
+							canvas.size(windowWidth,windowHeight);
+							slide1.resize();
+							slide1.display();
+							slide1.loadImg();
+					   }
+					}
+	}
+ 	
 	
 	this.loadImg = function(){
 		if(n<title.length-1 && img.length<title.length){
