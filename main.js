@@ -79,15 +79,7 @@ function mousePressed(){
 }
 
 function touchEnded(){
-	if(width<height){
-				n++;
-				if(n>=img.length){
-					n=0
-				}
-				slide1.resize();
-				slide1.display();
-				slide1.loadImg();
-				} else{}	
+	slide1.touch();
 }
 
 window.onresize = function(){
@@ -110,6 +102,8 @@ function Slide(){
 	this.imgHeight;
 	this.imgWidth;
 	this.move = 0;
+	
+	this.hold = 0;
 
 	this.display = function(){
 	
@@ -152,6 +146,22 @@ function Slide(){
 			this.titley = this.imgHeight+150;
 			canvas.size(this.imgWidth,this.imgHeight*1.5);
 		}
+	}
+	this.touch = function(){
+			if(width<height){
+				if(this.hold ===0){
+					n++;
+					if(n>=img.length){
+						n=0
+					}
+					this.hold = 1;
+					slide1.resize();
+					slide1.display();
+					slide1.loadImg();
+				}else if(this.hold ==1){
+					this.hold = 0;
+				}
+				} 	
 	}
 	
 	this.loadImg = function(){
