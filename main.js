@@ -145,7 +145,7 @@ function Slide(){
 			this.imgWidth = width;
 			this.imgHeight = (this.imgWidth/img[n].width)*img[n].height;
 			this.imgx = width/2;
-			this.imgy = this.imgHeight/2+30;
+			this.imgy = height/2;
 			this.titlex = 30;
 			this.titley = this.imgHeight+150;
 			canvas.size(this.imgWidth,this.imgHeight*1.5);
