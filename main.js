@@ -53,11 +53,11 @@ function setup() {
   slide1.loadImg();
 }
 
-function mouseMoved() {
-	if(frameCount>10){
-		slide1.display();
-	}
-}
+// function mouseMoved() {
+// 	if(frameCount>10){
+// 		slide1.display();
+// 	}
+// }
 
 function draw(){
 count++;
@@ -76,7 +76,9 @@ function keyPressed(){
 
 function mousePressed(){
 	if(width>height){
+		if(count>20){
 				n++;
+				count = 0;
 				if(n>=img.length){
 					n=0
 				}
@@ -85,6 +87,7 @@ function mousePressed(){
 				slide1.display();
 				slide1.loadImg();
 		}
+	}
 }
 
 function touchEnded(){
