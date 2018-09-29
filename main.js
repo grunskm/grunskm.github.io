@@ -156,7 +156,7 @@ function Slide(){
 	this.touch = function(){
 
 			if(width<height){
-				if(count>50){
+				if(count>20){
 					n++;
 					if(n>=img.length){
 						n=0
