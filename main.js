@@ -1,4 +1,5 @@
 var canvas;
+var count =0;
 var notoReg;
 var notoItal;
 var img =[];
@@ -52,6 +53,10 @@ function mouseMoved() {
 	if(frameCount>10){
 		slide1.display();
 	}
+}
+
+function draw(){
+count++;
 }
 
 function keyPressed(){
@@ -136,7 +141,7 @@ function Slide(){
 			if(width<900){
 			this.textSize = 15;
 			}else{this.textSize = 20;}
-		}else{
+		}else{	
 			this.textSize = 30;
 			this.imgWidth = width;
 			this.imgHeight = (this.imgWidth/img[n].width)*img[n].height;
@@ -147,9 +152,11 @@ function Slide(){
 			canvas.size(this.imgWidth,this.imgHeight*1.5);
 		}
 	}
+	
 	this.touch = function(){
+
 			if(width<height){
-				if(frameCount>200){
+				if(count>50){
 					n++;
 					if(n>=img.length){
 						n=0
@@ -157,10 +164,11 @@ function Slide(){
 					slide1.resize();
 					slide1.display();
 					slide1.loadImg();
-					frameCount = 0;
+					count = 0;
+					print(count);
 				}
 			} 	
-	}
+ 	}
 	
 	this.loadImg = function(){
 		if(n<title.length-1 && img.length<title.length){
