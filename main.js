@@ -9,7 +9,9 @@ var title = [
 "Computer Drawing of a New Painting",
 "XX_Flowers_XX",
 "Gumdrops",
-"Dark Square"
+"Dark Square",
+"Neves",
+"Focus Holes"
 ];
 var caption = [
 "Plaster, tissue paper, ink",
@@ -17,7 +19,8 @@ var caption = [
 "Plaster, decorated napkin, oil paint",
 "Plaster, paper towel, ink",
 "Plaster, toilet paper, ink",
-"Plaster, decorated napkin, oil paint",
+"Plaster, paper towel, ink",
+"Plaster, decorated napkin, oil paint"
 ]
 
 function preload(){
@@ -56,7 +59,7 @@ function keyPressed(){
 				if(n>=img.length){
 					n=0
 				}
-
+				canvas.size(windowWidth,windowHeight);
 				slide1.resize();
 				slide1.display();
 				slide1.loadImg();
@@ -68,6 +71,7 @@ function mousePressed(){
 				if(n>=img.length){
 					n=0
 				}
+				canvas.size(windowWidth,windowHeight);
 				slide1.resize();
 				slide1.display();
 				slide1.loadImg();
@@ -96,7 +100,7 @@ slide1.display();
 
 function Slide(){
 	this.x;
-	this.acc;
+	this.textSize;
 	this.imgx;
 	this.imgy;
 	this.titlex;
@@ -115,9 +119,9 @@ function Slide(){
 		
 		push();
 			fill(30);
-			textSize(25);
+			textSize(this.textSize);
 			text("Matthis Grunsky",this.titlex,this.titley-30);
-			textSize(20);
+			textSize(this.textSize);
 			textFont(notoItal);
 			text(title[n],this.titlex, this.titley);
 			textFont(notoReg);
@@ -128,21 +132,24 @@ function Slide(){
 	this.resize = function(){
 
 		if(width>height){
-			this.imgHeight = height*0.75;
+			this.imgHeight = height*0.85;
 			this.imgWidth = (this.imgHeight/img[n].height)*img[n].width;
 			
 			this.imgx = width*0.35;
 			this.imgy = height/2;
 			this.titlex = width-400;
 			this.titley = height*0.9;
+			if(width<900){
+			this.textSize = 15;
+			}else{this.textSize = 20;}
 		}else{
-
+			this.textSize = 30;
 			this.imgWidth = width;
 			this.imgHeight = (this.imgWidth/img[n].width)*img[n].height;
 			this.imgx = width/2;
 			this.imgy = this.imgHeight/2+30;
 			this.titlex = 30;
-			this.titley = this.imgHeight+100;
+			this.titley = this.imgHeight+150;
 			canvas.size(this.imgWidth,this.imgHeight*1.5);
 		}
 	}
