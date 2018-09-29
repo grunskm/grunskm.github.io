@@ -145,10 +145,11 @@ function Slide(){
 			this.imgWidth = width;
 			this.imgHeight = (this.imgWidth/img[n].width)*img[n].height;
 			this.imgx = width/2;
-			this.imgy = height/2;
+			this.imgy = height*0.4;
 			this.titlex = 30;
-			this.titley = this.imgHeight+150;
-			canvas.size(this.imgWidth,this.imgHeight*1.5);
+			this.titley = height*0.9;
+			canvas.size(this.imgWidth,height);
+			// canvas.size(this.imgWidth,this.imgHeight*1.5);
 		}
 	}
 	
