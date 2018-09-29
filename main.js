@@ -12,7 +12,9 @@ var title = [
 "Gumdrops",
 "Dark Square",
 "Neves",
-"Focus Holes"
+"Focus Holes",
+"Excess",
+"DGYHU"
 ];
 var caption = [
 "Plaster, tissue paper, ink",
@@ -21,7 +23,9 @@ var caption = [
 "Plaster, paper towel, ink",
 "Plaster, toilet paper, ink",
 "Plaster, paper towel, ink",
-"Plaster, decorated napkin, oil paint"
+"Plaster, decorated napkin, oil paint",
+"Plaster, paper towel, ink",
+"Plaster, toilet paper, ink"
 ]
 
 function preload(){
