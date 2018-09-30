@@ -5,6 +5,7 @@ var notoItal;
 var img =[];
 var n = 0;
 var slide1;
+var value = 0;
 var title = [ 
 "Sacs a Ordures",
 "Computer Drawing of a New Painting",
@@ -65,6 +66,8 @@ function setup() {
 
 function draw(){
 count++;
+fill(value);
+ellipse(100,100,50,50);
 }
 
 function keyPressed(){
@@ -79,6 +82,12 @@ function keyPressed(){
 
 function mousePressed(){
 	slide1.click();
+}
+function touchMoved(){
+	value += 5;
+		if(value<255){
+			value = 0;
+		}
 }
 
 // function touchEnded(){
@@ -104,7 +113,6 @@ function Slide(){
 	this.imgHeight;
 	this.imgWidth;
 	this.move = 0;
-	
 	this.hold = 0;
 
 	this.display = function(){
