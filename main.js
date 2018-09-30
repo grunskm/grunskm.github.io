@@ -63,11 +63,17 @@ function setup() {
 // 		slide1.display();
 // 	}
 // }
+function touchMoved(){
+	value += 5;
+		if(value<255){
+			value = 0;
+		}
+}
 
 function draw(){
 count++;
 fill(value);
-ellipse(100,100,50,50);
+//ellipse(100,100,50,50);
 }
 
 function keyPressed(){
@@ -83,12 +89,7 @@ function keyPressed(){
 function mousePressed(){
 	slide1.click();
 }
-function touchMoved(){
-	value += 5;
-		if(value<255){
-			value = 0;
-		}
-}
+
 
 // function touchEnded(){
 // 	slide1.touch();
