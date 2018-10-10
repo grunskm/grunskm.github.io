@@ -4,8 +4,9 @@ var notoReg;
 var notoItal;
 var img =[];
 var n = 0;
-var slide1;
-var value = 0;
+var slide;
+
+
 var title = [ 
 "Sacs a Ordures",
 "Computer Drawing of a New Painting",
@@ -34,46 +35,34 @@ var caption = [
 ]
 
 function preload(){
-    img[0] = loadImage("assets/image0.jpg");
+ img[0] = loadImage("assets/image0.jpg");
  notoReg = loadFont("NotoSans-Regular.ttf");
  notoItal = loadFont("NotoSans-Italic.ttf");
- 
-//  for(i=0;i<6;i++){
-//  img[i] = loadImage("assets/image"+i+".png");
-//  }
-  //img[1] = loadImage("assets/image1.png");
-
 }
 
 function setup() {
 
   canvas = createCanvas(windowWidth, windowHeight);
-  slide1 = new Slide();
+  slide = new Slide();
+  	 	var tx = random(0,width-200);
+	 	var ty = random(0,height-50);
 
   textSize(20);
   ellipseMode(CENTER);
   imageMode(CENTER);
-  slide1.resize();
-  slide1.display();
-  slide1.loadImg();
-}
-
-// function mouseMoved() {
-// 	if(frameCount>10){
-// 		slide1.display();
-// 	}
-// }
-function touchMoved(){
-	value += 5;
-		if(value<255){
-			value = 0;
-		}
+  slide.resize();
+  slide.display();
+  slide.loadImg();
+  slide.contact();
 }
 
 function draw(){
-count++;
-fill(value);
-//ellipse(100,100,50,50);
+  count++;
+}
+
+function mouseMoved(){
+  slide.display();
+  slide.contact();
 }
 
 function keyPressed(){
@@ -81,38 +70,33 @@ function keyPressed(){
 				if(n>=img.length){
 					n=0
 				}
-				slide1.resize();
-				slide1.display();
-				slide1.loadImg();
+				slide.resize();
+				slide.display();
+				slide.loadImg();
 }
 
 function mousePressed(){
-	slide1.click();
+	slide.click();
 }
 
-
-// function touchEnded(){
-// 	slide1.touch();
-// }
-
 window.onresize = function(){
-slide1.resize();
-slide1.display();
+slide.resize();
+slide.display();
 }
 
 //||||||||||||||||||||||||||||||||||||||||||||| main loop above
 
 function Slide(){
 	this.x;
-	this.textSize;
 	this.imgx;
 	this.imgy;
-	this.titlex;
-	this.titley;
-	this.captionx;
-	this.captiony;
 	this.imgHeight;
 	this.imgWidth;
+	
+	this.textSize;
+	this.titlex;
+	this.titley;
+	
 	this.move = 0;
 	this.hold = 0;
 
@@ -172,9 +156,9 @@ function Slide(){
 					if(n>=img.length){
 						n=0
 					}
-					slide1.resize();
-					slide1.display();
-					slide1.loadImg();
+					slide.resize();
+					slide.display();
+					slide.loadImg();
 					count = 0;
 					print(count);
 				}
@@ -185,9 +169,10 @@ function Slide(){
 							if(n>=img.length){
 								n=0
 							}
-							slide1.resize();
-							slide1.display();
-							slide1.loadImg();
+							slide.resize();
+							slide.display();
+							slide.loadImg();
+							slide.contact();
 					   }
 					}
 	}
@@ -197,30 +182,30 @@ function Slide(){
 		if(n<title.length-1 && img.length<title.length){
 		 img[n+1] = loadImage("assets/image"+(n+1)+".jpg"); 
 		 print("image"+(n+1)+" loaded");
+		 }
 		}
-	}
 	
-	// function Panel (n){
-// 		this.x = n*windowWidth;
-// 		this.y = 0;
-// 		this.n = n;
-// 		this.imgx;
-// 		this.imgy;
-// 		this.imgw;
-// 		this.imgh;
-// 		
-// 		this.display = function(){
-// 			image(img[this.n],this.imgx,this.imgy,this.imgw,this.imgh);
-// 		}
-// 		this.update = function(){
-// 			if(this.x<(-windowWidth)){
-// 				this.n += 3;
-// 				this.x = width;
-// 					if(this.n>=img.length){
-// 						n=0;
-// 					}
-// 			}
-// 		
-// 		}
-// 	}
+	this.contact = function(){
+	    var xx = width-100;
+	    var yy = 30;
+	    var ww = 50;
+	    var hh = 30;
+	    var tx = width/2-200;
+	 	var ty = height/2;
+		push();
+		fill(80);
+		text("Contact",xx,yy);
+		if(mouseX>xx&&mouseX<xx+ww&&mouseY>yy-20&&mouseY<yy+hh-20){
+			noStroke();
+			fill(200);
+			text("Contact",xx,yy);
+			fill(250,150,20);
+			rect(tx-15,ty-30,500,90)
+			fill(40);
+			text("Matthis Grunsky is an artist from Halifax, Nova Scotia.",tx,ty);
+			text("He currently lives in Vancouver, British Columbia.",tx,ty+20);
+			text("Please contact at grunskm@gmail.com ",tx,ty+40);
+			}
+		pop()
+	}
  }
