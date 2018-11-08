@@ -67,7 +67,6 @@ function Slide(){
 					}
 					slide.resize();
 					slide.display();
-					slide.loadImg();
 					count = 0;
 					print(count);
 				}
@@ -80,7 +79,6 @@ function Slide(){
 							}
 							slide.resize();
 							slide.display();
-							slide.loadImg();
 							slide.contact();
 					   }
 					}
@@ -95,7 +93,6 @@ function Slide(){
 							}
 					slide.resize();
 					slide.display();
-					slide.loadImg();
 					count = 0;
 					print(count);
 				}
@@ -108,7 +105,6 @@ function Slide(){
 							}
 							slide.resize();
 							slide.display();
-							slide.loadImg();
 							slide.contact();
 					   }
 					}
