@@ -1,9 +1,13 @@
 var canvas;
 var count =0;
+
 var notoReg;
 var notoItal;
+
 var img =[];
 var n = 0;
+var nLoad = 1;
+
 var slide;
 var backButton;
 var nutton;
@@ -42,13 +46,26 @@ function preload(){
  notoItal = loadFont("NotoSans-Italic.ttf");
 }
 
+function loadImg(){
+	if(nLoad<title.length){
+		 img[nLoad] = loadImage("assets/image"+(nLoad)+".jpg",imgLoaded); 
+	}
+}
+function imgLoaded(){
+	if(nLoad<title.length){
+	print("image"+nLoad+"loaded");
+	nLoad++;
+	loadImg();
+	}
+}
+
 function setup() {
 
   canvas = createCanvas(windowWidth, windowHeight);
   slide = new Slide();
   textSize(20);
   imageMode(CENTER);
-  slide.loadImg();
+  loadImg();
   resize();
 }
 

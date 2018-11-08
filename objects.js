@@ -113,14 +113,6 @@ function Slide(){
 					   }
 					}
 	}
- 	
-	
-	this.loadImg = function(){
-		if(n<title.length-1 && img.length<title.length){
-		 img[n+1] = loadImage("assets/image"+(n+1)+".jpg"); 
-		 print("image"+(n+1)+" loaded");
-		 }
-	}
 	
 	this.contact = function(){
 	    var xx = width-100;
