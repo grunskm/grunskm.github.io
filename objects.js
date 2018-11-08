@@ -40,14 +40,14 @@ function Slide(){
 			
 			this.imgx = width*0.35;
 			this.imgy = height/2;
-			this.titlex = width-400;
+			this.titlex = width*0.65;
 			this.titley = height*0.9;
 			if(width<900){
-			this.textSize = 15;
+			this.textSize = 20;
 			}else{this.textSize = 20;}
 		}else{	
 			canvas.size(windowWidth,height);
-			this.textSize = 30;
+			this.textSize = 20;
 			this.imgWidth = windowWidth;
 			this.imgHeight = (this.imgWidth/img[n].width)*img[n].height;
 			this.imgx = width/2;
@@ -221,8 +221,8 @@ function resize(){
 if(width<height){
 slide.resize();
 slide.display();
-backButton = new backButt(width*0.1,height*0.8,width*0.2);
-nextButton = new nextButt(width*0.7,height*0.8,width*0.2);
+backButton = new backButt(width*0.1,height*0.7,width*0.2);
+nextButton = new nextButt(width*0.7,height*0.7,width*0.2);
 backButton.display();
 nextButton.display();
 }
