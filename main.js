@@ -10,7 +10,7 @@ var nLoad = 1;
 
 var slide;
 var backButton;
-var nutton;
+var nextButton;
 
 
 var title = [ 

@@ -83,7 +83,7 @@ function Slide(){
 					   }
 					}
 	}
-		this.back = function(){
+	this.back = function(){
 
 			if(width<height){
 				if(count>20){
