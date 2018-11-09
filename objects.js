@@ -12,12 +12,17 @@ function Slide(){
 	
 	this.move = 0;
 	this.hold = 0;
+	
+	this.trans = 255;
+	this.transSpeed = 0;
+	this.n = n;
 
 	this.display = function(){
 	
 		background(240);
 		
-		image(img[n],this.imgx,this.imgy,this.imgWidth,this.imgHeight);
+		image(img[this.n],this.imgx,this.imgy,this.imgWidth,this.imgHeight);
+		background(240,255-this.trans);
 		
 		push();
 			fill(30);
@@ -57,10 +62,25 @@ function Slide(){
 		}
 	}
 	
+	this.transition = function(){
+		this.trans+=this.transSpeed;	
+		if(this.trans>=255){
+			this.transSpeed = 0;
+			this.trans = 255;
+		}else 
+		if(this.trans<=0){
+			this.transSpeed*=-1;
+			this.n = n;
+			resize();
+		}
+	}
+	
+	
 	this.next = function(){
 
 			if(width<height){
 				if(count>20){
+					this.transSpeed = -20;
 					n++;
 					if(n>=img.length){
 						n=0
@@ -72,6 +92,7 @@ function Slide(){
 				}
 			}else if(width>height){
 						if(count>20){
+							this.transSpeed = -20;
 							n++;
 							count = 0;
 							if(n>=img.length){
@@ -83,10 +104,12 @@ function Slide(){
 					   }
 					}
 	}
+
 	this.back = function(){
 
 			if(width<height){
 				if(count>20){
+					this.transSpeed = -30;
 					n--;
 					if(n<0){
 							n=img.length-1;
@@ -98,6 +121,7 @@ function Slide(){
 				}
 			}else if(width>height){
 						if(count>20){
+							this.transSpeed = -30;
 							n--;
 							count = 0;
 							if(n<0){

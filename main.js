@@ -71,12 +71,16 @@ function setup() {
 
 function draw(){
   count++;
-}
-
-function mouseMoved(){
+  if(count<100){
+  slide.transition();
   slide.display();
   backButton.display();
   nextButton.display();
+  }
+}
+
+function mouseMoved(){
+
 }
 
 function mousePressed(){
