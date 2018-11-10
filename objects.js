@@ -159,7 +159,54 @@ function Slide(){
 	}
  }
  
-
+function Projects(){
+	this.x = width*0.85;
+	this.y = height*0.2;
+	this.list = [];
+	this.words = ["About","Untitled Series","Milk Crates","Other Work"];
+	this.adds = ["about","untitledseries","crates","other"];
+	for(c=0;c<this.words.length;c++){
+		this.list[c] = new Link(this.x,this.y+(c*30),this.words[c],20,this.adds[c]);
+	}
+	
+	this.display = function(){
+		for(h=0;h<this.words.length;h++){
+			this.list[h].display();
+		}
+	}
+	this.resize = function(){
+		this.x = width*0.85;
+		this.y = height*0.2;
+		for(c=0;c<this.words.length;c++){
+			this.list[c] = new Link(this.x,this.y+(c*30),this.words[c],20,this.adds[c]);
+		}
+	}
+}
+	
+function Link(x,y,t,ts,a){
+		this.x = x;
+		this.y = y;
+		this.text = t;
+		this.textfill = 50;
+		this.w = this.text.length*ts; // link to relative text size??
+		this.textsize = ts;
+		this.h = ts;
+		this.address = a;
+		this.display = function(){
+			if(mouseX>this.x && mouseX<this.x+this.w && mouseY>this.y && mouseY<this.y+this.h){
+				this.textfill = 150;
+			}else{this.textfill = 90;}
+			fill(this.textfill);
+			textSize(this.textsize);
+			text(this.text,this.x,this.y+this.textsize);
+		}
+		this.click = function(){
+			if(mouseX>this.x && mouseX<this.x+this.w && mouseY>this.y && mouseY<this.y+this.h){
+				//insert link function here!
+			}
+		}
+	}
+ 
 function backButt(x,y,w){
 	this.x = x;
 	this.y = y;
@@ -232,18 +279,22 @@ function nextButt(x,y,w){
 function resize(){
 if(width<height){
 slide.resize();
+//projects.resize();
 slide.display();
 backButton = new backButt(width*0.1,height*0.7,width*0.2);
 nextButton = new nextButt(width*0.7,height*0.7,width*0.2);
 backButton.display();
 nextButton.display();
+//projects.display();
 }
 if(width>height){
 slide.resize();
+//projects.resize();
 slide.display();
 backButton = new backButt(width*0.64,height*0.7,width*0.05);
 nextButton = new nextButt(width*0.74,height*0.7,width*0.05);
 backButton.display();
 nextButton.display();
+//projects.display();
 }
 }

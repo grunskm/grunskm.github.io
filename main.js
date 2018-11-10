@@ -9,6 +9,7 @@ var n = 0;
 var nLoad = 1;
 
 var slide;
+var projects;
 var backButton;
 var nextButton;
 
@@ -63,6 +64,7 @@ function setup() {
 
   canvas = createCanvas(windowWidth, windowHeight);
   slide = new Slide();
+ // projects = new Projects();
   textSize(20);
   imageMode(CENTER);
   loadImg();
@@ -74,13 +76,19 @@ function draw(){
   if(count<100){
   slide.transition();
   slide.display();
+ // projects.display();
   backButton.display();
   nextButton.display();
   }
 }
 
 function mouseMoved(){
-
+  if(frameCount>10){
+  	 slide.display();
+ 	// projects.display();
+ 	 backButton.display();
+ 	 nextButton.display();
+  }
 }
 
 function mousePressed(){
