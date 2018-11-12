@@ -15,7 +15,7 @@ var nextButton;
 
 
 var title = [ 
-"Sacs a Ordures",
+"Sacs a Ordures,",
 "Computer Drawing of a New Painting",
 "XX_Flowers_XX",
 "Gumdrops",
@@ -27,6 +27,21 @@ var title = [
 "Oh Baby",
 "Jacks"
 ];
+
+var yyyy = [
+"2018",
+"2018",
+"2018",
+"2018",
+"2018",
+"2018",
+"2018",
+"2018",
+"2018",
+"2018",
+"2018"
+];
+
 var caption = [
 "Plaster, tissue paper, ink",
 "Plaster, paper towel, ink",

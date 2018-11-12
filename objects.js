@@ -27,7 +27,8 @@ function Slide(){
 		push();
 			fill(30);
 			textSize(this.textSize);
-			text("Matthis Grunsky",this.titlex,this.titley-30);
+			text("Matthis Grunsky",this.titlex,this.titley*0.95);
+			text(yyyy[n],this.titlex+(8*this.textSize),this.titley*0.95);
 			textSize(this.textSize);
 			textFont(notoItal);
 			text(title[n],this.titlex, this.titley);
@@ -63,13 +64,17 @@ function Slide(){
 	}
 	
 	this.transition = function(){
-		this.trans+=this.transSpeed;	
-		if(this.trans>=255){
-			this.transSpeed = 0;
-			this.trans = 255;
-		}else 
-		if(this.trans<=0){
-			this.transSpeed*=-1;
+		if(width>height){
+			this.trans+=this.transSpeed;	
+			if(this.trans>=255){
+				this.transSpeed = 0;
+				this.trans = 255;
+			}else if(this.trans<=0){
+				this.transSpeed*=-1;
+				this.n = n;
+				resize();
+			}
+		}else{
 			this.n = n;
 			resize();
 		}
