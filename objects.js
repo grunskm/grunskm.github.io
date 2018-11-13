@@ -84,7 +84,7 @@ function Slide(){
 	this.next = function(){
 
 			if(width<height){
-				if(count>20){
+				if(count>5){
 					this.transSpeed = -20;
 					n++;
 					if(n>=img.length){
@@ -96,7 +96,7 @@ function Slide(){
 					print(count);
 				}
 			}else if(width>height){
-						if(count>20){
+						if(count>5){
 							this.transSpeed = -20;
 							n++;
 							count = 0;

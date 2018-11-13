@@ -76,7 +76,7 @@ function imgLoaded(){
 }
 
 function setup() {
-
+  frameRate(30);
   canvas = createCanvas(windowWidth, windowHeight);
   slide = new Slide();
  // projects = new Projects();
