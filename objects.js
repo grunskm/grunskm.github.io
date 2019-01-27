@@ -1,4 +1,122 @@
 
+function NavBar(){
+	this.h = 35;
+	this.x = 0;
+	this.y = height-this.h;
+	this.spacing = 150;
+	this.about
+	this.link = [];
+	this.linkName = [
+		"Painting",
+		"Plaster",
+		"Exhibitions",
+		"Matthis Grunsky"
+		];
+		
+
+	this.link[0] = new Link(0,this.linkName[0],150,150);
+	this.link[1] = new Link(1,this.linkName[1],150,300);
+	this.link[2] = new Link(2,this.linkName[2],150,450);
+	this.link[3] = new Link(3,this.linkName[3],150,width-150);
+
+	
+	this.display = function(){
+		push();
+		noStroke();
+		fill(10);
+		rect(this.x,this.y,width,height);
+		textSize(15);
+		fill(150);
+		textFont(notoReg);
+		for(e=0;e<this.link.length;e++){
+			this.link[e].display(e);
+			this.link[e].hover(e);
+		}
+		pop();
+	}
+	
+	this.click = function(){
+		for(e=0;e<this.link.length;e++){
+			this.link[e].click(e);
+		}
+	}
+	
+	this.resize = function(){
+		this.y = height-this.h;
+		for(e=0;e<this.link.length;e++){
+			this.link[e].resize();
+		}
+	}
+
+	
+	function Link(number,title,spacing,x){
+		this.h = 35;
+		this.text = title;
+		this.spacing = spacing;
+		this.x = x;
+		this.y = height-10;
+
+		
+		this.display = function(p){
+			text(this.text,this.x,this.y);
+			push();
+			stroke(50);
+			//line(this.x-10,height-this.h,this.x-20,height);
+			noStroke();
+			//fill(15,15,15);
+			fill(240);
+			if(page==p){
+				beginShape();
+				vertex(this.x-15,height); //bottom left
+				vertex(this.x-20,height-this.h+10);
+				vertex(this.x-30,height-this.h-3);//top left
+				vertex(this.x+this.spacing-8,height-this.h-3);//top right
+				vertex(this.x+this.spacing-20,height-this.h+10);
+				vertex(this.x+this.spacing-26,height);//bottom right
+				endShape();
+				
+				fill(15);
+				text(this.text,this.x,this.y);
+				
+				fill(10);
+				ellipse(this.x+this.spacing-9,height-this.h+10,20);
+				ellipse(this.x-31,height-this.h+10,20);
+			}
+			pop();
+// 					if(page==p){
+// 				beginShape();
+// 				vertex(this.x-25,height-this.h-3);
+// 				vertex(this.x+this.spacing-15,height-this.h-3);
+// 				vertex(this.x+this.spacing-25,height);
+// 				vertex(this.x-15,height);
+// 				endShape();
+// 				fill(15,15,15);
+// 				text(this.text,this.x,this.y);
+			
+		}
+		
+		this.hover = function(p){
+			if(this.x<mouseX && mouseX<this.x+this.spacing && height-40<mouseY && p!=page){
+				push();
+				fill(250,250,200);
+				noStroke();
+				text(this.text,this.x,this.y);
+				pop();
+			}
+		}
+		
+		this.click = function(p){
+			if(this.x<mouseX && mouseX<this.x+this.spacing && height-40<mouseY&& p!=page){
+				slide.pageTrans(p);
+			}
+		}
+		
+		this.resize = function(){
+			this.y = height-10;
+		}
+	}
+}
+
 function Slide(){
 	this.x;
 	this.imgx;
@@ -16,50 +134,50 @@ function Slide(){
 	this.trans = 255;
 	this.transSpeed = 0;
 	this.n = n;
+	this.page = page;
 
 	this.display = function(){
 	
 		background(240);
 		
-		image(img[this.n],this.imgx,this.imgy,this.imgWidth,this.imgHeight);
+		image(img[this.page][this.n],this.imgx,this.imgy,this.imgWidth,this.imgHeight);
 		background(240,255-this.trans);
 		
 		push();
 			fill(30);
 			textSize(this.textSize);
-			text("Matthis Grunsky",this.titlex,this.titley*0.95);
-			text(yyyy[n],this.titlex+(8*this.textSize),this.titley*0.95);
+			text(dimension[page][n],this.titlex,this.titley+60);
+			text(yyyy[page][n],this.titlex,this.titley+90);
 			textSize(this.textSize);
 			textFont(notoItal);
-			text(title[n],this.titlex, this.titley);
+			text(title[page][n],this.titlex, this.titley);
 			textFont(notoReg);
-			text(caption[n],this.titlex,this.titley+30);
+			text(caption[page][n],this.titlex,this.titley+30);
 		pop();
-		this.contact();
 	}
 
 	this.resize = function(){
 		canvas.size(windowWidth,windowHeight);
 		if(width>height){
 			this.imgHeight = height*0.85;
-			this.imgWidth = (this.imgHeight/img[n].height)*img[n].width;
+			this.imgWidth = (this.imgHeight/img[page][n].height)*img[page][n].width;
 			
 			this.imgx = width*0.35;
-			this.imgy = height/2;
+			this.imgy = height*0.45;
 			this.titlex = width*0.65;
-			this.titley = height*0.9;
+			this.titley = height*0.2;
 			if(width<900){
 			this.textSize = 20;
 			}else{this.textSize = 20;}
 		}else{	
 			canvas.size(windowWidth,height);
-			this.textSize = 20;
+			this.textSize = 15;
 			this.imgWidth = windowWidth;
-			this.imgHeight = (this.imgWidth/img[n].width)*img[n].height;
+			this.imgHeight = (this.imgWidth/img[page][n].width)*img[page][n].height;
 			this.imgx = width/2;
 			this.imgy = height*0.4;
 			this.titlex = 30;
-			this.titley = height*0.9;
+			this.titley = height*0.2;
 		}
 	}
 	
@@ -72,6 +190,7 @@ function Slide(){
 			}else if(this.trans<=0){
 				this.transSpeed*=-1;
 				this.n = n;
+				this.page = page;
 				resize();
 			}
 		}else{
@@ -87,10 +206,10 @@ function Slide(){
 				if(count>5){
 					this.transSpeed = -20;
 					n++;
-					if(n>=img.length){
+					if(n>=img[page].length){
 						n=0
 					}
-					slide.resize();
+					//slide.resize();
 					slide.display();
 					count = 0;
 					print(count);
@@ -100,12 +219,11 @@ function Slide(){
 							this.transSpeed = -20;
 							n++;
 							count = 0;
-							if(n>=img.length){
+							if(n>=img[page].length){
 								n=0
 							}
-							slide.resize();
+							//slide.resize();
 							slide.display();
-							slide.contact();
 					   }
 					}
 	}
@@ -117,9 +235,9 @@ function Slide(){
 					this.transSpeed = -30;
 					n--;
 					if(n<0){
-							n=img.length-1;
+							n=img[page].length-1;
 							}
-					slide.resize();
+					//slide.resize();
 					slide.display();
 					count = 0;
 					print(count);
@@ -130,65 +248,29 @@ function Slide(){
 							n--;
 							count = 0;
 							if(n<0){
-								n=img.length-1;
+								n=img[page].length-1;
 							}
-							slide.resize();
+							//slide.resize();
 							slide.display();
-							slide.contact();
 					   }
 					}
 	}
 	
-	this.contact = function(){
-	    var xx = width-100;
-	    var yy = 30;
-	    var ww = 50;
-	    var hh = 30;
-	    var tx = width/2-200;
-	 	var ty = height/2;
-		push();
-		fill(80);
-		text("Contact",xx,yy);
-		if(mouseX>xx&&mouseX<xx+ww&&mouseY>yy-20&&mouseY<yy+hh-20){
-			noStroke();
-			fill(200);
-			text("Contact",xx,yy);
-			fill(250,150,20);
-			rect(tx-15,ty-30,500,90)
-			fill(40);
-			text("Matthis Grunsky is an artist from Halifax, Nova Scotia.",tx,ty);
-			text("He currently lives in Vancouver, British Columbia.",tx,ty+20);
-			text("Please contact at grunskm@gmail.com ",tx,ty+40);
+	this.pageTrans = function(k){
+		if(width>height){
+			if(count>5){
+				this.transSpeed = -20;
+				page = k;
+				n = 0;
+				count = 0;
+				//slide.resize();
+				slide.display();
 			}
-		pop()
+		}
 	}
  }
  
-function Projects(){
-	this.x = width*0.85;
-	this.y = height*0.2;
-	this.list = [];
-	this.words = ["About","Untitled Series","Milk Crates","Other Work"];
-	this.adds = ["about","untitledseries","crates","other"];
-	for(c=0;c<this.words.length;c++){
-		this.list[c] = new Link(this.x,this.y+(c*30),this.words[c],20,this.adds[c]);
-	}
-	
-	this.display = function(){
-		for(h=0;h<this.words.length;h++){
-			this.list[h].display();
-		}
-	}
-	this.resize = function(){
-		this.x = width*0.85;
-		this.y = height*0.2;
-		for(c=0;c<this.words.length;c++){
-			this.list[c] = new Link(this.x,this.y+(c*30),this.words[c],20,this.adds[c]);
-		}
-	}
-}
-	
-function Link(x,y,t,ts,a){
+function exLink(x,y,t,ts,a){
 		this.x = x;
 		this.y = y;
 		this.text = t;
@@ -221,6 +303,7 @@ function backButt(x,y,w){
 	this.textFill = 0;
 
 	this.display = function(){
+		if(title[page].length>1){
 		push();
 		ellipseMode(CORNER);
 		
@@ -238,6 +321,7 @@ function backButt(x,y,w){
 		line(this.x+this.w*0.7,this.y+this.w*0.25,this.x+this.w*0.25,this.y+this.w/2);
 		line(this.x+this.w*0.25,this.y+this.w/2,this.x+this.w*0.7,this.y+this.w*0.75);
 		pop();
+		}
 	}
 	this.click = function(){
 		if(mouseX>this.x && mouseX<this.x+this.w && mouseY>this.y && mouseY<this.y+this.h){
@@ -256,6 +340,7 @@ function nextButt(x,y,w){
 	this.textFill;
 
 	this.display = function(){
+	if(title[page].length>1){
 		push();
 		ellipseMode(CORNER);
 		if(mouseX>this.x && mouseX<this.x+this.w && mouseY>this.y && mouseY<this.y+this.h){
@@ -272,6 +357,7 @@ function nextButt(x,y,w){
 		line(this.x+this.w*0.3,this.y+this.w*0.25,this.x+this.w*0.75,this.y+this.w/2);
 		line(this.x+this.w*0.75,this.y+this.w/2,this.x+this.w*0.3,this.y+this.w*0.75);
 		pop();
+		}
 	}
 	this.click = function(){
 		if(mouseX>this.x && mouseX<this.x+this.w && mouseY>this.y && mouseY<this.y+this.h){
@@ -282,24 +368,27 @@ function nextButt(x,y,w){
 }
 
 function resize(){
-if(width<height){
+	if(width<height){
+////PortraitMode
 slide.resize();
-//projects.resize();
 slide.display();
 backButton = new backButt(width*0.1,height*0.7,width*0.2);
 nextButton = new nextButt(width*0.7,height*0.7,width*0.2);
 backButton.display();
 nextButton.display();
-//projects.display();
+navBar.resize();
+navBar.display();
 }
+
 if(width>height){
+//LandscapeMode
 slide.resize();
-//projects.resize();
 slide.display();
-backButton = new backButt(width*0.64,height*0.7,width*0.05);
-nextButton = new nextButt(width*0.74,height*0.7,width*0.05);
+backButton = new backButt(width*0.64,height*0.4,width*0.05);
+nextButton = new nextButt(width*0.74,height*0.4,width*0.05);
 backButton.display();
 nextButton.display();
-//projects.display();
+navBar.resize();
+navBar.display();
 }
 }

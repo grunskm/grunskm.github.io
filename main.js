@@ -4,82 +4,162 @@ var count =0;
 var notoReg;
 var notoItal;
 
-var img =[];
-var n = 0;
+var img =[
+[],
+[],
+[],
+[]
+];
 var nLoad = 1;
+var nPage = 0;
+
+var n = 0;
+var page = 0;
 
 var slide;
-var projects;
 var backButton;
 var nextButton;
+var navBar;
 
 
-var title = [ 
-"Sacs a Ordures,",
-"Computer Drawing of a New Painting",
-"XX_Flowers_XX",
-"Gumdrops",
-"Dark Square",
-"Neves",
+var title = [
+["Almost Done",
+"Parting Shot",
+"Dai-Fugi Sushi",
+"Nando's Flame Grilled Chicken",
+"Reflections II",
+"6105 III",
+"Block #1"
+],
+[
 "Focus Holes",
 "Excess",
+"Neves",
 "DGYHU",
-"Oh Baby",
-"Jacks"
-];
-
-var yyyy = [
-"2018",
-"2018",
-"2018",
-"2018",
-"2018",
-"2018",
-"2018",
-"2018",
-"2018",
-"2018",
-"2018"
+"Jacks",
+"Computer Drawing of a New Painting",
+"Sacs a Ordures,",
+"XX_Flowers_XX",
+"Gumdrops",
+"Oh Baby"],
+[""],
+[""]
 ];
 
 var caption = [
+[
+"Acrylic on board",
+"Acrylic on board",
+"Oil on canvas",
+"Oil on canvas",
+"Acrylic on canvas",
+"Acrylic on canvas",
+"Oil on canvas"],
+[
+"Plaster, tissue paper, oil paint",
+"Plaster, paper towel, ink",
 "Plaster, tissue paper, ink",
-"Plaster, paper towel, ink",
-"Plaster, decorated napkin, oil paint",
-"Plaster, paper towel, ink",
 "Plaster, toilet paper, ink",
+"Plaster, tissue paper, ink, oil paint",
 "Plaster, paper towel, ink",
-"Plaster, decorated napkin, oil paint",
+"Plaster, tissue paper, ink",
+"Plaster, tissue paper, oil paint",
 "Plaster, paper towel, ink",
-"Plaster, toilet paper, ink",
-"Plaster, decorated napkin, ink, oil paint",
-"Plaster, tissue paper, acrylic paint, ink",
-]
+"Plaster, tissue paper, ink, oil paint"
+],
+[""],
+["Matthis Grunsky is from Halifax, NS"]
+];
+
+var dimension = [
+[
+"24''x24''",
+"24''x24''",
+"30''x28''",
+"72''x60''",
+"84''x60''",
+"60''x60''",
+"60''x60''"],
+[
+"14''x18''",
+"9''x11''",
+"12''x14''",
+"12''x12''",
+"16''x16''",
+"9''x11''",
+"20''x14''",
+"14''x18''",
+"9''x11''",
+"16''x16''"],
+[""],
+["and currently lives in Vancouver, BC."]
+];
+
+var yyyy = [
+[
+"2019",
+"2018",
+"2015",
+"2015",
+"2012",
+"2012",
+"2010"],
+
+[
+"2018",
+"2018",
+"2018",
+"2018",
+"2018",
+"2018",
+"2018",
+"2018",
+"2018",
+"2018",
+"2018"],
+[""],
+["grunskm@gmail.com"]
+];
+
+
+//////////Image Loading//////////////////////////////
 
 function preload(){
- img[0] = loadImage("assets/image0.jpg");
+ img[0][0] = loadImage("assets/image0_0.jpg");
  notoReg = loadFont("NotoSans-Regular.ttf");
  notoItal = loadFont("NotoSans-Italic.ttf");
 }
 
 function loadImg(){
-	if(nLoad<title.length){
-		 img[nLoad] = loadImage("assets/image"+(nLoad)+".jpg",imgLoaded); 
+	if(nLoad<title[nPage].length){
+		 img[nPage][nLoad] = loadImage("assets/image"+(nPage)+"_"+(nLoad)+".jpg",imgLoaded); 
 	}
 }
 function imgLoaded(){
-	if(nLoad<title.length){
-	print("image"+nLoad+"loaded");
+	
+	if(nLoad<title[nPage].length){
+	print("image"+nPage+"_"+nLoad+"loaded");
 	nLoad++;
 	loadImg();
 	}
+	
+	if(nLoad>=title[nPage].length){
+		nPage++;
+		nLoad = 0;
+		print(nPage);
+		if(nPage<img.length){
+			loadImg();
+		}else{print("finished!");}
+	}
 }
+
+///Main Loop//////////////////////////////////
 
 function setup() {
   frameRate(30);
   canvas = createCanvas(windowWidth, windowHeight);
   slide = new Slide();
- // projects = new Projects();
+  navBar = new NavBar();
   textSize(20);
   imageMode(CENTER);
   loadImg();
@@ -91,7 +171,7 @@ function draw(){
   if(count<100){
   slide.transition();
   slide.display();
- // projects.display();
+  navBar.display();
   backButton.display();
   nextButton.display();
   }
@@ -100,22 +180,32 @@ function draw(){
 function mouseMoved(){
   if(frameCount>10){
   	 slide.display();
- 	// projects.display();
+ 	 navBar.display();
  	 backButton.display();
  	 nextButton.display();
   }
 }
 
 function mousePressed(){
+	
 	nextButton.click();
 	backButton.click();
+	
 	backButton.display();
     nextButton.display();
+    
+    navBar.click();
+	navBar.display();
+}
+
+function keyPressed(){
+print("page="+page);
+print("n="+n);
+
 }
 
 window.onresize = function(){
 resize();
 }
 
-//||||||||||||||||||||||||||||||||||||||||||||| main loop above
 
