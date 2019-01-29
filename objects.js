@@ -215,7 +215,7 @@ function Slide(){
 			}else{this.textSize = 20;}
 		}else{	
 			canvas.size(windowWidth,height);
-			this.textSize = 15;
+			this.textSize = width*0.03;
 			this.imgHeight = windowHeight*0.5;
 			this.imgWidth = (this.imgHeight/img[page][n].height)*img[page][n].width;
 			this.imgx = width*0.5;
