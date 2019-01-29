@@ -307,7 +307,7 @@ function Slide(){
 				page = k;
 				n = 0;
 				count = 0;
-				slide.resize();
+				//slide.resize();
 				slide.display();
 			}
 		}else{
