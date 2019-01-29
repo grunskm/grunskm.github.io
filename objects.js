@@ -1,9 +1,10 @@
 
 function NavBar(){
-	this.h = 35;
-	this.x = 0;
-	this.y = height-this.h;
-	this.spacing = 150;
+	this.h;
+	this.y;
+	this.w;
+	this.spacing;
+	this.fill;
 	this.about
 	this.link = [];
 	this.linkName = [
@@ -12,107 +13,136 @@ function NavBar(){
 		"Exhibitions",
 		"Matthis Grunsky"
 		];
-		
-
-	this.link[0] = new Link(0,this.linkName[0],150,150);
-	this.link[1] = new Link(1,this.linkName[1],150,300);
-	this.link[2] = new Link(2,this.linkName[2],150,450);
-	this.link[3] = new Link(3,this.linkName[3],150,width-150);
-
 	
 	this.display = function(){
 		push();
 		noStroke();
-		fill(10);
-		rect(this.x,this.y,width,height);
+		fill(this.fill);
+		rect(0,this.y,width,height);
 		textSize(15);
 		fill(150);
 		textFont(notoReg);
 		for(e=0;e<this.link.length;e++){
-			this.link[e].display(e);
+			this.link[e].display(e,this.h);
 			this.link[e].hover(e);
 		}
 		pop();
 	}
 	
 	this.click = function(){
-		for(e=0;e<this.link.length;e++){
-			this.link[e].click(e);
-		}
+			for(e=0;e<this.link.length;e++){
+				this.link[e].click(e);
+			}
 	}
 	
 	this.resize = function(){
-		this.y = height-this.h;
-		for(e=0;e<this.link.length;e++){
-			this.link[e].resize();
+
+		if(mobile==false){
+			this.h = 35;
+			this.y = height-this.h;
+			this.w = width;
+			this.spacing = 150;
+			this.fill = 15;
+			
+			for(f=0;f<this.linkName.length;f++){
+				this.link[f] = new Link();
+			}
+			//link.resize(title,x-position, y-position,size)
+			this.link[0].resize(this.linkName[0],150,height-10,150);
+			this.link[1].resize(this.linkName[1],300,height-10,150);
+			this.link[2].resize(this.linkName[2],450,height-10,150);
+			this.link[3].resize(this.linkName[3],width-150,height-10,150);
+		}else if(mobile==true){	
+			this.h = 100;
+			this.y = height-this.h;
+			this.w = width;
+			this.spacing = width*0.25;
+			this.fill = 240;
+			for(f=0;f<this.linkName.length;f++){
+				this.link[f] = new Link();
+			}
+			//link.resize(title,x-position, y-position,size)
+			this.link[0].resize(this.linkName[0],width*0.2,height*0.9,width*0.15);
+			this.link[1].resize(this.linkName[1],width*0.4,height*0.9,width*0.15);
+			this.link[2].resize(this.linkName[2],width*0.6,height*0.9,width*0.15);
+			this.link[3].resize(this.linkName[3],width*0.8,height*0.9,width*0.15);
 		}
 	}
 
-	
-	function Link(number,title,spacing,x){
-		this.h = 35;
-		this.text = title;
-		this.spacing = spacing;
-		this.x = x;
-		this.y = height-10;
+	function Link(){
+		this.h;
+		this.x;
+		this.y;
+		this.size;
+		this.text;
 
-		
-		this.display = function(p){
-			text(this.text,this.x,this.y);
-			push();
-			stroke(50);
-			//line(this.x-10,height-this.h,this.x-20,height);
-			noStroke();
-			//fill(15,15,15);
-			fill(240);
-			if(page==p){
-				beginShape();
-				vertex(this.x-15,height); //bottom left
-				vertex(this.x-20,height-this.h+10);
-				vertex(this.x-30,height-this.h-3);//top left
-				vertex(this.x+this.spacing-8,height-this.h-3);//top right
-				vertex(this.x+this.spacing-20,height-this.h+10);
-				vertex(this.x+this.spacing-26,height);//bottom right
-				endShape();
-				
-				fill(15);
+		this.display = function(p,h){
+			if(mobile==false){
+				fill(240);
 				text(this.text,this.x,this.y);
-				
-				fill(10);
-				ellipse(this.x+this.spacing-9,height-this.h+10,20);
-				ellipse(this.x-31,height-this.h+10,20);
-			}
-			pop();
-// 					if(page==p){
-// 				beginShape();
-// 				vertex(this.x-25,height-this.h-3);
-// 				vertex(this.x+this.spacing-15,height-this.h-3);
-// 				vertex(this.x+this.spacing-25,height);
-// 				vertex(this.x-15,height);
-// 				endShape();
-// 				fill(15,15,15);
-// 				text(this.text,this.x,this.y);
-			
-		}
-		
-		this.hover = function(p){
-			if(this.x<mouseX && mouseX<this.x+this.spacing && height-40<mouseY && p!=page){
+				if(page==p){
+					push();
+					noStroke();
+					fill(240);
+					beginShape();
+						vertex(this.x-15,height); //bottom left
+						vertex(this.x-20,height-h+10);
+						vertex(this.x-30,height-h-3);//top left
+						vertex(this.x+this.size-8,height-h-3);//top right
+						vertex(this.x+this.size-20,height-h+10);
+						vertex(this.x+this.size-26,height);//bottom right
+					endShape();
+					fill(15)
+					ellipse(this.x+this.size-9,this.y-15,20);
+					ellipse(this.x-31,this.y-15,20);
+					fill(15);
+					text(this.text,this.x,this.y);
+					pop();
+					}
+			}else if(mobile==true){
 				push();
-				fill(250,250,200);
 				noStroke();
-				text(this.text,this.x,this.y);
+				if(page!=p){
+					fill(200);
+					}else{fill(50)}
+				ellipse(this.x,this.y,this.size);
 				pop();
 			}
 		}
 		
+		this.hover = function(p){
+			if(mobile==false){
+				if(this.x<mouseX && mouseX<this.x+this.size && height-40<mouseY && p!=page){
+					push();
+						fill(250,250,200);
+						noStroke();
+						text(this.text,this.x,this.y);
+					pop();
+				}
+			}else{}
+		}
+		
 		this.click = function(p){
-			if(this.x<mouseX && mouseX<this.x+this.spacing && height-40<mouseY&& p!=page){
-				slide.pageTrans(p);
+			if(mobile==false){
+				if(this.x<mouseX && mouseX<this.x+this.size && height-40<mouseY&& p!=page){
+					slide.pageTrans(p);
+				}
+			}else if(mobile==true){
+				if(mouseX>this.x-(this.size*0.5) && 
+				   mouseX<this.x+(this.size*0.5) &&
+				   mouseY>this.y-(this.size*0.5) &&
+				   mouseY<this.y+(this.size*0.5) && 
+				   p!=page){
+				   slide.pageTrans(p);
+				}
 			}
 		}
 		
-		this.resize = function(){
-			this.y = height-10;
+		this.resize = function(title,x,y,s){
+			this.y = y;
+			this.text = title;
+			this.x = x;
+			this.size = s;
 		}
 	}
 }
@@ -143,6 +173,7 @@ function Slide(){
 		image(img[this.page][this.n],this.imgx,this.imgy,this.imgWidth,this.imgHeight);
 		background(240,255-this.trans);
 		
+		if(mobile==false){
 		push();
 			fill(30);
 			textSize(this.textSize);
@@ -154,11 +185,24 @@ function Slide(){
 			textFont(notoReg);
 			text(caption[page][n],this.titlex,this.titley+30);
 		pop();
+		}else if(mobile==true){
+			push();
+			fill(30);
+			textSize(this.textSize);
+			textFont(notoItal);
+			text(title[page][n],this.titlex-(title[page][n].length*4.5), this.titley);
+			text(dimension[page][n],this.titlex-(dimension[page][n].length*4.5),this.titley+60);
+			text(yyyy[page][n],this.titlex-(yyyy[page][n].length*4.5),this.titley+90);
+			textSize(this.textSize);
+			textFont(notoReg);
+			text(caption[page][n],this.titlex-(caption[page][n].length*4.5),this.titley+30);
+			pop();
+		}
 	}
 
 	this.resize = function(){
 		canvas.size(windowWidth,windowHeight);
-		if(width>height){
+		if(mobile==false){ // Landscape
 			this.imgHeight = height*0.85;
 			this.imgWidth = (this.imgHeight/img[page][n].height)*img[page][n].width;
 			
@@ -172,17 +216,17 @@ function Slide(){
 		}else{	
 			canvas.size(windowWidth,height);
 			this.textSize = 15;
-			this.imgWidth = windowWidth;
-			this.imgHeight = (this.imgWidth/img[page][n].width)*img[page][n].height;
-			this.imgx = width/2;
-			this.imgy = height*0.4;
-			this.titlex = 30;
-			this.titley = height*0.2;
+			this.imgHeight = windowHeight*0.5;
+			this.imgWidth = (this.imgHeight/img[page][n].height)*img[page][n].width;
+			this.imgx = width*0.5;
+			this.imgy = height*0.3;
+			this.titlex = width*0.5;
+			this.titley = height*0.65;
 		}
 	}
 	
 	this.transition = function(){
-		if(width>height){
+		if(mobile==false){
 			this.trans+=this.transSpeed;	
 			if(this.trans>=255){
 				this.transSpeed = 0;
@@ -257,15 +301,24 @@ function Slide(){
 	}
 	
 	this.pageTrans = function(k){
-		if(width>height){
+		if(mobile==false){
 			if(count>5){
 				this.transSpeed = -20;
 				page = k;
 				n = 0;
 				count = 0;
-				//slide.resize();
+				slide.resize();
 				slide.display();
 			}
+		}else{
+				print("page change");
+				page = k;
+				this.page = page;
+				n = 0;
+				this.n = n;
+				slide.resize();
+				slide.display();
+				resize();
 		}
 	}
  }
@@ -306,12 +359,11 @@ function backButt(x,y,w){
 		if(title[page].length>1){
 		push();
 		ellipseMode(CORNER);
-		
-		if(mouseX>this.x && mouseX<this.x+this.w && mouseY>this.y && mouseY<this.y+this.h){
+		if(mouseX>this.x && mouseX<this.x+this.w && mouseY>this.y && mouseY<this.y+this.h && mobile==false){
 			this.buttFill = 70;
 			this.line = 255;
 		}else{
-			this.buttFill = 240;
+			this.buttFill = 200;
 			this.line = 50;
 			}
 		noStroke();
@@ -343,11 +395,11 @@ function nextButt(x,y,w){
 	if(title[page].length>1){
 		push();
 		ellipseMode(CORNER);
-		if(mouseX>this.x && mouseX<this.x+this.w && mouseY>this.y && mouseY<this.y+this.h){
+		if(mouseX>this.x && mouseX<this.x+this.w && mouseY>this.y && mouseY<this.y+this.h && mobile==false){
 			this.buttFill = 70;
 			this.line = 255;
 		}else{
-			this.buttFill = 240;
+			this.buttFill = 200;
 			this.line = 50;
 			}
 		noStroke();
@@ -368,27 +420,29 @@ function nextButt(x,y,w){
 }
 
 function resize(){
-	if(width<height){
-////PortraitMode
-slide.resize();
-slide.display();
-backButton = new backButt(width*0.1,height*0.7,width*0.2);
-nextButton = new nextButt(width*0.7,height*0.7,width*0.2);
-backButton.display();
-nextButton.display();
-navBar.resize();
-navBar.display();
-}
-
-if(width>height){
-//LandscapeMode
-slide.resize();
-slide.display();
-backButton = new backButt(width*0.64,height*0.4,width*0.05);
-nextButton = new nextButt(width*0.74,height*0.4,width*0.05);
-backButton.display();
-nextButton.display();
-navBar.resize();
-navBar.display();
-}
+	if(width>height){
+		mobile = false;
+	}else{mobile = true;}
+	
+	
+	if(mobile==false){
+		slide.resize();
+		slide.display();
+		backButton = new backButt(width*0.64,height*0.4,width*0.05);
+		nextButton = new nextButt(width*0.74,height*0.4,width*0.05);
+		backButton.display();
+		nextButton.display();
+		navBar.resize();
+		navBar.display();
+	}
+	if(mobile==true){
+		slide.resize();
+		slide.display();
+		backButton = new backButt(width*0.1,height*0.65,width*0.15);
+		nextButton = new nextButt(width*0.75,height*0.65,width*0.15);
+		backButton.display();
+		nextButton.display();
+		navBar.resize();
+		navBar.display();
+	}
 }

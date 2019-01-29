@@ -4,6 +4,8 @@ var count =0;
 var notoReg;
 var notoItal;
 
+var mobile = false;
+
 var img =[
 [],
 [],
@@ -126,8 +128,8 @@ var yyyy = [
 
 function preload(){
  img[0][0] = loadImage("assets/image0_0.jpg");
- notoReg = loadFont("NotoSans-Regular.ttf");
- notoItal = loadFont("NotoSans-Italic.ttf");
+ notoReg = loadFont("RobotoMono-Regular.ttf");
+ notoItal = loadFont("RobotoMono-Italic.ttf");
 }
 
 function loadImg(){
@@ -198,11 +200,17 @@ function mousePressed(){
 	navBar.display();
 }
 
-function keyPressed(){
-print("page="+page);
-print("n="+n);
-
-}
+// function keyPressed(){
+// 	if(keyCode==LEFT_ARROW){
+// 		print("keyPressed");
+// 		backButton.click();
+// 		resize();
+// 	}else if(keyCode==RIGHT_ARROW){
+// 		print("keyPressed");
+// 		nextButton.click();
+// 		resize();
+// 	}
+// }
 
 window.onresize = function(){
 resize();
