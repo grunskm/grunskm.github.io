@@ -51,7 +51,7 @@ function NavBar(){
 			this.link[0].resize(this.linkName[0],150,height-10,150);
 			this.link[1].resize(this.linkName[1],300,height-10,150);
 			this.link[2].resize(this.linkName[2],450,height-10,150);
-			this.link[3].resize(this.linkName[3],width-150,height-10,150);
+			this.link[3].resize(this.linkName[3],width-200,height-10,200);
 		}else if(mobile==true){	
 			this.h = 100;
 			this.y = height-this.h;
@@ -177,13 +177,12 @@ function Slide(){
 		push();
 			fill(30);
 			textSize(this.textSize);
-			text(dimension[page][n],this.titlex,this.titley+60);
-			text(yyyy[page][n],this.titlex,this.titley+90);
-			textSize(this.textSize);
 			textFont(notoItal);
 			text(title[page][n],this.titlex, this.titley);
 			textFont(notoReg);
 			text(caption[page][n],this.titlex,this.titley+30);
+			text(dimension[page][n],this.titlex,this.titley+60);
+			text(yyyy[page][n],this.titlex,this.titley+90);
 		pop();
 		}else if(mobile==true){
 			push();
@@ -191,11 +190,10 @@ function Slide(){
 			textSize(this.textSize);
 			textFont(notoItal);
 			text(title[page][n],this.titlex-(title[page][n].length*4.5), this.titley);
-			text(dimension[page][n],this.titlex-(dimension[page][n].length*4.5),this.titley+60);
-			text(yyyy[page][n],this.titlex-(yyyy[page][n].length*4.5),this.titley+90);
-			textSize(this.textSize);
 			textFont(notoReg);
 			text(caption[page][n],this.titlex-(caption[page][n].length*4.5),this.titley+30);
+			text(dimension[page][n],this.titlex-(dimension[page][n].length*4.5),this.titley+60);
+			text(yyyy[page][n],this.titlex-(yyyy[page][n].length*4.5),this.titley+90);
 			pop();
 		}
 	}
@@ -205,14 +203,14 @@ function Slide(){
 		if(mobile==false){ // Landscape
 			this.imgHeight = height*0.85;
 			this.imgWidth = (this.imgHeight/img[page][n].height)*img[page][n].width;
-			
+			//this.trans = 255;
 			this.imgx = width*0.35;
 			this.imgy = height*0.45;
 			this.titlex = width*0.65;
 			this.titley = height*0.2;
 			if(width<900){
-			this.textSize = 20;
-			}else{this.textSize = 20;}
+			this.textSize = 15;
+			}else{this.textSize = 15;}
 		}else{	
 			canvas.size(windowWidth,height);
 			this.textSize = width*0.03;
@@ -246,7 +244,7 @@ function Slide(){
 	
 	this.next = function(){
 
-			if(width<height){
+			if(mobile==true){
 				if(count>5){
 					this.transSpeed = -20;
 					n++;
@@ -258,8 +256,8 @@ function Slide(){
 					count = 0;
 					print(count);
 				}
-			}else if(width>height){
-						if(count>5){
+			}else if(mobile==false){
+						if(this.trans==255){
 							this.transSpeed = -20;
 							n++;
 							count = 0;
@@ -428,8 +426,8 @@ function resize(){
 	if(mobile==false){
 		slide.resize();
 		slide.display();
-		backButton = new backButt(width*0.64,height*0.4,width*0.05);
-		nextButton = new nextButt(width*0.74,height*0.4,width*0.05);
+		backButton = new backButt(width*0.64,height*0.45,width*0.05);
+		nextButton = new nextButt(width*0.74,height*0.45,width*0.05);
 		backButton.display();
 		nextButton.display();
 		navBar.resize();

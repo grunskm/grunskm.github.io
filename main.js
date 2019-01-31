@@ -188,16 +188,29 @@ function mouseMoved(){
   }
 }
 
-function mousePressed(){
-	
+// function mousePressed(){
+// 	if(mobile==false){
+// 	nextButton.click();
+// 	backButton.click();
+// 	
+// 	backButton.display();
+//     nextButton.display();
+//     
+//     navBar.click();
+// 	navBar.display();
+// 	}
+// }
+
+function touchEnded(){
 	nextButton.click();
 	backButton.click();
-	
+	slide.display();
 	backButton.display();
     nextButton.display();
     
     navBar.click();
 	navBar.display();
+	
 }
 
 // function keyPressed(){
