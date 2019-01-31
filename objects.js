@@ -189,11 +189,11 @@ function Slide(){
 			fill(30);
 			textSize(this.textSize);
 			textFont(notoItal);
-			text(title[page][n],this.titlex-(title[page][n].length*4.5), this.titley);
+			text(title[page][n],this.titlex-(title[page][n].length*(this.textSize*0.25)), this.titley);
 			textFont(notoReg);
-			text(caption[page][n],this.titlex-(caption[page][n].length*4.5),this.titley+30);
-			text(dimension[page][n],this.titlex-(dimension[page][n].length*4.5),this.titley+60);
-			text(yyyy[page][n],this.titlex-(yyyy[page][n].length*4.5),this.titley+90);
+			text(caption[page][n],this.titlex-(caption[page][n].length*(this.textSize*0.25)),this.titley+30);
+			text(dimension[page][n],this.titlex-(dimension[page][n].length*(this.textSize*0.25)),this.titley+60);
+			text(yyyy[page][n],this.titlex-(yyyy[page][n].length*(this.textSize*0.25)),this.titley+90);
 			pop();
 		}
 	}
