@@ -25,7 +25,9 @@ var navBar;
 
 
 var title = [
-["Almost Done",
+[
+"Running Wild",
+"Almost Done",
 "Parting Shot",
 "Dai-Fugi Sushi",
 "Nando's Flame Grilled Chicken",
@@ -37,7 +39,7 @@ var title = [
 "Focus Holes",
 "Excess",
 "Neves",
-"DGYHU",
+"Window",
 "Jacks",
 "Computer Drawing of a New Painting",
 "Sacs a Ordures,",
@@ -52,6 +54,7 @@ var caption = [
 [
 "Acrylic on board",
 "Acrylic on board",
+"Acrylic on board",
 "Oil on canvas",
 "Oil on canvas",
 "Acrylic on canvas",
@@ -61,7 +64,7 @@ var caption = [
 "Plaster, tissue paper, oil paint",
 "Plaster, paper towel, ink",
 "Plaster, tissue paper, ink",
-"Plaster, toilet paper, ink",
+"Plaster, paper towel, ink",
 "Plaster, tissue paper, ink, oil paint",
 "Plaster, paper towel, ink",
 "Plaster, tissue paper, ink",
@@ -75,30 +78,32 @@ var caption = [
 
 var dimension = [
 [
-"24''x24''",
-"24''x24''",
-"30''x28''",
-"72''x60''",
-"84''x60''",
-"60''x60''",
-"60''x60''"],
+'24"x24"',
+'24"x24"',
+'24"x24"',
+'30"x28"',
+'72"x60"',
+'84"x60"',
+'60"x60"',
+'60"x60"'],
 [
-"14''x18''",
-"9''x11''",
-"12''x14''",
-"12''x12''",
-"16''x16''",
-"9''x11''",
-"20''x14''",
-"14''x18''",
-"9''x11''",
-"16''x16''"],
+'14"x18"',
+'9"x11"',
+'12"x14"',
+'9"x11"',
+'16"x16"',
+'9"x11"',
+'20"x14"',
+'14"x18"',
+'9"x11"',
+'16"x16"'],
 [""],
 ["and currently lives in Vancouver, BC."]
 ];
 
 var yyyy = [
 [
+"2019",
 "2019",
 "2018",
 "2015",

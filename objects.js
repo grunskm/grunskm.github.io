@@ -10,7 +10,7 @@ function NavBar(){
 	this.linkName = [
 		"Painting",
 		"Plaster",
-		"Exhibitions",
+		"Installation",
 		"Matthis Grunsky"
 		];
 	
