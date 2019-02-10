@@ -148,7 +148,7 @@ function imgLoaded(){
 	
 	if(nLoad<title[nPage].length){
 	print("image"+nPage+"_"+nLoad+"loaded");
-	text("image"+nPage+"_"+nLoad+" loaded",(50+nPage*200),(50+20*nLoad));
+	text("image"+nPage+"_"+nLoad+" loaded",(50+nPage*200),(50+30*nLoad));
 	nLoad++;
 	loadImg();
 	}
@@ -181,7 +181,7 @@ function setup() {
 
 function draw(){
   if(stage===0){
-  }else if(stage == 1){
+  }else if(stage != 0){
   	count++;
   	if(count<100){
   		slide.transition();
@@ -194,7 +194,7 @@ function draw(){
 }
 
 function mouseMoved(){
-  if(frameCount>10){
+  if(frameCount>10 && stage!=0){
   	 slide.display();
  	 navBar.display();
  	 backButton.display();
@@ -216,6 +216,7 @@ function mouseMoved(){
 // }
 
 function touchEnded(){
+	if(stage!=0){
 	nextButton.click();
 	backButton.click();
 	slide.display();
@@ -224,6 +225,7 @@ function touchEnded(){
     
     navBar.click();
 	navBar.display();
+	}
 	
 }
 
@@ -240,7 +242,9 @@ function touchEnded(){
 // }
 
 window.onresize = function(){
-resize();
+	if(stage!=0){
+	resize();
+	}
 }
 
 
