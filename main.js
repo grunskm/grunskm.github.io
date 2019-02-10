@@ -181,6 +181,16 @@ function setup() {
 
 function draw(){
   if(stage===0){
+  	push();
+  //	angleMode(DEGREE);
+  	textSize(50);
+  	translate(width*0.25,0);
+  //	rotate(15);
+  	fill(255,0,0);
+  	for(i=0;i<height/10;i++){
+  	text("LOADING - PLEASE WAIT",0,i*(height/10)-20);
+	}
+  	pop();
   }else if(stage != 0){
   	count++;
   	if(count<100){
