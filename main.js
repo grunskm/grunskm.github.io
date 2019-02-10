@@ -1,3 +1,5 @@
+var stage = 0;
+
 var canvas;
 var count =0;
 
@@ -146,6 +148,7 @@ function imgLoaded(){
 	
 	if(nLoad<title[nPage].length){
 	print("image"+nPage+"_"+nLoad+"loaded");
+	text("image"+nPage+"_"+nLoad+" loaded",(50+nPage*200),(50+20*nLoad));
 	nLoad++;
 	loadImg();
 	}
@@ -156,7 +159,11 @@ function imgLoaded(){
 		print(nPage);
 		if(nPage<img.length){
 			loadImg();
-		}else{print("finished!");}
+		}else{
+			  print("finished!");
+			  resize();
+			  stage = 1;
+			  }
 	}
 }
 
@@ -170,17 +177,19 @@ function setup() {
   textSize(20);
   imageMode(CENTER);
   loadImg();
-  resize();
 }
 
 function draw(){
-  count++;
-  if(count<100){
-  slide.transition();
-  slide.display();
-  navBar.display();
-  backButton.display();
-  nextButton.display();
+  if(stage===0){
+  }else if(stage == 1){
+  	count++;
+  	if(count<100){
+  		slide.transition();
+  		slide.display();
+  		navBar.display();
+  		backButton.display();
+  		nextButton.display();
+  	}
   }
 }
 
