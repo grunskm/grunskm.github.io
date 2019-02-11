@@ -1,5 +1,4 @@
 var stage = 0;
-
 var canvas;
 var count =0;
 
@@ -49,7 +48,7 @@ var title = [
 "Gumdrops",
 "Oh Baby"],
 [""],
-[""]
+["image -> FLUFF 5/136"]
 ];
 
 var caption = [
@@ -182,14 +181,10 @@ function setup() {
 function draw(){
   if(stage===0){
   	push();
-  //	angleMode(DEGREE);
   	textSize(50);
   	translate(width*0.25,0);
-  //	rotate(15);
-  	fill(255,0,0);
-  	for(i=0;i<height/10;i++){
-  	text("LOADING - PLEASE WAIT",0,i*(height/10)-20);
-	}
+  	fill(200,250,0);
+  	text("LOADING - PLEASE WAIT",-width*0.25 +50,height-50);
   	pop();
   }else if(stage != 0){
   	count++;
