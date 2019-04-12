@@ -43,7 +43,7 @@ function loadImg(){
 
 function imgLoaded(){
 	print("image "+nPage+"_"+nGroup+"_"+nSlide+" loaded");
-	text("image"+nPage+"_"+nGroup+"_"+nSlide+" loaded",(50+nGroup*200),(50+30*nSlide));
+	text("image"+nPage+"_"+nGroup+"_"+nSlide+" loaded",(50+nGroup*200)+(nPage*50),(50+30*nSlide)+(nPage*50));
 	
 	if(nSlide+1<title[nPage][nGroup].length){
 		nSlide++;
@@ -53,7 +53,8 @@ function imgLoaded(){
 		nSlide = 0;
 		loadImg();
 	}else if(nPage+1<title.length){
-		background(240);
+		//background(240);
+		fill(random(0,255),random(0,255),random(0,255));
  		nPage++;
  		nGroup = 0;
  		nSlide = 0;
@@ -92,10 +93,10 @@ function draw(){
   		push();
   		textSize(50);
   		translate(width*0.25,0);
-  		fill(200,10,10);
+  		//fill(50,50,10);
   		text("LOADING - PLEASE WAIT",-width*0.25 +50,height-50);
   		pop();
-		fill(0,200,200);
+		//fill(0,200,200);
 		ellipse(mouseX,mouseY,40);
  		}else if(stage != 0){
   			count++;
