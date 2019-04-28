@@ -8,7 +8,7 @@ var notoItal;
 var mobile = false;
 
 var img = [
-[ [],[],[],[] ],
+[ [],[],[],[]], //removed 'early work'
 [ [],[],[] ],
 [ [],[],[],[] ],
 [ [] ]
