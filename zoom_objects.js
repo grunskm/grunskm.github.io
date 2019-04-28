@@ -25,7 +25,7 @@ function NavBar(){
 		];
 		
 	this.groupName = [
-		["Sidewalks","Ghosts","Elixirs"],// removed - ,"Early Work"
+		["Sidewalks","Ghosts","Elixirs","Early Work"],// removed - 
 		["Printed Napkins","Paper Towel","Shaped"],
 		["Inside Out","GHOSTS","Falling Dots","Paintings"],
 		[""]
