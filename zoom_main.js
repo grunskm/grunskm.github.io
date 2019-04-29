@@ -81,8 +81,8 @@ function setup() {
   textSize(txtSize);
   textFont(notoReg);
   noStroke();
-  noFill();
   imageMode(CENTER);
+  fill(random(0,100),random(0,200),random(0,50));
   loadImg();
   }
 }
