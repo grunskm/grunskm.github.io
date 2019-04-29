@@ -127,7 +127,7 @@ function mouseMoved(){
 }
 
 function touchEnded(){
-	if(mobile==false){
+	if(mobile==false && stage==1){
 	slide.display();
     navBar.click();
 	navBar.display();
@@ -135,15 +135,19 @@ function touchEnded(){
 }
 
 function keyPressed(){
+  if(mobile==false && stage==1){
 	if(keyCode==LEFT_ARROW){
 		navBar.backButton.click();
 	}else if(keyCode==RIGHT_ARROW){
 		navBar.nextButton.click();
 	}
+  }
 }
 
 window.onresize = function(){
-resize();
+  if(mobile==false && stage==1){
+	resize();
+  }
 }
 
 
