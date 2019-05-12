@@ -45,6 +45,7 @@ function NavBar(){
 			text("Paintings",width*0.04,130);
 			text("Please Wait",width*0.04,280);
 			text("Loading "+"image"+nPage+"_"+nGroup+"_"+nSlide+".jpg",width*0.04,300);
+				}
 		if(this.groupName[page].length>1 && fullSite==true){
 		for(t=0;t<this.groupName[page].length;t++){
 			this.groupLink[t].display(t,this.h);
