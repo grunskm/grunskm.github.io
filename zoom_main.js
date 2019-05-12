@@ -1,11 +1,15 @@
 var stage = 0;
 var canvas;
-var count =0;
+var count = 0;
+
+var mobileImgs = 9;
+var mobileImg = [];
 
 var notoReg;
 var notoItal;
 
 var mobile = false;
+var fullSite = false;
 
 var img = [
 [ [],[],[],[]], //removed 'early work'
@@ -41,6 +45,19 @@ function loadImg(){
 	}
 }
 
+function loadMobileImg(){
+	for(q=0;q<mobileImgs;q++){
+		mobileImg[q] = loadImage("assets/mobile/mobileImage"+q+".jpg",mobileImgLoaded(q));
+	}
+}
+
+function mobileImgLoaded(x){
+	print("loaded image "+x);
+	if(x>=8){
+		stage = 1;
+	}
+}
+
 function imgLoaded(){
 	print("image "+nPage+"_"+nGroup+"_"+nSlide+" loaded");
 	text("image"+nPage+"_"+nGroup+"_"+nSlide+" loaded",(50+nGroup*200)+(nPage*50),(50+30*nSlide)+(nPage*50));
@@ -61,29 +78,43 @@ function imgLoaded(){
  		loadImg();
 	}else{
 		print("All Done!");
-		resize();
-		stage = 1;
+		fullSite = true;
 		}
+	if(img[0][0].length == title[0][0].length){
+		stage = 1;
+		resize();
+	}
 }
 
 ///Main Loop//////////////////////////////////
 
 function setup() {
   frameRate(30);
-  canvas = createCanvas(windowWidth, windowHeight);
-  if(width<height){
+
+  if(windowWidth<windowHeight){
 	mobile = true;
-  }else if(width>height){mobile=false;}
+  }else {mobile=false;}
 
   if(mobile==false){
-  slide = new Slide();
-  navBar = new NavBar();
-  textSize(txtSize);
-  textFont(notoReg);
-  noStroke();
-  imageMode(CENTER);
-  fill(random(0,100),random(0,200),random(0,50));
-  loadImg();
+  	canvas = createCanvas(windowWidth, windowHeight);
+  	slide = new Slide();
+  	navBar = new NavBar();
+  	textSize(txtSize);
+  	textFont(notoReg);
+  	noStroke();
+  	imageMode(CENTER);
+  	fill(random(0,100),random(0,200),random(0,50));
+  	loadImg();
+  }else if(mobile==true){
+    canvas = createCanvas(windowWidth, windowHeight);
+  	slide = new Slide();
+  	navBar = new NavBar();
+  	textSize(txtSize);
+    textFont(notoReg);
+    noStroke();
+    imageMode(CENTER);
+    loadMobileImg();
+    resize();
   }
 }
 
@@ -106,18 +137,27 @@ function draw(){
   				navBar.display();
   			}
   		}
-	}else{	
-	push();
-	background(0)
-	textSize(txtSize);
-    textFont(notoReg);
-	noStroke();
-	fill(200);
-	text("MOBILE WEBSITE UNDER CONSTRUCTION",50,height*0.25);
-	text("PLEASE REVISIT ON DESKTOP COMPUTER",50,(height*0.25)+(txtSize*2));
-	pop();
+	}else if(mobile==true){	
+		if(stage===0){
+  		push();
+  			textSize(20);
+  			background(255);
+  			text("LOADING",0,height/2);
+  			text("PLEASE WAIT",0,height/2.5);
+  		pop();
+ 		}else if(stage != 0){
+			count++;
+  			if(count<100){
+  				slide.transition();
+  				slide.display();
+  				navBar.display();
+  			}
+ 		}
+ 	  }
 	}
-}
+
+
+///Interaction///////////////////////////////////
 
 function mouseMoved(){
   if(frameCount>10 && stage==1 && mobile==false){
