@@ -4,6 +4,7 @@ var count = 0;
 
 var mobileImgs = 9;
 var mobileImg = [];
+var imgNum = 0;
 
 var notoReg;
 var notoItal;
@@ -59,6 +60,7 @@ function mobileImgLoaded(x){
 }
 
 function imgLoaded(){
+	imgNum++;
 	print("image "+nPage+"_"+nGroup+"_"+nSlide+" loaded");
 	text("image"+nPage+"_"+nGroup+"_"+nSlide+" loaded",(50+nGroup*200)+(nPage*50),(50+30*nSlide)+(nPage*50));
 	

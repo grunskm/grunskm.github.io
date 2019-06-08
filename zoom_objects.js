@@ -45,6 +45,7 @@ function NavBar(){
 			text("Paintings",width*0.04,130);
 			text("Please Wait",width*0.04,280);
 			text("Loading "+"image"+nPage+"_"+nGroup+"_"+nSlide+".jpg",width*0.04,300);
+			text(imgNum + "/40 ",width*0.04,320);
 				}
 		if(this.groupName[page].length>1 && fullSite==true){
 		for(t=0;t<this.groupName[page].length;t++){
@@ -60,9 +61,10 @@ function NavBar(){
  			text(dimension[page][group][n],this.titlex,this.titley+50);
  			text(yyyy[page][group][n],this.titlex,this.titley+75);
 		pop();
-		
+		if(img[page][group].length>1){
 		this.backButton.display();
     	this.nextButton.display();
+    	}
     	}else if(mobile==true){
     		push();
     		  ///nothing yet
@@ -71,9 +73,10 @@ function NavBar(){
 	}
 	
 	this.click = function(){
-	
+			if(img[page][group].length>1){
 			this.nextButton.click();
 			this.backButton.click();
+			}
 			
 			for(e=0;e<this.link.length;e++){
 				this.link[e].click(e);
