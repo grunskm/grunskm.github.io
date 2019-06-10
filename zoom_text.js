@@ -29,19 +29,18 @@ var title =
 	[
 		[
 		"Focus Holes",
-		"XX_Flowers_XX"
+		"XX_Flowers_XX",
+		"Oh Baby"
 		],
 		[
+		"*star*",
 		"Excess",
 		"Computer Drawing of a New Painting",
-		"Gumdrops"
-		],
-		[
+		"Gumdrops",
 		"Neves",
-		"DGYHU",
 		"Jacks",
+		"DGYHU",
 		"Sacs a Ordures",
-		"Oh Baby"
 		]				
 	],
 	[
@@ -103,19 +102,21 @@ var caption =
 	[
 		[
 		"Oil paint, napkin, plaster",
-		"Oil paint, napkin, plaster"
+		"Oil paint, napkin, plaster",
+		"Tissue, acrylic+oil paint, plaster"
 		],
 		[
+		"Ink, tissue paper, plaster",
 		"Ink, paper towel, plaster",
 		"Ink, paper towel, plaster",
-		"Ink, paper towel, plaster"
-		],
-		[
 		"Ink, paper towel, plaster",
-		"Ink, tissue, plaster",
+		"Ink, paper towel, plaster",
 		"Oil paint, tissue, plaster",
 		"Ink, tissue paper, plaster",
-		"Tissue, acrylic+oil paint, plaster"
+		"Ink, tissue, plaster"
+		],
+		[
+
 		]				
 	],
 	[
@@ -178,18 +179,20 @@ var dimension =
 		[
 		'14"x18"',
 		'14"x18"',
-		],
-		[
-		'9"x11"',
-		'9"x11"',
-		'9"x11"',
-		],
-		[
-		'11"x15"',
-		'10"x10"',
-		'14"x14"',
-		'20"x14"',
 		'14"x14"'
+		],
+		[
+		'13"x14"',
+		'9"x11"',
+		'9"x11"',
+		'9"x11"',
+		'11"x15"',
+		'14"x14"',
+		'10"x10"',
+		'20"x14"',
+		],
+		[
+		
 		] 
 	],
 	[ 
@@ -276,19 +279,21 @@ var yyyy =
 	[ 
 		[
 		"2018",
-		"2018"
-		],
-		[
-		"2018",
 		"2018",
 		"2018"
 		],
 		[
+		"2019",
 		"2018",
 		"2018",
 		"2018",
 		"2018",
-		"2018"
+		"2018",
+		"2018",
+		"2018",
+		],
+		[
+
 		] 
 	],
 	[ 

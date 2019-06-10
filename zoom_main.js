@@ -13,8 +13,8 @@ var mobile = false;
 var fullSite = false;
 
 var img = [
-[ [],[],[],[]], //removed 'early work'
-[ [],[],[] ],
+[ [],[],[],[] ], //removed 'early work'
+[ [],[], []], //removed 'shaped'
 [ [],[],[],[] ],
 [ [] ]
 ];
@@ -150,7 +150,7 @@ function draw(){
  		}else if(stage != 0){
 			count++;
   			if(count<100){
-  				slide.transition();
+ // 				slide.transition();
   				slide.display();
   				navBar.display();
   			}
@@ -169,7 +169,7 @@ function mouseMoved(){
 }
 
 function touchEnded(){
-	if(mobile==false && stage==1){
+	if(stage==1){
 	slide.display();
     navBar.click();
 	navBar.display();

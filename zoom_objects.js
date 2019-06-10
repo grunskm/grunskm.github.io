@@ -25,8 +25,8 @@ function NavBar(){
 		];
 		
 	this.groupName = [
-		["Sidewalks","Ghosts","Elixirs"],// removed - ,"Early Work"
-		["Printed Napkins","Paper Towel","Shaped"],
+		["Gum Paintings","Ghosts","Elixirs"],// removed - ,"Early Work"
+		["Printed Napkins","Paper Towel"],
 		["Inside Out","GHOSTS","Falling Dots","Paintings"],
 		[""]
 	];
@@ -67,12 +67,14 @@ function NavBar(){
     	}
     	}else if(mobile==true){
     		push();
-    		  ///nothing yet
+    		this.backButton.display();
+    		this.nextButton.display();
     		pop();
     	}
 	}
 	
 	this.click = function(){
+		if(mobile==false){
 			if(img[page][group].length>1){
 			this.nextButton.click();
 			this.backButton.click();
@@ -84,6 +86,10 @@ function NavBar(){
 			for(o=0;o<this.groupName[page].length;o++){
 				this.groupLink[o].click(o);
 			}
+		}else if(mobile==true){
+			this.nextButton.click();
+			this.backButton.click();
+		}
 	}
 	
 	this.resize = function(){
@@ -120,6 +126,9 @@ function NavBar(){
 			this.groupLink[3].resize(this.groupName[3][group],this.w*0.60,height*0.5,30);
 			
 		}else if(mobile==true){	
+		
+			this.backButton = new backButt(width*0.11,height*0.8,width*0.25);
+			this.nextButton = new nextButt(width*0.61,height*0.8,width*0.25);
 		}
   	}
 }
@@ -286,19 +295,14 @@ function Slide(){
 		}else if(mobile==true){
 		push();
 			background(this.fill);
-			textSize(width*0.06);
-			text("MATTHIS GRUNSKY", width*0.140,85);
-			let ySet = 0
-			for(e=0;e<mobileImg.length;e++){
-			this.imgHeight = (this.imgWidth/mobileImg[e].width)*mobileImg[e].height;
-			image(mobileImg[e],this.imgx,this.imgy+ySet,this.imgWidth,this.imgHeight);
-			ySet += this.imgHeight;
-			}
+			textSize(txtSize);
+			text("MATTHIS GRUNSKY", width*0.14,height*0.05);
+			image(mobileImg[n],this.imgx,this.imgy,this.imgWidth,this.imgHeight);
 		pop();
 		}
 	}
 
-	this.resize = function(q){
+	this.resize = function(){
 		
 		if(mobile==false){ // Landscape
 			this.imgHeight = height*0.8;
@@ -311,12 +315,13 @@ function Slide(){
 			this.imgx = navBar.w+(this.imgWidth/2)+100;
 			this.imgy = height/2;
 			this.fill = 250;
+			
 		}else if(mobile==true){	//portrait
 			this.imgWidth = width;
-// 			this.imgHeight = (this.imgWidth/mobileImg[q].width)*mobileImg[q].width;
+ 			this.imgHeight = (this.imgWidth/mobileImg[n].width)*mobileImg[n].height;
 			this.imgx = 0;
-			this.imgy = 150;
-			this.fill = 250;
+			this.imgy = height*0.10;
+			this.fill = 240;
 		}
 	}
 	
@@ -358,16 +363,17 @@ function Slide(){
 	
 	this.next = function(){
 			if(mobile==true){
-				if(count>5){
+				if(count>20){
 					n++;
-					if(n>=mobileImgs.length){
+					if(n>=mobileImg.length){
 						n=0;
 					}
+					print(n);
 					slide.display();
 					count = 0;
 				}
 			}else if(mobile==false){
-						if(count>5){
+						if(count>20){
 							this.transSpeed = -20;
 							n++;
 							count = 0;
@@ -440,6 +446,7 @@ function Slide(){
 				this.n = n;
 		}
 	}
+	
  }
  
 function backButt(x,y,w){
@@ -530,12 +537,8 @@ function resize(){
 	}
 	if(mobile==true){
 		imageMode(CORNER);
-		var h=0;
-		for(w=0;w<mobileImg.length;w++){
-		 h += mobileImg[w].height;
-		}
-		let scaled_h = h * 0.35;
-		canvas.size(windowWidth,scaled_h);
+
+		canvas.size(windowWidth,windowHeight);
 		slide.resize();
 		slide.display();
 		navBar.resize();
