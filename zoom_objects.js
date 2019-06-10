@@ -295,7 +295,7 @@ function Slide(){
 		}else if(mobile==true){
 		push();
 			background(this.fill);
-			textSize(txtSize);
+			textSize(width*0.04);
 			text("MATTHIS GRUNSKY", width*0.14,height*0.05);
 			image(mobileImg[n],this.imgx,this.imgy,this.imgWidth,this.imgHeight);
 		pop();
@@ -363,7 +363,7 @@ function Slide(){
 	
 	this.next = function(){
 			if(mobile==true){
-				if(count>20){
+				if(count>5){
 					n++;
 					if(n>=mobileImg.length){
 						n=0;
@@ -388,7 +388,7 @@ function Slide(){
 	this.back = function(){
 
 			if(mobile==true){
-				if(count>20){
+				if(count>5){
 					n--;
 					if(n<0){
 						n=mobileImg.length-1;
