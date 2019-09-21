@@ -1,0 +1,103 @@
+		@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+		@font-face{ font-family: 'Muli', sans-serif} 
+
+
+		body {
+			width:95%; 
+			max-width: 40em;
+			margin: auto;
+			font-family: 'Muli';
+			border:0em;
+			padding:0em;
+			display: grey;
+		}   
+
+		header {
+		}
+		header.top{
+			width: 100%;
+			position: fixed;
+			z-index: 9999;
+			margin-bottom: 0em;
+			top:0em;
+			background:none;
+		}
+		div.container {
+			padding: 0em;
+			position: relative;
+			top: 7em;
+			margin-top:0em;
+			margin-bottom:10em;
+		}  	
+		div.slideContainer{
+			margin: 0em;
+			padding: 0em;
+			width: 100%;	
+		}
+
+		a{
+			text-decoration:none;
+			color: #000000;
+		}
+		a:hover{
+			color:red;
+		}
+
+		img {
+		}
+
+		img.slide {
+			width: 100%;
+			height: auto;
+			margin: auto;
+		}
+		img.index {
+			width: 100%;
+			height: auto;
+			margin: auto;
+		}
+		img.index:hover{
+			/* opacity: 0.75; */
+		}
+		
+
+    	p {	
+			color:  black;
+    		font-size: 1em;  
+    		margin-top: 1.0em; 
+			} 
+		p.cap{
+			margin: 0em;
+			margin-left: 1em;
+			padding: 0em;
+			position: relative;
+			opacity: 0.05;
+			top: -3.5em;
+		}
+		p.cap:hover{
+			opacity: 1;
+		}
+		.link{
+
+		}
+    	h1{
+			margin-bottom: 0em;
+		}
+		h2 {	
+			margin-top: 2em;
+    		 } 
+    	h3 {	
+			margin-top: 0em;
+    		 } 
+		.quo{
+			margin-left: 4em;
+			font-style: italic;
+			margin-right: 4em;
+		}
+		footer{
+			background: black;
+		}
+
+
+
+    	
