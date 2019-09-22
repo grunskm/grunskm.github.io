@@ -57,7 +57,7 @@
 			margin: auto;
 		}
 		img.index:hover{
-			/* opacity: 0.75; */
+			 opacity: 0.75; 
 		}
 		
 
@@ -73,6 +73,15 @@
 			position: relative;
 			opacity: 0.05;
 			top: -3.5em;
+		}
+		p.indexcap{
+			margin: 0em;
+			margin-left: 11em;
+			padding: 0em;
+			position: relative;
+			opacity: 0.5;
+			top: -10em;
+			font-size: 3em;
 		}
 		p.cap:hover{
 			opacity: 1;
