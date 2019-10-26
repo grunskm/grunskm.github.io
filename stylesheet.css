@@ -22,6 +22,11 @@
 			top:0em;
 			background:none;
 		}
+
+		footer{
+			height:4em;
+			background:none;
+		}
 		div.container {
 			padding: 0em;
 			position: relative;
@@ -42,6 +47,15 @@
 		a:hover{
 			color:#f3a94e;
 		}
+		a.footer{
+			margin-left:0em;
+			font-size:1.5em;
+			color:#000000;
+		}
+		a.footer:hover{
+			color:#f3a94e;
+		}
+		
 
 		img {
 		}
@@ -103,9 +117,7 @@
 			font-style: italic;
 			margin-right: 4em;
 		}
-		footer{
-			background: black;
-		}
+
 
 
 
