@@ -3,6 +3,8 @@
 
 * {
   box-sizing: border-box;
+  padding:0;
+  margin:0;
 }
 
 a{
@@ -20,6 +22,7 @@ body {
 	margin: auto;
 } 
 
+
 header {
   position: fixed;
   margin-left: 5px;
@@ -27,10 +30,13 @@ header {
   background-color: none;
   color: #000000;
   z-index: 999;
+  margin-left:10px;
 }
 
 .indexWrapper{
 	margin-top:5em;
+	margin-right:10px;
+	margin-left:10px;
 	text-align: center;
 }
 
@@ -79,6 +85,12 @@ header{
 	font-size: 2em;
 	margin-top:1em;
 }
+.indexWrapper{
+	margin-top:5em;
+	margin-left:10px;
+	width: 100%;
+	text-align:left;
+}
 .indexSlide {
   float: left;
   padding: 5px;
@@ -88,8 +100,30 @@ header{
 	opacity: 75%;
 }
 .slide{
-margin-top:0;
-width:70%;
+	margin:0;
+	width:70%;
+
+}
+.cap{
+	float:right;
+	margin-right:4em;
+	margin-top: 44%;
+}
+.descriptionWrapper{
+	margin-top:5em;
+	margin-left:10px;
+	width: 70%;
+	max-width: 800px;
+}
+.descriptionSlide{
+width:100%;
+}
+.descriptionSlide:hover{
+opacity:80%;
+}
+.textLink{
+text-align:right;
+font-size:0.75em;
 }
 .description{
 width:75%;

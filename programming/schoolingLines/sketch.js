@@ -6,7 +6,7 @@ var p = 0;
 function setup() {
   let w = select('body');
   print(w.style.width);
-  createCanvas(windowHeight,windowHeight);
+  createCanvas(windowHeight*0.9,windowHeight*0.9);
   angleMode(DEGREES);
   stroke(0);
   for(w=0;w<n;w++){
