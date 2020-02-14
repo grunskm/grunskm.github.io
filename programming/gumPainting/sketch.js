@@ -11,8 +11,8 @@ function preLoad(){
 }
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
-  backImg = loadImage("blank2.png");
+  createCanvas(windowHeight,windowHeight);
+  backImg = loadImage("blank2.jpg");
   painting = new Painting();
   imageMode(CENTER);
   noStroke();
