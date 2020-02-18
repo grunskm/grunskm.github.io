@@ -135,20 +135,38 @@ body {
 } 
 
 header{
-	font-size: 1.5em;
-	margin-top:1em;
-	margin-left:2%;
+	background-color:black;
+	color:rgb(240,240,240);
+	top:0;
+	padding:0;
+	height: 5%;
+	min-height:35px;
+	width:100%;
+	font-size: 1.25em;
+	z-index:9999;
+	text-align:left;
+	position:fixed;
 }
+.headerLink{
+	top:5px;
+	color:rgb(240,240,240);
+	position:relative;
+	left:20px;
+}
+.headerText{
+	color:rgb(240,240,240);
+}
+a{
+	text-decoration:none;
+	}
 
-.indexwrapper{
+.scrolling-wrapper{
 	display:none;
 }
 
-.indexSlide {
-	display:none;
-}
 .mobileScroll{
 	margin:auto;
+	margin-top:7%;
 	width:96%;
 }
 .mobileSlide{
