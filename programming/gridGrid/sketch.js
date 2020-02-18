@@ -47,7 +47,7 @@ function grid(xx,yy,row,col,wi,hi){
 			let y = a*hi/row+yy;
 			let w = wi/col;
 			let h = hi/row;
-			fill(random(150,255),random(0,150),random(0,255));
+			fill(random(0,255),random(0,250),random(0,255));
 			rect(x,y,w,h);
 		}
 	}
