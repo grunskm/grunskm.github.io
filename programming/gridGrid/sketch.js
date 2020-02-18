@@ -14,27 +14,27 @@ function setup() {
 }
 
 function draw(){
-	if(frameCount%30==0){
-			rows = floor(random(3,30));
-			cols = rows;
-			gridGrid();
-	}
+// 	if(frameCount%30==0){
+// 			rows = floor(random(3,30));
+// 			cols = rows;
+// 			gridGrid();
+// 	}
 }
 
 function mousePressed(){
-	rows = floor(random(3,30));
+	rows = floor(random(3,10));
 	cols = rows;
 	gridGrid();
 }
-function keyPressed(){
-		saveCanvas("gridImage.png","png");
-}
+// function keyPressed(){
+// 		saveCanvas("gridImage.png","png");
+// }
 
 
 function gridGrid(){
 	for(i=0;i<rows;i++){
 		for(e=0;e<cols;e++){
-			let n = floor(random(1,10));
+			let n = floor(random(4,13));
 			grid(i*width/rows,e*height/cols,n,n,width/rows,height/cols);
 		}
 	}
@@ -47,7 +47,7 @@ function grid(xx,yy,row,col,wi,hi){
 			let y = a*hi/row+yy;
 			let w = wi/col;
 			let h = hi/row;
-			fill(random(0,255),random(0,255),random(0,255));
+			fill(random(150,255),random(0,150),random(0,255));
 			rect(x,y,w,h);
 		}
 	}

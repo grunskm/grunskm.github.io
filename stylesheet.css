@@ -1,44 +1,139 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-@font-face{ font-family: 'Muli', sans-serif} 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@font-face{ font-family: 'Open Sans', sans-serif;} 
 
 * {
   box-sizing: border-box;
   padding:0;
   margin:0;
+  font-family: 'Open Sans', sans-serif;
 }
 
-a{
-	text-decoration:none;
-	color: #000000;
-}
+/*  DESKTOP  */
+@media only screen and (min-width: 768px){
 
-a:hover{
-	color:#f3a94e;
+html{
+height:100%;
 }
 
 body {
 	font-family: 'Muli';
-	max-width: 1000px;
-	margin: auto;
+	padding:0;
+	margin:0;
+	background-color:rgb(240,240,240);
+	height:100%;
 } 
 
-
-header {
-  position: fixed;
-  top:0em;
-  background-color: none;
-  color: #000000;
-  z-index: 999;
+.mobileScroll{
+	display:none;
+}
+.mobileSlide{
+	display:none;
+}
+a{
+	text-decoration:none;
+	font-size:1em;
+	color:black;
 }
 
-.indexWrapper{
-	margin-top:5em;
-	text-align: center;
+a:hover{
+	color:rgb(250,200,100);
 }
+header{
+	background-color:black;
+	color:rgb(240,240,240);
+	bottom:0;
+	padding:0;
+	height: 5%;
+	min-height:35px;
+	width:100%;
+	font-size: 1.25em;
+	z-index:9999;
+	text-align:right;
+	position:fixed;
+}
+.headerLink{
+	color:rgb(240,240,240);
+	position:relative;
+	right:20px;
+}
+.headerText{
+	color:rgb(240,240,240);
+}
+
+/* HORIZONTAL SCROLLING SLIDESHOW */	
+
+.scrolling-wrapper {
+  background-color:white;;
+  margin-top: 0em;
+  padding:0px;
+  margin-bottom:none;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  z-index:9999;
+  height:95%;
+}
+.static-wrapper {
+  background-color:white;
+  
+  height:95%;
+}
+.card {
+	background-color:rgb(240,240,240);
+	margin:0;
+	padding:0;
+	margin-right:-5px;
+    display: inline-block;
+	height: 100%;
+	text-align:center;
+}
+.textCard{
+	padding:2%;
+	display:inline-block;
+	background-color: white;
+	height:100%;
+	width: 49.75%;
+	overflow-y: scroll;
+}
+.textSlide{
+	width:100%;
+	margin: auto;
+}
+.slide{
+	height:85%;
+	margin: auto;
+}
+.cap{
+	font-size: 0.75em;
+}
+.indexLink{
+    display: block;
+	height:50%;
+	margin-bottom:0%;
+}
+.indexLink:hover{
+	opacity:70%;
+}
+
+.quote{
+margin:auto;
+font-style:italic;
+width:70%;
+}
+
+}
+
 
 
 /*  MOBILE */
 @media only screen and (max-width: 768px){
+
+body {
+	font-family: 'Muli';
+	margin:auto;
+	height:100%;
+} 
+
 header{
 	font-size: 1.5em;
 	margin-top:1em;
@@ -60,102 +155,6 @@ header{
 	margin:auto;
 	width:100%;
 }
-
-}
-
-
-
-
-/*  DESKTOP  */
-@media only screen and (min-width: 768px){
-
-.mobileScroll{
-	display:none;
-}
-.mobileSlide{
-	display:none;
-}
-
-header{
-	font-size: 2em;
-	margin-top:1em;
-	margin-left:2%;
-}
-.indexWrapper{
-	margin:auto;
-	width: 96%;
-	margin-top:5em;
-	text-align:left;
-}
-.indexSlide {
-  float: left;
-  padding: 5px;
-  width: 50%;
-}
-.indexSlide:hover{
-	opacity: 75%;
-}
-.slide{
-	margin:0;
-  padding: 5px;
-	width:70%;
-
-}
-.cap{
-	float:right;
-	margin-right:4em;
-	margin-top: 44%;
-}
-.descriptionWrapper{
-	margin-top:5em;
-	margin-left:10px;
-	width: 70%;
-	max-width: 800px;
-}
-.descriptionSlide{
-width:100%;
-}
-.descriptionSlide:hover{
-opacity:80%;
-}
-.textLink{
-text-align:right;
-font-size:0.75em;
-}
-.description{
-width:75%;
-}
-.quote{
-margin:auto;
-font-style:italic;
-width:70%;
-}
-footer{
-font-size:0;
-}
-}
-
-
-
-
-/* HORIZONTAL SCROLLING SLIDESHOW */	
-
-.scrolling-wrapper {
-  margin-top: 6em;
-  margin-bottom:none;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  z-index:9999;
-  height:35em;
-  background-color:#ffffff;
-}
-.card {
-    display: inline-block;
-	margin-right:20px;
-	height: 100%;
-}
-.cardCaption {
 
 }
 

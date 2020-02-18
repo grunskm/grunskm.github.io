@@ -6,7 +6,7 @@ var p = 0;
 function setup() {
   let w = select('body');
   print(w.style.width);
-  createCanvas(windowHeight*0.9,windowHeight*0.9);
+  createCanvas(600,600);
   angleMode(DEGREES);
   stroke(0);
   for(w=0;w<n;w++){
@@ -14,7 +14,9 @@ function setup() {
   }
 }
 function draw(){
-  background(255);
+  background(0);
+  fill(255);
+  ellipse(width/2,height/2,width);
   p+=-0.3;
   translate(width/2,height/2);
   rotate(p);
@@ -25,7 +27,7 @@ function draw(){
 
 function Worm(){
     this.speed = random(0.4,0.6);
-	this.radius = random(20,height*0.25);
+	this.radius = random(50,height*0.35);
 	this.amp = 75;
     this.deg = random(10,20);
     this.inc =1;
