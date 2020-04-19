@@ -215,8 +215,6 @@ function SCORE() {
   push();
   fill(250, 100, 100);
   text("HIGHSCORE ="+highscore,width-300,2*height/3-50);
-  //text("gullStage =" + gull.stage,20,2 * height / 3 - 110);
-  text("fps =" + floor(frameRate()), 20, 2 * height / 3 - 80);
   text("SCORE = " + score, 20, 2 * height / 3 - 20);
   text("HEALTH = " + health, 20, 2 * height / 3 - 50);
   pop();

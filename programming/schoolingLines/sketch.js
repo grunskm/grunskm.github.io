@@ -17,7 +17,7 @@ function draw(){
   background(0);
   fill(255);
   ellipse(width/2,height/2,width);
-  p+=-0.3;
+  p+=-0.4;
   translate(width/2,height/2);
   rotate(p);
   for(w=0;w<n;w++){
@@ -26,7 +26,7 @@ function draw(){
 }
 
 function Worm(){
-    this.speed = random(0.4,0.6);
+    this.speed = random(0.3,0.6);
 	this.radius = random(50,height*0.35);
 	this.amp = 75;
     this.deg = random(10,20);
