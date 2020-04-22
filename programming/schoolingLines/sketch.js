@@ -17,7 +17,7 @@ function draw(){
   background(0);
   fill(255);
   ellipse(width/2,height/2,width);
-  p+=-0.4;
+  p+=-0.35;
   translate(width/2,height/2);
   rotate(p);
   for(w=0;w<n;w++){

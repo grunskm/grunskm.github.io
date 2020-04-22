@@ -46,7 +46,7 @@ header{
 	height: 5%;
 	min-height:35px;
 	width:100%;
-	font-size: 1.25em;
+	font-size: 1em;
 	z-index:9999;
 	text-align:right;
 	position:fixed;
@@ -54,6 +54,7 @@ header{
 .headerLink{
 	color:rgb(240,240,240);
 	position:relative;
+	top:15%;
 	right:20px;
 }
 .headerText{
