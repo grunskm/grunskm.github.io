@@ -22,7 +22,7 @@ function draw(){
 function Circle(N){
 	this.x = width*0.5;
 	this.y = height*0.5;
-	this.d = height*0.8/2;
+	this.d = height*0.9/2;
 
 	this.r = this.d*0.175;
 	this.n = N*900;
@@ -35,7 +35,7 @@ function Circle(N){
 			stroke(0,0,0,0);
 		}
 
-		this.m = map(noise(this.n*0.01),0,1,0.1,1.25);
+		this.m = map(noise(this.n*0.01),0,1,0.1,1);
 
 		let x = sin(this.n)*(this.d*this.m)+this.x;
 		let y = cos(this.n)*(this.d*this.m)+this.y;
