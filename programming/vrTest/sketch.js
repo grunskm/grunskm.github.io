@@ -1,16 +1,16 @@
 let frame;
 let n = 25;
-let size = 300;
+let size = 100;
 
 function setup(){
-	createCanvas(2220,1080);
+	createCanvas(1080,500);
 	ellipseMode(CENTER);
 	colorMode(HSB);
 	frame = new img(width/2,height,0,0);
 	noStroke();
 	background(255);
-	frame.display(0,0);
-	frame.display(width/2,0);
+	frame.display(25,0);
+	frame.display(width/2-25,0);
 }
 
 // function draw(){
