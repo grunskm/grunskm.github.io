@@ -29,6 +29,9 @@ body {
 .mobileSlide{
 	display:none;
 }
+.mobileNav{
+	display:none;
+}
 a{
 	text-decoration:none;
 	font-size:1em;
@@ -65,8 +68,8 @@ header{
 
 .scrolling-wrapper {
   background-color:white;;
-  margin-top: 0em;
-  padding:0px;
+  margin: 0em;
+  padding:0;
   margin-bottom:none;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -136,6 +139,31 @@ body {
 } 
 
 header{
+	display:none;
+}
+.headerLink{
+	top:10%;
+	color:rgb(240,240,240);
+	position:relative;
+	left:2%;
+}
+.headerText{
+	color:rgb(240,240,240);
+}
+a{
+	text-decoration:none;
+	}
+
+.scrolling-wrapper{
+	display:none;
+}
+.navImg{
+	top:10px;
+	height:50%;
+	right:0px;
+
+}
+.mobileNav{
 	background-color:black;
 	color:rgb(240,240,240);
 	top:0;
@@ -148,23 +176,6 @@ header{
 	text-align:left;
 	position:fixed;
 }
-.headerLink{
-	top:5px;
-	color:rgb(240,240,240);
-	position:relative;
-	left:20px;
-}
-.headerText{
-	color:rgb(240,240,240);
-}
-a{
-	text-decoration:none;
-	}
-
-.scrolling-wrapper{
-	display:none;
-}
-
 .mobileScroll{
 	margin:auto;
 	margin-top:7%;
