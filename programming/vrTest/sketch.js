@@ -8,13 +8,16 @@ function setup(){
 	colorMode(HSB);
 	frame = new img(width/2,height,0,0);
 	noStroke();
-}
-
-function draw(){
 	background(255);
 	frame.display(0,0);
 	frame.display(width/2,0);
 }
+
+// function draw(){
+// 	background(255);
+// 	frame.display(0,0);
+// 	frame.display(width/2,0);
+// }
 
 
 function img(W,H,X,Y){
