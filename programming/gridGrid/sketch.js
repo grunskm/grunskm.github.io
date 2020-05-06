@@ -1,8 +1,8 @@
 //// GRID IMAGE PAINTING///////
 
 
-let rows = 10;
-let cols = 10;
+let rows = 30;
+let cols = 30;
 let grid = [];
 let size;
 let on = false;
@@ -11,7 +11,7 @@ let on = false;
 function setup() {
 	createCanvas(windowWidth,windowHeight*0.95);
 	noStroke();
-	size = width*0.2;
+	size = width/cols;
 	for(i=0;i<rows;i++){
 		for(e=0;e<cols;e++){
 			grid[i*cols+e] = new SingleGrid(e,i,size,floor(random(2,10)));
@@ -26,7 +26,6 @@ function draw(){
 	for(i=0;i<rows;i++){
 		for(e=0;e<cols;e++){
 			grid[i*cols+e].hit();
-			grid[i*cols+e].display();
 		}
 	}
 	}
@@ -71,6 +70,7 @@ function SingleGrid(X,Y,S,N){
 			for(a=0;a<this.n;a++){
 				for(s=0;s<this.n;s++){
 					this.grid[a*this.n+s] = new Square(a,s,this.s/this.n);
+					this.grid[a*this.n+s].display(this.x,this.y);
 				}
 			}
 		}
