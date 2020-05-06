@@ -35,7 +35,11 @@ function draw(){
 function mousePressed(){
 	if(on ==false){
 		on=true;
-	}else{on = false;}
+		noCursor();
+	}else{
+		on = false;
+		cursor();
+		}
 }
 
 

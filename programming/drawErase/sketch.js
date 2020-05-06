@@ -1,5 +1,5 @@
 
-circles = [];
+circle = [];
 
 function setup() {
 	createCanvas(windowWidth,windowHeight*0.95);
@@ -8,13 +8,17 @@ function setup() {
 	stroke(0);
 
 	for(i=0;i<2;i++){
-		circles.push(new Circle(i));
+		circle.push(new Circle(i));
+	}
+	for(i=0;i<1200;i++){
+		circle[0].display();
+		circle[1].display();
 	}
 }
 
 function draw(){
-	for(i=0;i<circles.length;i++){
-		circles[i].display();
+	for(i=0;i<circle.length;i++){
+		circle[i].display();
 	}
 }
 
