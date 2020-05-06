@@ -8,7 +8,7 @@ let inten;
 
 function setup() {
 
-	createCanvas(windowWidth,windowHeight);
+	createCanvas(windowWidth,windowHeight*0.95);
 	angleMode(DEGREES);
 	noFill();
 	stroke(0);
