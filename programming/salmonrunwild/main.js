@@ -1,9 +1,10 @@
 var health = 10;
 var canvas;
-var highscore = 215;
+var highscore = 0;
 var score = 0;
 var stage = 0;
 var zzz = 0;
+var count = 0;
 
 
 var imgFish = [];
@@ -83,6 +84,7 @@ function setup() {
 
 function draw() {
   background(200);
+  count++;
   translate(0, height / 3);
 
   if (stage === 0) {

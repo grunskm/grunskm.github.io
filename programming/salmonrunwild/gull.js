@@ -25,7 +25,7 @@ function gullObj() {
       this.stage = 1;
       this.up = -800;
     }else if (this.bite){
-      health--;
+      healthDrop();
       //text("BITE",width/2,0);
       this.up3 = -800;
     }else if (this.hit) {

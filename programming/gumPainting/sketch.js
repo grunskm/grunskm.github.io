@@ -3,7 +3,7 @@
 
 var painting;
 var back;
-var n = 0;
+var n = 1;
 var backImg;
 
 function preLoad(){
@@ -16,17 +16,19 @@ function setup() {
   painting = new Painting();
   imageMode(CENTER);
   noStroke();
-  text("CLICK TO COMPOSE",width*0.45,height/2);
+  text("CLICK TO COMPOSE",width*0.5-50,height*0.48);
+  text("SPACE TO SAVE",width*0.5-40,height*0.52);
 }
 
 function mousePressed(){
+  noCursor();
   painting.recompose();
   painting.display();
 }
 
 function keyPressed(){
-	if(keyCode==SHIFT){
-	saveCanvas("composition"+n,"png");
+	if(keyCode==32){
+		saveCanvas("gum_painting"+n,"png");
 	}
 }
 

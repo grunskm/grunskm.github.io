@@ -25,7 +25,9 @@ function setup() {
 }
 
 function mousePressed(){
+	if(mouseY<height){
 	render();
+	}
 }
 
 function render(){

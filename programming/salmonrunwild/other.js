@@ -120,12 +120,11 @@ function bottomObj(x,y,z){
     if (this.hit) {
       salmon.sink = 0;
       salmon.bob = -2;
-      print(floor(this.z));
-        if(this.z <-300 && salmon.y<-10){
-          print(floor(this.z));
-          for(k=0;k<numBottom+2;k++){
-            bottom[k].stage = 1;
-          }
+	  healthDrop();
+      //print(floor(this.z));
+    	if(this.z <-300 && salmon.y<-10){
+        //  print(floor(this.z));
+            this.stage = 1;
         }
     }
   }
@@ -195,7 +194,7 @@ function shoreObj(x,y,z){
     push();
     translate(0,waterDepth);
     stroke(190);
-    strokeWeight(this.size);q
+    strokeWeight(this.size);
     line(this.x,this.y,this.x,this.z);
     pop();
   }
@@ -244,7 +243,8 @@ function Start() {
       health = 10;
       zzz=0;
       for(e=0;e<numBottom+2;e++){
-      bottom[e].z = -10;
+	  bottom[e].speed = 5;
+	  bottom[e].z = -10;
       bottom[e].zzz = 0;
       bottom[e].stage = 0;
     ///////////////////////////////////////////
@@ -287,4 +287,11 @@ function Start() {
   //   }else if(startText>0){
   //     text("PRESS", 0*xSpacing+20, 100);
   //   }
+}
+
+function healthDrop(){
+	if(count>100 && health>0){
+	health--;
+	count = 0;
+	}
 }
