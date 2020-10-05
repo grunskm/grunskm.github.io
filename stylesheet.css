@@ -141,15 +141,38 @@ body {
 header{
 	display:none;
 }
+.mobileNav{
+	height: 2em;
+	background-color:black;
+	color:rgb(240,240,240);
+	top:0;
+	padding-left:5%;
+	min-height:35px;
+	width:100%;
+	font-size: 1.25em;
+	z-index:9999;
+	text-align:left;
+	position:fixed;
+}
 .headerLink{
-	top:10%;
+
 	color:rgb(240,240,240);
+}
+#infoLink{
+	margin-top:0.25em;
+	display:inline-block;
+	width:85%;
+	text-align:left;
+
+}
+#backLink{
+	display:inline-block;
 	position:relative;
-	left:2%;
+	text-align:right;
+
 }
-.headerText{
-	color:rgb(240,240,240);
-}
+
+
 a{
 	text-decoration:none;
 	}
@@ -163,19 +186,7 @@ a{
 	right:0px;
 
 }
-.mobileNav{
-	background-color:black;
-	color:rgb(240,240,240);
-	top:0;
-	padding:0;
-	height: 5%;
-	min-height:35px;
-	width:100%;
-	font-size: 1.25em;
-	z-index:9999;
-	text-align:left;
-	position:fixed;
-}
+
 .mobileScroll{
 	margin:auto;
 	margin-top:7%;
