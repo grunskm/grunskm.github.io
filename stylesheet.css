@@ -64,10 +64,24 @@ header{
 	color:rgb(240,240,240);
 }
 
+#empty-backdrop{
+	display:block; height:100%; width:100%; background:white; padding-top:10%;
+}
+#floating-imagecontainer{
+	display:block; position:relative; height:75%; width:75%; margin:auto; background:white; overflow:hidden;
+}
+
+#centered-text{
+	position:absolute; display:block; width:75%; height:75%; top:12.5%; left:12.5%; opacity:80%; background:white; padding:10%;
+}
+#floating-image{
+	width:100%;
+}
+
 /* HORIZONTAL SCROLLING SLIDESHOW */	
 
 .scrolling-wrapper {
-  background-color:white;;
+  background-color:white;
   margin: 0em;
   padding:0;
   margin-bottom:none;
@@ -132,6 +146,9 @@ width:70%;
 /*  MOBILE */
 @media only screen and (max-width: 768px){
 
+html{
+height:100%;
+}
 body {
 	font-family: 'Muli';
 	margin:auto;
@@ -161,7 +178,7 @@ header{
 #infoLink{
 	margin-top:0.25em;
 	display:inline-block;
-	width:85%;
+	width:82%;
 	text-align:left;
 
 }
@@ -196,6 +213,21 @@ a{
 	margin:auto;
 	width:100%;
 }
+
+#empty-backdrop{
+	display:block; height:100%; width:100%; background:white; padding-top:0px;
+}
+#floating-imagecontainer{
+	display:block; position:relative; height:100%; margin:auto; background:white; overflow:hidden;
+}
+
+#centered-text{
+	position:absolute; display:block; width:75%; height:75%; top:12.5%; left:12.5%; opacity:80%; background:white; padding:10%;
+}
+#floating-image{
+	height:100%;
+}
+
 
 }
 
