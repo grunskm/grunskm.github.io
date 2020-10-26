@@ -35,13 +35,6 @@ html{
 		border: 2px dotted darkgrey;
 		margin:auto;
 	}
-	.content-wrapper{
-		max-height:25em;
-		padding:20px;
-		overflow:scroll;
-		display:none;
-		color:black;
-	}
 
 	.column{
 		vertical-align:top;
@@ -81,14 +74,6 @@ html{
 		margin:auto;
 	}
 
-	.content-wrapper{
-		max-height:15em;
-		padding:20px;
-		overflow:scroll;
-		display:none;
-		color:black;
-	}
-
 	.column{
 		display:block;
 		width:100%;
@@ -111,6 +96,14 @@ html{
 .content-title{
 	position:relative;
 	padding-left:20px;
+}
+
+.content-wrapper{
+	max-height:50vh;
+	padding:20px;
+	overflow:scroll;
+	display:none;
+	color:black;
 }
 
 p{
