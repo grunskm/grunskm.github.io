@@ -1,5 +1,6 @@
 $(document).ready(function(){
   $(".portfolio-item").click(function(){
-    $(this).find(".content-wrapper").toggle();
+		$(".content-wrapper:visible").slideToggle();
+    $(this).find(".content-wrapper:hidden").slideToggle();
   });
 }); 
