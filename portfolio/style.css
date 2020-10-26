@@ -36,6 +36,14 @@ html{
 		margin:auto;
 	}
 
+	.content-wrapper{
+/* 		max-height:70vh; */
+		padding:20px;
+		overflow:scroll;
+		display:none;
+		color:black;
+	}
+
 	.column{
 		vertical-align:top;
 		display:inline-block;
@@ -74,6 +82,14 @@ html{
 		margin:auto;
 	}
 
+	.content-wrapper{
+/* 		max-height:50vh; */
+		padding:20px;
+		overflow:scroll;
+		display:none;
+		color:black;
+	}
+
 	.column{
 		display:block;
 		width:100%;
@@ -96,14 +112,6 @@ html{
 .content-title{
 	position:relative;
 	padding-left:20px;
-}
-
-.content-wrapper{
-	max-height:50vh;
-	padding:20px;
-	overflow:scroll;
-	display:none;
-	color:black;
 }
 
 p{
