@@ -1,7 +1,14 @@
 $(document).ready(function(){
 	$('.portfolio-item').click(function(event){
+		
+
 		$(this).find(".content-wrapper:visible").slideUp(300);
 		$(this).find(".content-wrapper:hidden").slideDown(300);
+
+// 		$(this).find(".content-title").toggle(0);
+
+		
+
 	}); 
 }); 
 
