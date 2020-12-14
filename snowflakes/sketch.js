@@ -31,10 +31,16 @@ let sketch = function(p) {
 		}
 	}
 
+	p.touchStarted = function(){
+		tx = p.mouseX;
+		ty = p.mouseY;
+		document.getElementById('instruction').style.display='none';
+	}
+
 	p.mousePressed = function(){
 		tx = p.mouseX;
 		ty = p.mouseY;
-
+		document.getElementById('instruction').style.display='none';
 	}
 }
 
