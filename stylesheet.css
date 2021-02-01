@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-@font-face{ font-family: 'Open Sans', sans-serif;} 
+@font-face{ font-family: 'Open Sans', sans-serif;}
 
 * {
   box-sizing: border-box;
@@ -21,7 +21,7 @@ body {
 	margin:0;
 	background-color:rgb(240,240,240);
 	height:100%;
-} 
+}
 
 .mobileScroll{
 	display:none;
@@ -59,12 +59,13 @@ header{
 	position:relative;
 	top:15%;
 	right:20px;
+  user-select:none;
 }
 .headerText{
 	color:rgb(240,240,240);
 }
 
-/* HORIZONTAL SCROLLING SLIDESHOW */	
+/* HORIZONTAL SCROLLING SLIDESHOW */
 
 .scrolling-wrapper {
   background-color:white;
@@ -145,12 +146,12 @@ width:70%;
 	margin:auto;
 	background:white;
 	opacity:90%;
-	
+
 }
 #info-text{
 	width:60%;
-	opacity:100%; 
-	margin:auto; 
+	opacity:100%;
+	margin:auto;
 	margin-top:15%;
 }
 
@@ -168,7 +169,7 @@ body {
 	font-family: 'Muli';
 	margin:auto;
 	height:100%;
-} 
+}
 
 header{
 	display:none;
@@ -245,8 +246,3 @@ a{
 
 
 }
-
-
-
-
-    	
