@@ -31,6 +31,7 @@ function mousePressed(){
 function keyPressed(){
 	if(keyCode==32){
 		saveCanvas("gum_painting"+n,"png");
+    n++;
 	}
 }
 
