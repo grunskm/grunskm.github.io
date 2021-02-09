@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
 	<script>
   		window.dataLayer = window.dataLayer || [];
   		function gtag(){dataLayer.push(arguments);}
   		gtag('js', new Date());
 		gtag('config', 'UA-36211356-3');
-	</script>
+	</script> -->
 
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Matthis Grunsky</title>
-	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="stylesheet.css">
+
+  <script src="script.js" type="text/javascript"></script>
 
   </head>
 
@@ -28,7 +30,7 @@
 				<a href="gumPaintings/gum2019">
 				<img class="indexLink" src="gumPaintings/gum2019/images/good_advice.jpg" alt="Gum 2019">
 				<a href="programming/colour_panel">
-				<video class="indexLink" src="programming/colour_panel/images/colour_bars_crop.mp4" type="video/mp4" autoplay loop></video><!-- 
+				<video class="indexLink" src="programming/colour_panel/images/colour_bars_crop.mp4" type="video/mp4" autoplay loop></video><!--
 				<iframe src="programming/colour_panel" title="colourpanel"></iframe>
  -->
 				</a>
@@ -85,27 +87,66 @@
 			</div>
 
 		</div>
-		<div class="mobileNav">
-			<div id="infoLink">
-				<a href="contact" class="headerLink">MATTHIS GRUNSKY</a>
-			</div>
-			<div id="backLink">
-				<a href="contact" class="headerLink">ABOUT</a>
-			</div>
-		</div>
-		<div class="mobileScroll">
-			<a href="gumPaintings/notch2019">
-				<img class="mobileSlide" src="gumPaintings/notch2019/web_uvula.jpg" alt="finger">
-			</a>
-			<a href="plaster">
-				<img class="mobileSlide" src="plaster/images/web_window.jpg" alt="web_window">
-			</a>
-			<a href="gumPaintings/gum2019">
-				<img class="mobileSlide" src="gumPaintings/gum2019/images/web_hot_minute.jpg" alt="gone_fishing">
-			</a>
-			<a href="gumPaintings/gum2015">
-				<img class="mobileSlide" src="gumPaintings/gum2015/images/dai_fuji_sushi.jpg" alt="dai_fuji_sushi">
-			</a>
-		</div>
+
+  <!-- Mobile content below -->
+
+    <div class="mobile-horizontal-scroll">
+
+      <div class="mobile-slide-container" onclick="toggle_visibility('first_place');">
+        <img class="mobile-slide" src="gumPaintings/gum2019/images/web_first_place.jpg" alt="first_place">
+        <div class="mobile-slide-info" id="first_place">
+          <h3><i>First Place</i>, 2019<br>
+            24"x24"<br>
+            Acrylic on panel<br>
+          </h3>
+        </div>
+      </div>
+
+      <div class="mobile-slide-container" onclick="toggle_visibility('running_wild');">
+        <img class="mobile-slide" src="gumPaintings/gum2019/images/running_wild.jpg" alt="running_wild">
+        <div class="mobile-slide-info" id="running_wild">
+          <h3><i>Running Wild</i>, 2019<br>
+            24"x24"<br>
+            Acrylic on panel<br>
+          </h3>
+        </div>
+      </div>
+
+      <div class="mobile-slide-container" onclick="toggle_visibility('gone_fishing');">
+        <img class="mobile-slide" src="gumPaintings/gum2019/images/gone_fishing.jpg" alt="running_wild">
+        <div class="mobile-slide-info" id="gone_fishing">
+          <h3><i>Gone Fishing</i>, 2019<br>
+            24"x24"<br>
+            Acrylic on panel<br>
+          </h3>
+        </div>
+      </div>
+
+      <img class="mobile-slide" src="gumPaintings/gum2019/images/gone_fishing.jpg" alt="gone_fishing">
+      <img class="mobile-slide" src="gumPaintings/gum2019/images/parting_shot.jpg" alt="parting_shot">
+      <img class="mobile-slide" src="gumPaintings/gum2019/images/web_known_issue.jpg" alt="known_issue">
+      <img class="mobile-slide" src="gumPaintings/gum2019/images/web_hot_minute.jpg" alt="hot minute">
+      <img class="mobile-slide" src="gumPaintings/gum2019/images/good_advice.jpg" alt="good advice">
+      <img class="mobile-slide" src="gumPaintings/gum2019/images/web_get_lost.jpg" alt="get lost">
+    </div><div class="mobile-horizontal-scroll">
+      <img class="mobile-slide" src="gumPaintings/gum2012/images/reflections_01.jpg" alt="reflections">
+      <img class="mobile-slide" src="gumPaintings/gum2012/images/reflections_02.jpg" alt="reflections2">
+      <img class="mobile-slide" src="gumPaintings/gum2012/images/6105_01.jpg" alt="6105">
+    </div><div class="mobile-horizontal-scroll">
+      <img class="mobile-slide" src="gumPaintings/notch2019/web_uvula.jpg" alt="uvula">
+      <img class="mobile-slide" src="gumPaintings/notch2019/web_finger.jpg" alt="finger">
+    </div><div class="mobile-horizontal-scroll">
+      <img class="mobile-slide" src="plaster/images/web_star.jpg" alt="star">
+      <img class="mobile-slide" src="plaster/images/web_window.jpg" alt="window">
+      <img class="mobile-slide" src="plaster/images/upside_down_website_closeCrop2.jpg" alt="upsidedown">
+      <img class="mobile-slide" src="plaster/images/web_three.jpg" alt="three">
+      <img class="mobile-slide" src="plaster/images/web_move.jpg" alt="move">
+    </div><div class="mobile-horizontal-scroll">
+      <img class="mobile-slide" src="prints/dognuts/images/dognut_76.9_web.jpg" alt="76.9">
+      <img class="mobile-slide" src="prints/dognuts/images/dognut_20000_web.jpg" alt="20000">
+      <img class="mobile-slide" src="prints/dognuts/images/dognut_90_web.jpg" alt="90">
+      <img class="mobile-slide" src="prints/dognuts/images/dognut_950_web.jpg" alt="950">
+    </div>
+
 	</body>
 </html>

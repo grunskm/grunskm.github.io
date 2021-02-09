@@ -23,14 +23,16 @@ body {
 	height:100%;
 }
 
-.mobileScroll{
-	display:none;
+
+.mobile-horizontal-scroll{
+  display:none;
 }
+
 .mobileSlide{
-	display:none;
+  display:none;
 }
-.mobileNav{
-	display:none;
+.mobileBuffer{
+  display:none;
 }
 a{
 	text-decoration:none;
@@ -111,7 +113,7 @@ header{
 	font-size: 0.75em;
 }
 .indexLink{
-    display: block;
+  display: block;
 	height:50%;
 	margin-bottom:0%;
 }
@@ -164,71 +166,81 @@ width:70%;
 
 html{
 height:100%;
+width:100%;
 }
 body {
+  width:100%
+  height:100%;
 	font-family: 'Muli';
 	margin:auto;
-	height:100%;
+  background:white;
+  padding-bottom:5em;
 }
 
 header{
-	display:none;
-}
-.mobileNav{
-	height: 2em;
-	background-color:black;
+  position:fixed;
+  width:100%;
+  background-color:black;
 	color:rgb(240,240,240);
-	top:0;
-	padding-left:5%;
-	min-height:35px;
-	width:100%;
-	font-size: 1.25em;
+	bottom:0;
+	padding-left:1em;
+	height: 3em;
+	font-size: 1.5em;
 	z-index:9999;
 	text-align:left;
-	position:fixed;
 }
 .headerLink{
-
-	color:rgb(240,240,240);
-}
-#infoLink{
-	margin-top:0.25em;
-	display:inline-block;
-	width:82%;
-	text-align:left;
-
-}
-#backLink{
-	display:inline-block;
+  color:rgb(240,240,240);
 	position:relative;
-	text-align:right;
-
+	top:0.4em;
+  user-select:none;
+}
+/* .mobileBuffer{
+  display:block;
+  width:100%;
+  height:10%;
+} */
+.mobile-horizontal-scroll{
+  scrollbar-width: none;    /*removes scrollbar on firefox */
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
+.mobile-horizontal-scroll::-webkit-scrollbar{/*removes scrollbar on chrome */
+  display: none;
+}
+.mobile-slide-container{
+  position: relative;
+  display:inline-block;
+  text-align: center;
+}
+.mobile-slide{
+  width:100%;
+}
+.mobile-slide-info{
+  position:absolute;
+  text-align: left;
+  color:rgb(50,50,50);
+  padding:3em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background:rgba(255, 255, 255, 0.6);
+  display:none;
+  user-select:none;
+}
 
 a{
-	text-decoration:none;
-	}
+  text-decoration:none;
+}
 
+/* removes desktop elements */
 .scrolling-wrapper{
 	display:none;
 }
-.navImg{
-	top:10px;
-	height:50%;
-	right:0px;
 
-}
-
-.mobileScroll{
-	margin:auto;
-	margin-top:7%;
-	width:96%;
-}
-.mobileSlide{
-	margin:auto;
-	width:100%;
-}
+/* 'Contact' section IDs */
 
 #empty-backdrop{
 	display:block; height:100%; width:100%; background:white; padding-top:0px;

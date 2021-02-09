@@ -28,11 +28,32 @@
     <style>body {max-width: 100%; margin: 0; margin-top: 0%; display: flex; justify-content: center; align-items: center; background:rgb(0,0,0);} </style>
   </head>
   <body>
-	<header>
-		<div class="headerLink">
-			Salmon Run Wild /
-			<a href = "../../" class="headerText"> Matthis Grunsky</a>
-		</div>
-	</header>
+    <header>
+      <div class="headerLink">
+        Salmon Run Wild /
+        <a href = "../../" class="headerText"> Matthis Grunsky</a>
+      </div>
+    </header>
+    <div id="note" onclick="document.getElementById('info').style.display = 'block'">
+      *
+    </div>
+    <div id="info" onclick="document.getElementById('info').style.display = 'none'">
+      <div id="info-text">
+      <h2><i>Salmon Run Wild</i></h2><br>
+      <p>
+      Salmon Run Wild is a single player side-scrolling game written in JavaScript using the p5.js creative coding library.
+      Participants play as a spawning salmon, running upstream with the goal of fertilizing eggs while avoiding predators.
+      The game was developed for a 2018 BYOB event at VIVO media center in Vancouver BC and currently exists as an early-stage proof-of-concept.
+      Several aspects of the gameplay, programming, and design are still unfinished, and will continue to be developed in the future.
+      </p><br>
+      <p>
+        The core design of <i>Salmon Run Wild</i> originated from a frustration with the popular mobile game (now defunct) <i>Flappy Bird</i>.
+        Based on the 2000 original <i>Helicopter Game</i>, <i>Flappy Bird</i> gained viral success in 2014, but lacks the playability of its precursor due to its unimaginative physics simulation.
+        Both games use a single-button input to maneuver a flying object around obstacles, however, where <i>Helicopter Game</i> feels fast, dynamic, and dangerous, <i>Flappy Bird</i> feels slow and unresponsive.
+        <i>Salmon Run Wild</i> is intended to recapture the joy that <i>Helicopter Game</i> succeeded in creating through inventive and subtle physical mechanics in single-button gameplay.
+      </p><br>
+      </div>
+    </div>
+
   </body>
 </html>
