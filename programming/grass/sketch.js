@@ -7,12 +7,12 @@ let r = 30;
 
 
 function setup() {
-  createCanvas(500,500);
+  createCanvas(windowWidth,windowHeight);
 	noFill();
 	noCursor();
 	stroke(30,100,80);
 	for(i=0;i<n;i++){
-		blade.push(new Grass(random(150,350),random(150,350)));
+		blade.push(new Grass(random(width/2-100,width/2+100),random(height/2-100,height/2+100)));
 	}
 
 }
@@ -48,7 +48,7 @@ function Grass(X,Y){
 
 
 	this.display = (speed)=>{
-			
+
 			this.height+=0.005;
 			if(this.cut == true){
 // 				this.y+=this.flyaway.y;
@@ -73,7 +73,7 @@ function Grass(X,Y){
 			}
 			endShape();
 
-		
+
 	}
 
 	this.collide = ()=>{
@@ -84,4 +84,3 @@ function Grass(X,Y){
 		}
 	}
 }
-
