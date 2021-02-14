@@ -12,7 +12,7 @@ function setup() {
 	noCursor();
 	stroke(30,100,80);
 	for(i=0;i<n;i++){
-		blade.push(new Grass(random(width/2-100,width/2+100),random(height*0.75-100,height*0.75+100)));
+		blade.push(new Grass(random(width/2-100,width/2+100),random(height*0.66-100,height*0.66+100)));
 	}
 
 }
