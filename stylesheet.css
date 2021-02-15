@@ -240,21 +240,5 @@ a{
 	display:none;
 }
 
-/* 'Contact' section IDs */
-
-#empty-backdrop{
-	display:block; height:100%; width:100%; background:white; padding-top:0px;
-}
-#floating-imagecontainer{
-	display:block; position:relative; height:100%; margin:auto; background:white; overflow:hidden;
-}
-
-#centered-text{
-	position:absolute; display:block; width:75%; height:75%; top:12.5%; left:12.5%; opacity:80%; background:white; padding:10%;
-}
-#floating-image{
-	height:100%;
-}
-
 
 }
