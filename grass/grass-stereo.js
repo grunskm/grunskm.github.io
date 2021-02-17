@@ -1,4 +1,4 @@
-let n = 100;
+let n = 150;
 let grass = [];
 let blade;
 
@@ -93,10 +93,10 @@ function Grass(X,Y,Z){
 	this.length = 10;
 	this.height = 0;
 	this.maxHeight = height*0.05;// random(height*0.05,height*0.04)*this.z;
-	this.growthRate = random(0.002,0.004);
+	this.growthRate = 0.003;//random(0.002,0.004);
 
 
-	this.Xsample = X*0.005;
+	this.Xsample = X*0.02;
 	this.Ysample = Z*8;
 
 	
