@@ -3,12 +3,41 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cutting Grass</title>
-    <style> body {padding: 0; margin: 0;} </style>
+    <title>Mow the Grass 3D</title>
+
     <script src="p5.js"></script>
     <script src="p5.sound.js"></script>
-    <script src="sketch.js"></script>
+    <script src="grass-stereo.js"></script>
+		<link rel="stylesheet" href="../../stylesheet.css">
+    <style> body { 	max-width: 100%; margin: 0; display: flex; justify-content: center; align-items: center; background:rgb(0,0,0);}
+		.headerLink{opacity:50%;}
+		.headerText:hover{opacity:100%;}
+	  </style>
   </head>
   <body>
+	<div id="note" onclick="document.getElementById('info').style.display = 'block'">
+		*
+	</div>
+	<div id="info" onclick="document.getElementById('info').style.display = 'none'" style="opacity:50%;">
+    <div id="info-text">
+    <h2><i>Mow the Grass 3D</i></h2><br>
+		<p>
+		This artwork can be viewed using the cross-eyed method of stereoscopic free-viewing described below.<br><br>
+		Keeping the screen at arms length, allow your eyes to relax until three patches of grass appear.
+		Train your gaze on the middle patch for a few minutes while your eyes refocus.
+		Following the movement of the cursor can help speed the process.<br><br>
+		It is important to keep the screen rotationally aligned with your eyes.
+		Slowly rotate your head (or computer) from side to side until the image "snaps" together. <br><br>
+
+		It may be helpful to position an object with a circular opening halfway between the screen and the eyes so that the left image is only visible from the right eye and the right image is only visible from the left eye.
+		</p>
+    </div>
+	</div>
+	<header style="background:none;">
+		<div class="headerLink">
+			Mow the Grass 3D /
+			<a href = "../../" class="headerText"> Matthis Grunsky</a>
+		</div>
+	</header>
   </body>
 </html>
