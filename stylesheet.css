@@ -234,6 +234,10 @@ header{
 a{
   text-decoration:none;
 }
+a:visited{
+		color:rgb(200,200,200);
+
+}
 
 /* removes desktop elements */
 .scrolling-wrapper{
