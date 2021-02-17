@@ -1,7 +1,7 @@
 
 let n = 300;
 let blade = [];
-let cutHeight = 3
+let cutHeight = 2;
 let r = 30;
 
 
@@ -10,6 +10,7 @@ function setup() {
   createCanvas(windowWidth,windowHeight);
 	noFill();
 	noCursor();
+	strokeWeight(0.5);
 	stroke(30,100,80);
 	for(i=0;i<n;i++){
 		blade.push(new Grass(random(width*0.3,width*0.7),random(height*0.6,height*0.8)));
