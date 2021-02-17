@@ -1,4 +1,4 @@
-let n = 150;
+let n = 100;
 let grass = [];
 let blade;
 
@@ -42,7 +42,7 @@ function draw() {
 	background(50,30,30);
 	stroke(30,100,80,250);
 
-	let speed  = map(noise(frameCount*0.0001),0,1,0.005,0.02);
+	let speed  = map(noise(frameCount*0.0001),0,1,0.005,0.01);
 
   for(i=0;i<n;i++){
 		grass[i].display(speed,seperation,offset);
@@ -93,11 +93,11 @@ function Grass(X,Y,Z){
 	this.length = 10;
 	this.height = 0;
 	this.maxHeight = height*0.05;// random(height*0.05,height*0.04)*this.z;
-	this.growthRate = random(0.005,0.007);
+	this.growthRate = random(0.002,0.004);
 
 
-	this.Xsample = X*0.01;
-	this.Ysample = Y*0.01;
+	this.Xsample = X*0.005;
+	this.Ysample = Z*8;
 
 	
 
@@ -110,12 +110,12 @@ function Grass(X,Y,Z){
 			}
 
 			this.Xsample-=speed;
-			this.Ysample-=speed*0.75;
-			let force = map(noise(this.Xsample,this.Ysample),0,1,0.01,0.02);
+			this.Ysample-=speed;
+			let force = map(noise(this.Xsample,this.Ysample),0,1,0.005,0.015);
 
 			beginShape();
 			for(e=0;e<this.length;e++){
-				let sway = e*e*force*this.height*this.z;
+				let sway = e*e*force*this.height;
 				let x = this.x+sway+xPos+(offSet*this.z);
 				let y = this.y+sway-(e*this.height); // not currently factoring depth into height to preserve relative shape of top vs. bottom
 				vertex(x,y);
