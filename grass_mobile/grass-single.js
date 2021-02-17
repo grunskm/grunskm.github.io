@@ -13,7 +13,7 @@ function setup() {
 	strokeWeight(0.5);
 
 	for(i=0;i<n;i++){
-		blade.push(new Grass(random(width*0.3,width*0.7),random(height*0.6,height*0.8)));
+		blade.push(new Grass(random(width*0.2,width*0.8),random(height*0.6,height*0.8)));
 	}
 
 }
