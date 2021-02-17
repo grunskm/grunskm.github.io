@@ -11,7 +11,7 @@ function setup() {
 	noFill();
 	noCursor();
 	strokeWeight(0.5);
-	stroke(30,100,80);
+
 	for(i=0;i<n;i++){
 		blade.push(new Grass(random(width*0.3,width*0.7),random(height*0.6,height*0.8)));
 	}
@@ -22,12 +22,13 @@ function draw() {
 	background(50,30,30);
 
 	let speed  = map(noise(frameCount*0.0001),0,1,0.005,0.02);
-
+	stroke(30,100,80);
   for(i=0;i<n;i++){
 		blade[i].display(speed);
 		blade[i].collide();
 	}
-	ellipse(mouseX,mouseY,60,60);
+	stroke(200,200,200);
+	ellipse(mouseX,mouseY-50,50,20);
 }
 
 function Grass(X,Y){
@@ -79,7 +80,7 @@ function Grass(X,Y){
 
 	this.collide = ()=>{
 
-		if(this.height>cutHeight && mouseIsPressed && mouseX>this.x-r && mouseX<this.x+r && mouseY>this.y-r && mouseY<this.y+r){
+		if(this.height>cutHeight && mouseIsPressed && mouseX>this.x-r && mouseX<this.x+r && mouseY-50>this.y-r && mouseY-50<this.y+r){
 			print("CUT");
 			this.cut = true;
 		}
