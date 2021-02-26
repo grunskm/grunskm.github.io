@@ -2,6 +2,8 @@ let n = 150;
 let grass = [];
 let blade;
 
+let snip;
+
 
 let mx, my;
 
@@ -31,7 +33,7 @@ function setup() {
 		grass.push(new Grass(random(-width*0.1,width*0.1),viewAngle,random(0.8,random(0.9,1))));
 	}
 	blade = new Disc(viewAngle-cutHeight);
-
+	snip = loadSound('snip.mp3');
 }
 
 function draw() {
@@ -101,9 +103,6 @@ function Grass(X,Y,Z){
 
 	
 
-
-
-
 	this.display = (speed,xPos,offSet)=>{
 			if(this.height<this.maxHeight){
 				this.height+=this.growthRate;
@@ -122,14 +121,14 @@ function Grass(X,Y,Z){
 			}
 			endShape();
 
-
 	}
 
 	this.collide = ()=>{
 	//	ellipse(blade.x,blade.z,blade.s,blade.s*0.3);
 		let s = blade.s/3;
 		if(this.height>cutHeight && blade.x+s>this.x && blade.x-s<this.x && blade.z-s*0.3<this.y-cutHeight*3 && blade.z+s*0.3>this.y-cutHeight*3 ){
-					this.height = cutHeight;
+					this.height = cutHeight-2;
+					snip.play();
 		}
 	}
 }
