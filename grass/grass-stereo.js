@@ -128,7 +128,7 @@ function Grass(X,Y,Z){
 		let s = blade.s/3;
 		if(this.height>cutHeight && blade.x+s>this.x && blade.x-s<this.x && blade.z-s*0.3<this.y-cutHeight*3 && blade.z+s*0.3>this.y-cutHeight*3 ){
 					this.height = cutHeight-2;
-					snip.play();
+					//snip.play();
 		}
 	}
 }
