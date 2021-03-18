@@ -2,6 +2,9 @@
 
 
 
+let mobile = false;
+
+
 let scale = 0.0005;
 
 let number_of_worms = 20;
@@ -11,6 +14,7 @@ let r = 0;
 
 function setup(){
 	createCanvas(windowHeight*0.5*2.2,windowHeight*0.5);
+
 	angleMode(DEGREES);
 	stroke(0);
 	noFill();
@@ -18,18 +22,23 @@ function setup(){
 	for(i=0;i<number_of_worms;i++){
 		worm.push(new Worm());
 	}
-
 }
 
 function draw(){
+	if(windowWidth<750){
+		mobile = true;
+	}else{mobile = false;}
+
 	background(0);
 	for(i=0;i<number_of_worms;i++){
 		worm[i].move();
 	}
-	school(width*0.25,-15);
-	school(width*0.75,15);
-
-	line(0,mouseY,width,mouseY);
+	if(mobile==false){
+		school(width*0.25,-15);
+		school(width*0.75,15);
+	}else{
+		school(width*0.5,0);
+	}
 }
 
 function school(POSITION, OFF){
