@@ -36,6 +36,8 @@ function setup() {
 		grass.push(new Grass(x,y,z));
 	}
 
+	grass.sort((a,b)=>{return a.d-b.d});
+
 	blade = new Disc(cutHeight+height*0.3);
 
 }
@@ -46,7 +48,7 @@ function draw() {
 	stroke(30,100,80,250);
 
 	let speed  = map(noise(frameCount*0.0001),0,1,0.005,0.01);
-
+		
   for(i=0;i<n;i++){
 		grass[i].update(speed);
 		grass[i].display(seperation,offset);

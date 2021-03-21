@@ -4,6 +4,7 @@ circle = [];
 function setup() {
 	createCanvas(windowWidth,windowHeight*0.95);
 	background(255);
+	noSmooth();
 	angleMode(DEGREES);
 	stroke(0);
 
