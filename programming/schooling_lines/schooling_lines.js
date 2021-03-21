@@ -13,7 +13,13 @@ let r = 0;
 
 
 function setup(){
-	createCanvas(windowHeight*0.5*2.2,windowHeight*0.5);
+	if(windowWidth<768){
+		createCanvas(windowWidth,windowHeight);
+		mobile = true;
+	}else{
+		createCanvas(windowHeight*0.5*2.2,windowHeight*0.5);
+		mobile = false;
+	}
 
 	angleMode(DEGREES);
 	stroke(0);
@@ -25,10 +31,6 @@ function setup(){
 }
 
 function draw(){
-	if(windowWidth<750){
-		mobile = true;
-	}else{mobile = false;}
-
 	background(0);
 	for(i=0;i<number_of_worms;i++){
 		worm[i].move();
@@ -37,7 +39,10 @@ function draw(){
 		school(width*0.25,-15);
 		school(width*0.75,15);
 	}else{
-		school(width*0.5,0);
+		translate(width,0);
+		rotate(90);
+		school(width*0.25,-15);
+		school(width*0.75,15);
 	}
 }
 

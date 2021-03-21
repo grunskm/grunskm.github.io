@@ -16,7 +16,16 @@
 
 
 		<link rel="stylesheet" href="../../stylesheet.css">
-    <style> body { 	max-width: 100%; margin: 0; display: flex; justify-content: center; align-items: center; background:rgb(0,0,0);}
+    <style>
+		@media only screen and (min-width: 768px){
+		 body { 	max-width: 100%; margin: 0; display: flex; justify-content: center; align-items: center; background:rgb(0,0,0);}
+		}
+		@media only screen and (max-width: 768px){
+		body { 	max-width: 100%; margin: 0; display: flex; justify-content: center; align-items: center; background:rgb(0,0,0);}
+		canvas{
+			position:fixed;
+		}
+		}
 	  </style>
 
   </head>
