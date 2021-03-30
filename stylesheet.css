@@ -48,7 +48,7 @@ header{
 	color:rgb(240,240,240);
 	bottom:0;
 	padding:0;
-	height: 5%;
+	height: 2em;
 	min-height:35px;
 	width:100%;
 	font-size: 1em;
@@ -78,20 +78,23 @@ header{
   overflow-y: hidden;
   white-space: nowrap;
   z-index:9999;
-  height:95%;
+  height:calc(100% - 2em);
+  scrollbar-color: grey black;
+  /* font-size:0px; */
 }
 .static-wrapper {
   background-color:white;
-  height:95%;
+  height:calc(100% - 2em);
 }
 .card {
 	background-color:rgb(240,240,240);
 	margin:0;
 	padding:0;
-	margin-right:-5px;
-    display: inline-block;
+	margin-right:-0.5em;
+  display: inline-block;
 	height: 100%;
 	text-align:center;
+  overflow:hidden;
 }
 .textCard{
 	padding:4%;
@@ -107,7 +110,7 @@ header{
 }
 .slide{
 	height:85%;
-	margin: auto;
+	padding: 5em;
 }
 .cap{
 	font-size: 0.75em;
