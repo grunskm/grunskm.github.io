@@ -137,6 +137,7 @@ width:70%;
 	top:0px;
 	font-size:3em;
 	color:rgb(50,50,50);
+	z-index: 999;
 }
 #note:hover{
 	color:rgb(250,200,100);
@@ -151,7 +152,7 @@ width:70%;
 	margin:auto;
 	background:white;
 	opacity:90%;
-
+	z-index: 999;
 }
 #info-text{
 	width:60%;
