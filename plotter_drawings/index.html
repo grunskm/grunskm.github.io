@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Machine Drawings - Matthis Grunsky</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" type="text/javascript"></script>
+    <script>
+      function toggle_text(){
+        let text = document.getElementById('long-text');
+        let toggle = document.getElementById('toggle');
+
+        if(toggle.innerText == 'READ MORE'){
+          console.log("expand");
+          text.style.display = 'block';
+          toggle.innerText = "READ LESS";
+        }else{
+          console.log("collapse");
+          text.style.display = 'none';
+          toggle.innerText = "READ MORE";
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+
+		<div id="nav_stack">
+			<a href="../machine_drawings"><div class="nav_item">Machine Drawing &#8857;</div></a>
+			<a href="../painting/"><div class="nav_item">Painting &#8857;</div></a>
+			<a href="../stereo"><div class="nav_item">Stereo &#8857;</div></a>
+			<a href="../web_stuff"><div class="nav_item">Web Stuff &#8857;</div></a>
+			<a href="../plaster"><div class="nav_item">Plaster &#8857;</div></a>
+			<a href="../archive"><div class="nav_item">Archive &#8857;</div></a>
+			<a href="..research"><div class="nav_item">Research &#8857;</div></a>
+			<a href="../teaching"><div class="nav_item">Teaching &#8857;</div></a>
+			<a href="../"><div class="nav_item">Front Page &#8857;</div></a>
+			<div id="title_block">Matthis Grunsky <span id="indicator">></span></div>
+		</div>
+		<div id="mob_nav_stack">
+			<a href="../machine_drawings"><div class="nav_item">Machine Drawing &#8857;</div></a>
+			<a href="../painting/"><div class="nav_item">Painting &#8857;</div></a>
+			<a href="../stereo"><div class="nav_item">Stereo Drawing &#8857;</div></a>
+			<a href="../web_stuff"><div class="nav_item">Web Stuff &#8857;</div></a>
+			<a href="../plaster"><div class="nav_item">Plaster &#8857;</div></a>
+			<a href="../research"><div class="nav_item">Research &#8857;</div></a>
+			<a href="../teaching"><div class="nav_item">Teaching &#8857;</div></a>
+			<a href="../"><div class="nav_item">Front Page &#8857;</div></a>
+			<div id="mob_title_block">Matthis Grunsky <span id="mob_indicator">></span></div>
+		</div>
+
+		<div id="slide-container">
+			<div class="blog-post" style="padding:5%;">
+				<h3>Handmade Plotter</h3>
+				<p>
+  				With the intention of more deeply exploring the material aesthetics of computation, I recently
+  				designed, built, and programmed my own drawing machine. Rather than purchasing a ready-made
+          pen-plotter, I decided to make one for myself, hoping that it would help me better understand
+          the relationship between a computer's virtual and physical elements. I was also interested
+          in finding a material alternative to the ubiquitous LCD monitor which normally
+          serves as our primary means of visual communication with the computer.
+        </p>
+				<p id="long-text" style="display:none;">
+  				My plotter uses cartesian coordinate system for positioning the pen, with two discrete axes of
+  				movement in a "flatbed" design. Contrary to some popular consumer plotters that combine the X,Y axes
+  				into a space saving "T" shape, the axes of my plotter are entirely independent of each other.
+          This design simplifies the mecahnical construction of the machine and increases its stability considerably,
+  				but it also has a conceptual significance. Due to the way that the axes are entirely separated from each other, this machine
+          does not mimic the gesture of the articulated human arm. This divergence from how we normally think of
+          drawing, brings the internal processes of the computer to the surface.
+          <br><br>
+          There are many recycled or repurposed materials used in the construction of this machine.
+          The X-axis uses an old rail from a broken Epson printer and the Y-axis consists
+  				of an MDF panel fixed to two salvaged drawer slides. In the age of CAD, rapid prototyping, and 3D printing, it is
+          important to me that tools retain their beauty. Taking inspiration from the studio bricolage practice
+          of Tom Sachs, I aimed to use as many found, scavenged, or repurposed materials as possible in the design.
+          <br><br>
+  				While it would be possible to use a full-fledged computer to achieve more complex
+  				control of the plotter (like printing vector files or responding to networked inputs) I chose
+  				to limit the plotter with a comparitively basic microcontroller. As it is currently set-up
+          scripts are written in the Arduino IDE with my custom plotter library and run directly on the machine with no screen preview.
+          I find this allows a more direct feeling of drawing when working with the plotter and means each print must be expressed
+  				entirely through code.
+				</p>
+        <span id="toggle" onclick="toggle_text()">READ MORE</span>
+			</div>
+      <div id="slide-container">
+        <img src="assets/web_plot1.jpg" class="slide" alt="">
+        <div class="caption">
+        <h3>Plot 1</h3>
+        <p>
+        Plotter Drawing<br>
+        Ink on Stonehenge paper<br>
+        16.5"x16.5", 2021
+        </p>
+        </div>
+
+        <img src="assets/web_plot1.jpg" class="slide" alt="">
+        <div class="caption">
+        <h3>Plot 1</h3>
+        <p>
+        Plotter Drawing<br>
+        Ink on Stonehenge paper<br>
+        16.5"x16.5", 2021
+        </p>
+        </div>
+
+        <img src="assets/web_plot1.jpg" class="slide" alt="">
+        <div class="caption">
+        <h3>Plot 1</h3>
+        <p>
+        Plotter Drawing<br>
+        Ink on Stonehenge paper<br>
+        16.5"x16.5", 2021
+        </p>
+        </div>
+		</div>
+
+		</div>
+  </body>
+</html>
