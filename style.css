@@ -122,7 +122,6 @@ a:hover{
 	.slide{
 		width:70%;
 		margin-bottom:1em;
-
 	}
 	.slide:hover{
 
@@ -157,8 +156,8 @@ a:hover{
 		position:absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
-		width:75%;
+		/* transform: translate(-50%, -50%); */
+		width:50%;
 	}
 
 }
@@ -177,7 +176,7 @@ a:hover{
 		max-width: 500px;
 		margin:auto;
 	}
-	
+
 	#nav_stack{
 		display:none;
 	}
@@ -214,6 +213,9 @@ a:hover{
 		margin-bottom:1em;
 		width:100%;
 	}
+  .thumbnail{
+    width:100%;
+  }
 	#overlay{
 		display:none;
 		width:0px;
