@@ -49,7 +49,7 @@ function draw(){
 }
 
 function keyPressed(){
-	if(keyCode===RETURN){
+	if(keyCode===ENTER){
 		for(i=0;i<num;i++){
 			fly.push(new Fly());
 		}
@@ -125,7 +125,7 @@ function Fly(){
 			this.scale = 1/(1+(this.d*scale));
 			this.x = (noise(this.inc+this.xseed)*w-(w/2)+this.wiggleX)*this.scale;
 			this.y = (noise(this.inc+this.yseed)*w-(w/2)+this.wiggleY)*this.scale;
-			
+
 		}else if(this.zapped == true && this.dead == false){
 // 		  this.inc += 0.1;
 // 			this.d += noise(this.inc)*20+10;
@@ -136,7 +136,7 @@ function Fly(){
 		}else if(this.dead == true){
 			this.y = this.floor*this.scale;
 		}
-		
+
 		if(this.y>this.floor*this.scale && this.down>0){
 			this.down*=-random(0.2,0.4);
 			if(this.down<0.1 && this.down > -0.1){
@@ -154,10 +154,10 @@ function Fly(){
 
 		if(
 		zapper.charged==true &&
-		this.d > zapper.d && 
-		x > zapper.x+(OFF*this.scale) && 
-		x < zapper.x+(OFF*this.scale) + zapper.w && 
-		this.y > zapper.y && 
+		this.d > zapper.d &&
+		x > zapper.x+(OFF*this.scale) &&
+		x < zapper.x+(OFF*this.scale) + zapper.w &&
+		this.y > zapper.y &&
 		this.y < zapper.y + zapper.h){
 			stroke(150);
 		}else{
@@ -172,19 +172,14 @@ function Fly(){
 		if(
 		zapper.charged == true &&
 		this.zapped == false &&
-		this.d < zapper.d+100 && 
+		this.d < zapper.d+100 &&
 		this.d > zapper.d-100 &&
-		this.x > zapper.x && 
-		this.x < zapper.x + zapper.w && 
-		this.y > zapper.y && 
+		this.x > zapper.x &&
+		this.x < zapper.x + zapper.w &&
+		this.y > zapper.y &&
 		this.y < zapper.y + zapper.h){
 			zap.play();
 			this.zapped = true;
 		}
 	}
 }
-
-
-
-
-
