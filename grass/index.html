@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="">
   <head>
+<!-- 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
 	<script>
   		window.dataLayer = window.dataLayer || [];
@@ -8,18 +9,35 @@
   		gtag('js', new Date());
 		gtag('config', 'UA-36211356-3');
 	</script>
+ -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grass</title>
 
     <script src="p5.js"></script>
     <script src="p5.sound.js"></script>
-    <script src="grass-single.js"></script>
-		<link rel="stylesheet" href="../stylesheet.css">
-    <style> body { 	max-width: 100%; margin: 0; display: flex; justify-content: center; align-items: center; background:rgb(0,0,0);}
-		.headerLink{opacity:50%;}
-		.headerText:hover{opacity:100%;}
-	  </style>
+    <script src="grass-stereo.js"></script>
+    <style>
+    body{
+      background-color:black;
+    }
+    canvas{
+			position:fixed;
+			left:50%;
+			top:50%;
+			transform:translate(-50%,-50%);
+      }
+		#note{
+			position:fixed;
+			right:0.5em;
+			top:1em;
+			transform:translate(-50%,-50%);
+			color:rgb(140,120,100);
+			font-size:4em;
+			z-index:999;
+		}
+
+    </style>
   </head>
   <body>
 	<div id="note" onclick="document.getElementById('info').style.display = 'block'">
@@ -40,11 +58,5 @@
 		</p>
     </div>
 	</div>
-	<header style="background:none;">
-		<div class="headerLink">
-			Grass /
-			<a href = "../../" class="headerText"> Matthis Grunsky</a>
-		</div>
-	</header>
   </body>
 </html>
