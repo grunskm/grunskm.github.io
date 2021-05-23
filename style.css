@@ -9,10 +9,9 @@ html,body{
   width:100%;
   height:100%;
 }
-
-body{
+#content-body{
   background-color:white;
-	margin:auto;
+  margin:auto;
 }
 a{
 	color:black;
@@ -78,9 +77,9 @@ a:hover{
 
 /*  DESKTOP  */
 @media only screen and (min-width: 900px){
-	body{
-		max-width:1300px;
-	}
+  #content-body{
+    max-width:1300px;
+  }
 	.blog-column{
 		width: 37%;
 		margin-left:1em;
@@ -120,7 +119,7 @@ a:hover{
 		width:80%;
 	}
 	.slide{
-		width:70%;
+		width:50%;
 		margin-bottom:1em;
 	}
 	.slide:hover{
@@ -129,7 +128,7 @@ a:hover{
 	.caption{
 		float:right;
 		padding-left:1em;
-		width:30%;
+		width:50%;
 	}
 	.thumbnail{
 		width:30%;
@@ -141,32 +140,27 @@ a:hover{
 	}
 	#overlay{
 		display:none;
-		width:100%;
-		height:100%;
 		position:fixed;
+    background-color:rgb(255,255,255,0.5);
+    width:100%;
+    height:100%;
 	}
-	#backdrop{
-		display:block;
-		background:white;
-		opacity:50%;
-		width:100%;
-		height:100%
-	}
+
 	#zoom-slide{
 		position:absolute;
+    width:60%;
 		top: 50%;
 		left: 50%;
-		/* transform: translate(-50%, -50%); */
-		width:50%;
+		transform: translate(-50%, -50%);
 	}
 
 }
 /* MOBILE */
 @media only screen and (max-width: 900px){
-	body{
-	padding-top:2em;
-  font-family:courier;
-	}
+  #content-body{
+    padding-top:2em;
+    font-family:courier;
+  }
 	#left-column{
 		margin:none;
 	}

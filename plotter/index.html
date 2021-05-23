@@ -23,9 +23,20 @@
         }
       }
     </script>
+    <style>
+      #toggle:hover{
+        color:chartreuse;
+        cursor:pointer;
+      }
+    </style>
   </head>
 
-  <body>
+  <body id="body">
+    <div id="overlay">
+      <!-- <div id="backdrop"></div> -->
+      <img src="" id="zoom-slide">
+    </div>
+    <div id="content-body">
 
 		<div id="nav_stack">
       <a href="../plotter"><div class="nav_item">Plotter &#8857;</div></a>
@@ -46,10 +57,7 @@
 			<div id="mob_title_block">Matthis Grunsky <span id="mob_indicator">></span></div>
 		</div>
 
-    <div id="overlay">
-      <div id="backdrop"></div>
-      <img src="" id="zoom-slide">
-    </div>
+
 
 		<div id="slide-container">
 			<div class="blog-post" style="padding:5%;">
@@ -69,7 +77,7 @@
           This design simplifies the mecahnical construction of the machine and increases its stability considerably.
   				It also has a conceptual significance for the way it reflects the logic of computation.
           <br><br>
-          In the current moment of CAD, rapid prototyping, and 3D printing, I feel it is important to acknowledge   
+          In the current moment of CAD, rapid prototyping, and 3D printing, I feel it is important to acknowledge
           the beauty of the handmade when possible. Taking inspiration from the studio bricolage practice of Tom Sachs,
           I solved design problems with materials that I could find in my immediate environment.
           There are many recycled or repurposed objects including an old rail from a broken inkjet printer,
@@ -114,5 +122,6 @@
         </div>
 
 		</div>
+  </div>
   </body>
 </html>

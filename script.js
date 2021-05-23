@@ -32,7 +32,16 @@ function zoom_src(slide){
 		let img = slide.getAttribute("src");
 		let zoom = document.getElementById("zoom-slide");
 
-		zoom.setAttribute("src",img);
+    zoom.setAttribute("src",img);
+    // if(window.innerHeight>window.innerWidth){
+    //   let temp_width = window.innerWidth*0.8;
+    //   zoom.setAttribute("width",temp_width);
+    // }else{
+    //   let temp_height = window.innerHeight*0.8;
+    //   zoom.setAttribute("width",temp_height);
+    // }
+
+
 		overlay.style.display = "block";
 }
 

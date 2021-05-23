@@ -9,74 +9,76 @@
     <script src="script.js" type="text/javascript"></script>
   </head>
 
-  <body>
-
-		<div id="nav_stack">
-      <a href="plotter/"><div class="nav_item">Plotter &#8857;</div></a>
-			<a href="painting/"><div class="nav_item">Painting &#8857;</div></a>
-			<a href="stereoscopic/"><div class="nav_item">Stereo &#8857;</div></a>
-			<a href="screen/"><div class="nav_item">Screen &#8857;</div></a>
-			<a href="plaster/"><div class="nav_item">Plaster &#8857;</div></a>
-			<!-- <a href="research/"><div class="nav_item">Research &#8857;</div></a>
-			<a href="teaching/"><div class="nav_item">Teaching &#8857;</div></a> -->
-			<div id="title_block">Matthis Grunsky <span id="indicator">></span></div>
-		</div>
-		<div id="mob_nav_stack">
-      <a href="plotter/"><div class="nav_item">Plotter &#8857;</div></a>
-			<a href="painting/"><div class="nav_item">Painting &#8857;</div></a>
-			<a href="stereoscopic/"><div class="nav_item">Stereo &#8857;</div></a>
-			<a href="screen/"><div class="nav_item">Screen &#8857;</div></a>
-			<a href="plaster/"><div class="nav_item">Plaster &#8857;</div></a>
-			<!-- <a href="research/"><div class="nav_item">Research &#8857;</div></a>
-			<a href="teaching/"><div class="nav_item">Teaching &#8857;</div></a> -->
-			<div id="mob_title_block">Matthis Grunsky <span id="mob_indicator">></span></div>
-		</div>
-
-		<div class="blog-column" id="left-column">
-			<div class="blog-post">
-				<div class="blog-text">
-					Hi! &#127859; I am an artist living in Vancouver, Canada.
-					I work with code to make drawings and paintings that explore the aesthetics
-					of computation and the intersections of physical and digital materials.
-					<br><br>
-					I'm currently delving into the world of machine drawing using my <a href="plotter"><b>homemade
-					pen plotter</b></a> and experimenting with <a href="stereoscopic"><b>procedurally animated stereoscopic drawings</b></a>.
-
-					<br><br>
-					Get in touch with me at <code>grunskm</code>&#64;<span>gmail</span>&#46;com if you want to chat about
-					creative coding, pen plotting, painting, stereoscopy, (or anything else really).<br><br>
-					<a href="https://www.instagram.com/grunskm/" target="blank">  <img style=" float:right; width:30px; opacity:20%;" src="assets/insta.png" alt=""></a>
-					<a href="https://twitter.com/grunskm" target="blank"><img style="margin-right:0.5em;float:right; width:30px; opacity:20%;" src="assets/twitter.jpeg" alt="">
-				</div>
-			</div>
-
-				<div class="blog-post">
-					<img src="assets/newimage.jpg" class="blog-image">
-					<div class="blog-text">
-					<h3>Exhibition @ Trapp Projects</h3>
-					I will be having an exhibition of recent work at Trapp Projects in Vancouver between June 12 and June 25.
-					If you're in the area please drop by on weekends between 12-5PM.
-					The work will include a series of drawings produced with my homemade pen plotter and a large stereoscopic diptych!
-					<!-- <a href="">Documentation of the install can be viewed here.</a> -->
-					</div>
-				</div>
-
-		</div><div class="blog-column">
-			<a href="https://to-do-to-do.github.io/to-do/">
-			<div class="blog-post">
-        <img class="blog-image" src="assets/todo.gif" alt="">
-				<div class="blog-text">
-				<h2>To-Do-To-Do</h2>
-					Presented by Number 3 Gallery as part of their SPAM monthly newsletter, To-Do-To-Do is a
-					collaboration between M.E. Sparks and myself.
-					The project features a series of smaller web pages looking at different forms of list making.
-				</div>
-			</div>
-			</a>
-			</div>
-      <div id="overlay">
-        <div id="backdrop"></div>
-        <img src="" id="zoom-slide">
+  <body id="body">
+    <div id="overlay">
+      <!-- <div id="backdrop"></div> -->
+      <img src="" id="zoom-slide">
+    </div>
+    <div id="content-body">
+      <div id="nav_stack">
+        <a href="plotter/"><div class="nav_item">Plotter &#8857;</div></a>
+        <a href="painting/"><div class="nav_item">Painting &#8857;</div></a>
+        <a href="stereoscopic/"><div class="nav_item">Stereo &#8857;</div></a>
+        <a href="screen/"><div class="nav_item">Screen &#8857;</div></a>
+        <a href="plaster/"><div class="nav_item">Plaster &#8857;</div></a>
+        <!-- <a href="research/"><div class="nav_item">Research &#8857;</div></a>
+        <a href="teaching/"><div class="nav_item">Teaching &#8857;</div></a> -->
+        <div id="title_block">Matthis Grunsky <span id="indicator">></span></div>
       </div>
+      <div id="mob_nav_stack">
+        <a href="plotter/"><div class="nav_item">Plotter &#8857;</div></a>
+        <a href="painting/"><div class="nav_item">Painting &#8857;</div></a>
+        <a href="stereoscopic/"><div class="nav_item">Stereo &#8857;</div></a>
+        <a href="screen/"><div class="nav_item">Screen &#8857;</div></a>
+        <a href="plaster/"><div class="nav_item">Plaster &#8857;</div></a>
+        <!-- <a href="research/"><div class="nav_item">Research &#8857;</div></a>
+        <a href="teaching/"><div class="nav_item">Teaching &#8857;</div></a> -->
+        <div id="mob_title_block">Matthis Grunsky <span id="mob_indicator">></span></div>
+      </div>
+
+      <div class="blog-column" id="left-column">
+        <div class="blog-post">
+          <div class="blog-text">
+            Hi! &#127859; I am an artist living in Vancouver, Canada.
+            I work with code to make drawings and paintings that explore the aesthetics
+            of computation and the intersections of physical and digital materials.
+            <br><br>
+            I'm currently delving into the world of machine drawing using my <a href="plotter"><b>homemade
+            pen plotter</b></a> and experimenting with <a href="stereoscopic"><b>procedurally animated stereoscopic drawings</b></a>.
+
+            <br><br>
+            Get in touch with me at <code>grunskm</code>&#64;<span>gmail</span>&#46;com if you want to chat about
+            creative coding, pen plotting, painting, stereoscopy, (or anything else really).<br><br>
+            <a href="https://www.instagram.com/grunskm/" target="blank">  <img style=" float:right; width:30px; opacity:20%;" src="assets/insta.png" alt=""></a>
+            <a href="https://twitter.com/grunskm" target="blank"><img style="margin-right:0.5em;float:right; width:30px; opacity:20%;" src="assets/twitter.jpeg" alt="">
+          </div>
+        </div>
+
+          <div class="blog-post">
+            <img src="assets/newimage.jpg" class="blog-image">
+            <div class="blog-text">
+            <h3>Exhibition @ Trapp Projects</h3>
+            I will be having an exhibition of recent work at Trapp Projects in Vancouver between June 12 and June 25.
+            If you're in the area please drop by on weekends between 12-5PM.
+            The work will include a series of drawings produced with my homemade pen plotter and a large stereoscopic diptych!
+            <!-- <a href="">Documentation of the install can be viewed here.</a> -->
+            </div>
+          </div>
+      </div><div class="blog-column">
+        <a href="https://to-do-to-do.github.io/to-do/">
+        <div class="blog-post">
+          <img class="blog-image" src="assets/todo.gif" alt="">
+          <div class="blog-text">
+            <h2>To-Do-To-Do
+            </h2>
+            Presented by Number 3 Gallery as part of their SPAM monthly newsletter, To-Do-To-Do is a
+            collaboration between M.E. Sparks and myself.
+            The project features a series of smaller web pages looking at different forms of list making.
+          </div>
+        </div>
+        </a>
+      </div>
+
+    </div>
   </body>
 </html>
