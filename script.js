@@ -14,7 +14,7 @@ window.onload = ()=>{
 		toggle_mob_navlinks();
   });
 
-  let slide = document.getElementsByClassName("slide");
+  let slide = document.getElementsByClassName("zoom_slide");
 
 	for(let i=0; i<slide.length; i++){
 		slide[i].addEventListener("click",()=>{
@@ -30,7 +30,7 @@ window.onload = ()=>{
 
 function zoom_src(slide){
 		let img = slide.getAttribute("src");
-		let zoom = document.getElementById("zoom-slide");
+		let zoom = document.getElementById("large-slide");
 
     zoom.setAttribute("src",img);
     // if(window.innerHeight>window.innerWidth){

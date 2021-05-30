@@ -68,6 +68,8 @@ a:hover{
 
 .slide{
 }
+.zoom_slide{
+}
 .caption{
 }
 .thumbnail{
@@ -122,6 +124,10 @@ a:hover{
 		width:50%;
 		margin-bottom:1em;
 	}
+  .zoom_slide{
+    width:50%;
+    margin-bottom:1em;
+  }
 	.slide:hover{
 
 	}
@@ -146,7 +152,7 @@ a:hover{
     height:100%;
 	}
 
-	#zoom-slide{
+	#large-slide{
 		position:absolute;
     width:60%;
 		top: 50%;
