@@ -22,9 +22,6 @@ a{
 a:visited{
 	color:black;
 }
-a:hover{
-	color:chartreuse;
-}
 
 .blog-column{
 	display:inline-block;
@@ -118,6 +115,10 @@ a:hover{
 		color:chartreuse;
 	}
 
+  a:hover{
+  	color:chartreuse;
+  }
+
 	#slide-container{
 		margin-left:20%;
 		width:80%;
@@ -179,6 +180,10 @@ a:hover{
 		margin:auto;
 	}
 
+  .blog-post{
+    padding-bottom:2em;
+  }
+
 	#nav_stack{
 		display:none;
 	}
@@ -191,6 +196,7 @@ a:hover{
 		color:white;
 		bottom:0px;
 		text-align:right;
+    z-index:999;
 	}
 	#mob_title_block{
 		padding:0.5em 0em 0.5em 0em;
