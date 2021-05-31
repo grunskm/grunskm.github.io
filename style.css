@@ -209,6 +209,9 @@ a:hover{
 	.slide{
 		width:100%;
 	}
+  .zoom_slide{
+    width:100%;
+  }
 	.caption{
 		margin-bottom:1em;
 		width:100%;
@@ -225,7 +228,7 @@ a:hover{
 	#backdrop{
 		display:none;
 	}
-	#zoom-slide{
+	#large-slide{
 		display:none;
 	}
 }
