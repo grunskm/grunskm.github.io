@@ -17,6 +17,22 @@
     <title>Matthis Grunsky</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" type="text/javascript"></script>
+    <script>
+    function toggle_text(){
+      let text = document.getElementById('long-text');
+      let toggle = document.getElementById('toggle');
+
+      if(toggle.innerText =='ABOUT'){
+        console.log("expand");
+        text.style.display = 'block';
+        toggle.innerText = "COLLAPSE";
+      }else{
+        console.log("COLLAPSE");
+        text.style.display = 'none';
+        toggle.innerText = "ABOUT";
+      }
+    }
+    </script>
   </head>
 
   <body id="body">
@@ -48,33 +64,65 @@
 
       <div class="blog-column" id="left-column">
         <div class="blog-post">
-          <div class="blog-text">
-            Hi! &#127859; I'm an artist living in Vancouver, Canada, and
-            I work with code to make drawings and paintings that explore the aesthetics
-            of computation.
-            <br><br>
-            I'm currently making <a href="plotter"><b>generative drawings</b></a> using a
-            pen plotter of my own design and experimenting with procedurally animated <a href="stereoscopic"><b>stereoscopic websites</b></a>.
+          <!-- &#127859;&#127859;&#127859; -->
+          <span><b>MATTHIS GRUNSKY</b></span>          <a href="https://www.instagram.com/grunskm/" target="blank">  <img style=" float:right; width:30px; opacity:20%;" src="assets/insta.png" alt=""></a>
+                    <a href="https://twitter.com/grunskm" target="blank"><img style="margin-right:0.5em;float:right; width:30px; opacity:20%;" src="assets/twitter.jpeg" alt=""></a>
 
-            <br><br>
-            Get in touch with me at <code>grunskm</code>&#64;<span>gmail</span>&#46;com if you want to chat about
-            creative coding, pen plotting, painting, stereoscopy, (or anything else really).<br><br>
-            <a href="https://www.instagram.com/grunskm/" target="blank">  <img style=" float:right; width:30px; opacity:20%;" src="assets/insta.png" alt=""></a>
-            <a href="https://twitter.com/grunskm" target="blank"><img style="margin-right:0.5em;float:right; width:30px; opacity:20%;" src="assets/twitter.jpeg" alt=""></a>
+
+          <div id="long-text" style="display:none;">
             <br>
-          </div>
-        </div>
+            I use computational systems to produce drawings and paintings that explore the aesthetics
+            of computer code, the natural world, and our propensity for finding beauty in chaotic information.
+            <br>
+            I'm currently making <a href="plotter"><b>drawings</b></a> using a
+            pen plotter of my own design and experimenting with browser-based <a href="stereoscopic"><b>stereoscopic animation</b></a>.
+            <br><br>
 
-          <div class="blog-post">
+            As of July 2021, I am living on Treaty One Territoy in Winnipeg, MB and teaching at the University of Manitoba.
+            I was previously based in Vancouver BC, and am originally from Halifax NS.
+            <br>
+            <br>
+            Get in touch with me at <code>grunskm</code>&#64;<span>gmail</span>&#46;com if you want to chat about
+            drawing with code, pen plotting, painting, stereoscopy, (or anything else really).
+          <br>
+          </div><br>
+          <div id="toggle" onclick="toggle_text()">ABOUT</div>
+
+        </div>
+        <div class="blog-post">
             <img src="assets/newimage.jpg" class="blog-image">
             <div class="blog-text">
             <h3>A Fine Line @ Trapp Projects</h3>
-            A selection of my recent drawings will be featured in the exhibition 'A Fine Line' at Trapp Projects (Vancouver), alongside the paintings of M.E. Sparks.
-						The show will run from June 12 to 26, and will be open to the public on Saturdays and Sundays between 12-5 PM. <br>
+            A selection of my recent work was included in 'A Fine Line', a two person exhibition with <a href="https://www.mesparks.com/" target="blank">M.E. Sparks</a> that took place this spring at Trapp Projects (Vancouver).
+						<br><br>
+            The show ran from June 12 to 26, 2021.
+            <br><br>
+            Install Documentation: <a href="https://www.trappprojects.com/exhibitions-1" target="blank"><b>Trapp Projects</b></a> <br>
+            Work: <a href="plotter">Plotter Drawings<a> + <a href="stereoscopic">Stereo Work<a>
             <!-- <a href="">Documentation of the install can be viewed here.</a> -->
-          <a href="https://www.trappprojects.com/exhibitions-1" target="blank" style="float:right;">
+            <!-- <a href="https://www.trappprojects.com/exhibitions-1" target="blank" style="float:right;">
             <b>Visit Trapp Projects</b>
-          </a>
+            </a> -->
+            </div>
+          </div>
+          <div class="blog-post">
+
+            <img class="blog-image" src="painting/images/2019_colour/web_first_place_square.jpg" alt="">
+            <div class="blog-text">
+              <a href="/painting">
+              <h2>Paintings
+              </h2>
+              </a>
+            </div>
+          </div>
+          <div class="blog-post">
+
+            <img class="blog-image" src="plotter/newimage.jpg" alt="">
+            <div class="blog-text">
+              <a href="/plotter">
+              <h2>Plotter Drawings
+              </h2>
+              </a>
             </div>
           </div>
       </div><div class="blog-column">
@@ -92,6 +140,24 @@
           <a href="https://to-do-to-do.github.io/to-do/" target="blank" style="float:right;">
             <b>Visit Site</b>
           </a>
+        </div>
+        <div class="blog-post">
+          <img class="blog-image" src="plaster/images/web_star.jpg" alt="">
+          <div class="blog-text">
+            <a href="plaster">
+            <h2>Plaster
+            </h2>
+          </a>
+          </div>
+        </div>
+        <div class="blog-post">
+          <img class="blog-image" src="schoolinglines/schoolinglines.png" alt="">
+          <div class="blog-text">
+            <a href="stereoscopic">
+            <h2>Stereoscopic Work
+            </h2>
+          </a>
+          </div>
         </div>
       </div>
 

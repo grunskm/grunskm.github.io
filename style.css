@@ -34,6 +34,10 @@ a:visited{
 	padding:5%;
 	margin-bottom:1em;
 }
+#toggle:hover{
+  color:chartreuse;
+  cursor:pointer;
+}
 .blog-text{
 /* 	padding:2em; */
 	color:black;

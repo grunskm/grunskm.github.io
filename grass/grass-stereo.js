@@ -9,7 +9,7 @@ let mx, my;
 
 let offset = 30;
 
-let viewAngle; 
+let viewAngle;
 let cutHeight;
 let horizon;
 let seperation;
@@ -71,20 +71,20 @@ function Disc(Y){
 		let z = map(this.z,horizon,this.y,0,1);
 		this.s = this.size*z*this.size*0.02;
 		this.x = X;  // x pos for collision calc
-		let x = this.x+S+(O*z); // x pos for individual instance 
+		let x = this.x+S+(O*z); // x pos for individual instance
 
 		push();
 		noCursor();
 		stroke(255,255,255,50);
 		ellipse(x,this.z-cutHeight,this.s,this.s*0.2);
 // 		stroke(50,10,40);
-// 		ellipse(x,this.z+cutHeight,this.s,this.s*0.3);		
+// 		ellipse(x,this.z+cutHeight,this.s,this.s*0.3);
 		pop();
 	}
 }
 
 function Grass(X,Y,Z){
-	
+
 	this.z = Z;
 
 
@@ -93,7 +93,7 @@ function Grass(X,Y,Z){
 
 
 	this.length = 10;
-	this.height = 0;
+	this.height = height*0.005;
 	this.maxHeight = height*0.05;// random(height*0.05,height*0.04)*this.z;
 	this.growthRate = 0.003;//random(0.002,0.004);
 
@@ -101,7 +101,7 @@ function Grass(X,Y,Z){
 	this.Xsample = X*0.02;
 	this.Ysample = Z*8;
 
-	
+
 
 	this.display = (speed,xPos,offSet)=>{
 			if(this.height<this.maxHeight){
@@ -132,4 +132,3 @@ function Grass(X,Y,Z){
 		}
 	}
 }
-
