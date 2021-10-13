@@ -92,9 +92,10 @@
       <span class="img-toggle" onclick="toggle_group('2015')">2015</span>
       <span class="img-toggle" onclick="toggle_group('2019')">2019</span>
       <span class="img-toggle" onclick="toggle_group('2021')">2021</span>
-      <span id="toggle" onclick="toggle_text()">MORE INFO</span><br><br>
+      <span id="toggle" onclick="toggle_text()">MORE INFO</span><br>
+      <span class="img-toggle" onclick="toggle_group('notched')">NOTCHED</span><br><br>
 
-  		<div  class="blog-post" id="long-text" style="display:none;">
+  		<div  class="blog-post" id="long-text" style="display:none; overflow:scroll;">
   <!--  -->
   			<img style="width:50%;" alt="" src="images/2019_notch/web_uvula.jpg">
         <div class="caption">
@@ -111,8 +112,40 @@
 
   		  </div>
       </div>
+      <div id="starting_group" class="img-group">
+        <img src="images/2012/reflections_02.jpg" width="50%" onclick="toggle_group('2012')">
+        <div class="caption">
+          <i>Reflections 2</i>,
+          <span> 2012</span> <br>
+          <span>Acrylic on canvas</span><br>
+          <span>60"x96"</span>
+          <img width="10px"src="../assets/redCircle.png">
+        </div>
+        <img src="images/2019_colour/good_advice.jpg" width="50%" onclick="toggle_group('2019')">
+        <div class="caption">
+          <i>Get Lost</i>,
+          <span> 2019</span> <br>
+          <span>Acrylic on panel</span><br>
+          <span>24"x424"</span>
+        </div>
+        <img src="images/2019_notch/web_uvula.jpg" width="50%" onclick="toggle_group('notched')">
+        <div class="caption">
+          <i>Uvula</i>,
+          <span> 2019</span> <br>
+          <span>Acrylic on canvas</span><br>
+          <span>24"x20"</span>
+          <img width="10px"src="../assets/redCircle.png">
+        </div>
+        <img src="images/2015/dai_fuji_sushi.jpg" width="50%" onclick="toggle_group('2015')">
+        <div class="caption">
+          <i>Dai-Fuji Sushi</i>,
+          <span> 2015</span> <br>
+          <span>Acrylic on canvas</span><br>
+          <span>30"x34"</span>
+        </div>
+      </div>
 
-      <div id="2021" class="img-group">
+      <div id="2021" class="img-group" style="display:none;">
         <img src="../stereoscopic/depth10.jpg" class="zoom_slide">
         <div class="caption">
           <i>depth(10)</i>,
@@ -122,7 +155,52 @@
         </div>
       </div>
 
-      <div id="2019" class="img-group">
+      <div id="2019" class="img-group" style="display:none;">
+        <img src="images/2019_colour/web_first_place.jpg" class="zoom_slide">
+        <div class="caption">
+          <i>First Place</i>,
+          <span> 2019</span> <br>
+          <span>Acrylic on panel</span><br>
+          <span>24"x424"</span>
+        </div>
+        <img src="images/2019_colour/good_advice.jpg" class="zoom_slide">
+        <div class="caption">
+          <i>Get Lost</i>,
+          <span> 2019</span> <br>
+          <span>Acrylic on panel</span><br>
+          <span>24"x424"</span>
+        </div>
+        <img src="images/2019_colour/web_hot_minute.jpg" class="zoom_slide">
+        <div class="caption">
+          <i>Hot Minute</i>,
+          <span> 2019</span> <br>
+          <span>Acrylic on panel</span><br>
+          <span>24"x424"</span>
+        </div>
+        <img src="images/2019_colour/parting_shot.jpg" class="zoom_slide">
+        <div class="caption">
+          <i>Parting Shot</i>,
+          <span> 2019</span> <br>
+          <span>Acrylic on panel</span><br>
+          <span>24"x424"</span>
+        </div>
+        <img src="images/2019_colour/gone_fishing.jpg" class="zoom_slide">
+        <div class="caption">
+          <i>Gone Fishing</i>,
+          <span> 2019</span> <br>
+          <span>Acrylic on panel</span><br>
+          <span>24"x424"</span>
+        </div>
+        <img src="images/2019_colour/web_get_lost.jpg" class="zoom_slide">
+        <div class="caption">
+          <i>Get Lost</i>,
+          <span> 2019</span> <br>
+          <span>Acrylic on panel</span><br>
+          <span>24"x424"</span>
+        </div>
+      </div>
+
+      <div id="notched" class="img-group" style="display:none;">
         <img src="images/2019_notch/web_uvula.jpg" class="zoom_slide">
         <div class="caption">
           <i>Uvula</i>,
@@ -140,7 +218,7 @@
         </div>
       </div>
 
-      <div id="2010" class="img-group">
+      <div id="2010" class="img-group" style="display:none;">
         <img src="images/2010/block1.jpg" class="zoom_slide">
         <div class="caption">
           <i>Block 1</i>,
@@ -151,7 +229,7 @@
         </div>
       </div>
 
-      <div id="2012" class="img-group">
+      <div id="2012" class="img-group" style="display:none;">
         <img src="images/2012/reflections_02.jpg" class="zoom_slide">
         <div class="caption">
           <i>Reflections 2</i>,
@@ -177,7 +255,7 @@
         </div>
       </div>
 
-      <div id="2015" class="img-group">
+      <div id="2015" class="img-group" style="display:none;">
         <img src="images/2015/dai_fuji_sushi.jpg" class="zoom_slide">
         <div class="caption">
           <i>Dai-Fuji Sushi</i>,
