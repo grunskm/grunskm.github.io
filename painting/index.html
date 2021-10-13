@@ -17,6 +17,40 @@
     <title>Paintings - Matthis Grunsky</title>
     <link rel="stylesheet" href="../style.css">
     <script src="../script.js" type="text/javascript"></script>
+    <script>
+      function toggle_text(){
+        let text = document.getElementById('long-text');
+        let toggle = document.getElementById('toggle');
+
+        if(toggle.innerText ==  'MORE INFO'){
+          console.log("expand");
+          text.style.display = 'block';
+          toggle.innerText = "LESS INFO";
+        }else{
+          console.log("collapse");
+          text.style.display = 'none';
+          toggle.innerText = "MORE INFO";
+        }
+      }
+      function toggle_group(ID){
+        let focus = document.getElementById(ID);
+        let classes = document.getElementsByClassName('img-group');
+        for(let i=0;i<classes.length;i++){
+          classes[i].style.display = 'none';
+        }
+        focus.style.display = 'block';
+      }
+    </script>
+    <style>
+      #toggle:hover{
+        color:chartreuse;
+        cursor:pointer;
+      }
+      .img-toggle:hover{
+        color:chartreuse;
+        cursor:pointer;
+      }
+    </style>
   </head>
   <body id="body">
     <div id="overlay">
@@ -52,62 +86,115 @@
 
 		<div id="slide-container">
       <h3 style="color:salmon;">Paintings</h3>
-			<img src="images/2019_notch/web_uvula.jpg" class="zoom_slide">
-			<div class="caption">
-				<i>Uvula</i>,
-				<span> 2019</span> <br>
-				<span>Acrylic on canvas</span><br>
-				<span>24"x20"</span>
-			</div>
-			<img src="images/2019_notch/web_finger.jpg" class="zoom_slide">
-			<div class="caption">
-				<i>Finger</i>,
-				<span> 2019</span> <br>
-				<span>Acrylic on canvas</span><br>
-				<span>60"x60"</span>
-			</div>
-			<img src="images/2015/dai_fuji_sushi.jpg" class="zoom_slide">
-			<div class="caption">
-				<i>Dai-Fuji Sushi</i>,
-				<span> 2015</span> <br>
-				<span>Acrylic on canvas</span><br>
-				<span>30"x34"</span>
-			</div>
-			<img src="images/2015/nandos_flame_grilled_chicken.jpg" class="zoom_slide">
-			<div class="caption">
-				<i>Nandos Flame-Grilled Chicken</i>,
-				<span> 2015</span> <br>
-				<span>Acrylic on canvas</span><br>
-				<span>72"x86"</span>
-			</div>
-			<img src="images/2012/reflections_02.jpg" class="zoom_slide">
-			<div class="caption">
-				<i>Reflections 2</i>,
-				<span> 2012</span> <br>
-				<span>Acrylic on canvas</span><br>
-				<span>60"x96"</span>
-			</div>
-			<img src="images/2012/reflections_01.jpg" class="zoom_slide">
-			<div class="caption">
-				<i>Reflections 1</i>,
-				<span> 2012</span> <br>
-				<span>Acrylic on canvas</span><br>
-				<span>60"x96"</span>
-			</div>
-			<img src="images/2012/6105_01.jpg" class="zoom_slide">
-			<div class="caption">
-				<i>6105 (1/3)</i>,
-				<span> 2012</span> <br>
-				<span>Plaster, tissue paper, ink</span><br>
-				<span>60"x60"</span>
-			</div>
-			<img src="images/2010/block1.jpg" class="zoom_slide">
-			<div class="caption">
-				<i>Block 1</i>,
-				<span> 2010</span> <br>
-				<span>Oil on canvas</span><br>
-				<span>60"x60"</span>
-			</div>
-		</div>
+
+      <span class="img-toggle" onclick="toggle_group('2010')">2010</span>
+      <span class="img-toggle" onclick="toggle_group('2012')">2012</span>
+      <span class="img-toggle" onclick="toggle_group('2015')">2015</span>
+      <span class="img-toggle" onclick="toggle_group('2019')">2019</span>
+      <span class="img-toggle" onclick="toggle_group('2021')">2021</span>
+      <span id="toggle" onclick="toggle_text()">MORE INFO</span><br><br>
+
+  		<div  class="blog-post" id="long-text" style="display:none;">
+  <!--  -->
+  			<img style="width:50%;" alt="" src="images/2019_notch/web_uvula.jpg">
+        <div class="caption">
+        <b>Gum Paintings</b><br><br>
+        Originally based on found patterns of chewing gum stuck on city sidewalks,
+        the composition of recent <i>gum paintings</i> has been determined using
+        computer programs. I return to this series periodically to investigate
+        my relationship to 'randomized' compositional structures.<br><br>
+        <b>Purchasing</b><br><br>
+        Certain works are available for purchase.
+        <br><br>
+        Unavailable pieces are labelled with a red dot <img width="10px"src="../assets/redCircle.png"><br><br>
+        Please inquire at <code>grunskm</code>&#64;<span>gmail</span>&#46;com for more info.
+
+  		  </div>
+      </div>
+
+      <div id="2021" class="img-group">
+        <img src="../stereoscopic/depth10.jpg" class="zoom_slide">
+        <div class="caption">
+          <i>depth(10)</i>,
+          <span> 2021</span> <br>
+          <span>Acrylic on canvas, stereoscopic diptych</span><br>
+          <span>48"x48" (x2)</span>
+        </div>
+      </div>
+
+      <div id="2019" class="img-group">
+        <img src="images/2019_notch/web_uvula.jpg" class="zoom_slide">
+        <div class="caption">
+          <i>Uvula</i>,
+          <span> 2019</span> <br>
+          <span>Acrylic on canvas</span><br>
+          <span>24"x20"</span>
+          <img width="10px"src="../assets/redCircle.png">
+        </div>
+        <img src="images/2019_notch/web_finger.jpg" class="zoom_slide">
+        <div class="caption">
+          <i>Finger</i>,
+          <span> 2019</span> <br>
+          <span>Acrylic on canvas</span><br>
+          <span>60"x60"</span>
+        </div>
+      </div>
+
+      <div id="2010" class="img-group">
+        <img src="images/2010/block1.jpg" class="zoom_slide">
+        <div class="caption">
+          <i>Block 1</i>,
+          <span> 2010</span> <br>
+          <span>Oil on canvas</span><br>
+          <span>60"x60"</span>
+          <img width="10px"src="../assets/redCircle.png">
+        </div>
+      </div>
+
+      <div id="2012" class="img-group">
+        <img src="images/2012/reflections_02.jpg" class="zoom_slide">
+        <div class="caption">
+          <i>Reflections 2</i>,
+          <span> 2012</span> <br>
+          <span>Acrylic on canvas</span><br>
+          <span>60"x96"</span>
+          <img width="10px"src="../assets/redCircle.png">
+        </div>
+        <img src="images/2012/reflections_01.jpg" class="zoom_slide">
+        <div class="caption">
+          <i>Reflections 1</i>,
+          <span> 2012</span> <br>
+          <span>Acrylic on canvas</span><br>
+          <span>60"x96"</span>
+          <img width="10px"src="../assets/redCircle.png">
+        </div>
+        <img src="images/2012/6105_01.jpg" class="zoom_slide">
+        <div class="caption">
+          <i>6105 (1/3)</i>,
+          <span> 2012</span> <br>
+          <span>Plaster, tissue paper, ink</span><br>
+          <span>60"x60"</span>
+        </div>
+      </div>
+
+      <div id="2015" class="img-group">
+        <img src="images/2015/dai_fuji_sushi.jpg" class="zoom_slide">
+        <div class="caption">
+          <i>Dai-Fuji Sushi</i>,
+          <span> 2015</span> <br>
+          <span>Acrylic on canvas</span><br>
+          <span>30"x34"</span>
+        </div>
+        <img src="images/2015/nandos_flame_grilled_chicken.jpg" class="zoom_slide">
+        <div class="caption">
+          <i>Nandos Flame-Grilled Chicken</i>,
+          <span> 2015</span> <br>
+          <span>Acrylic on canvas</span><br>
+          <span>72"x86"</span>
+          <img width="10px"src="../assets/redCircle.png">
+        </div>
+      </div>
+
+
   </div>
 	</body>
