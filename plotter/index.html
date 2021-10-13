@@ -26,17 +26,27 @@
           console.log("expand");
           text.style.display = 'block';
           toggle.innerText = "LESS INFO";
-					text.style.padding = "1%";
         }else{
           console.log("collapse");
           text.style.display = 'none';
           toggle.innerText = "MORE INFO";
-					text.style.padding = "1%";
         }
+      }
+      function toggle_group(ID){
+        let focus = document.getElementById(ID);
+        let classes = document.getElementsByClassName('img-group');
+        for(let i=0;i<classes.length;i++){
+          classes[i].style.display = 'none';
+        }
+        focus.style.display = 'block';
       }
     </script>
     <style>
       #toggle:hover{
+        color:chartreuse;
+        cursor:pointer;
+      }
+      .img-toggle:hover{
         color:chartreuse;
         cursor:pointer;
       }
@@ -71,126 +81,145 @@
 
 
 		<div>
-			
+
 		</div>
 
 		<div id="slide-container">
 
-		<h3 style="color:salmon;">Plotter Drawings</h3>
-			
-			<div class="blog-post" style="padding:1%; display:inline-block; width:50%; max-height:50%;">
-				<span id="toggle" onclick="toggle_text()">MORE INFO</span>	
-				<p id="long-text" style="display:none;">
-
-						I recently designed, built, and programmed my own drawing machine in order 
-						to get closer to the materiality of computation.
-						Here are some photos (and a video) of the plotter in action!<br><br>
-						<img style=" width:100%; min-with:200px; margin:auto;"  alt="" src="assets/grass_plot2.jpg">
-						<img style=" width:100%; min-with:200px; margin:auto;" alt="" src="assets/arm_detail.jpg">
-						<video width="100%" controls>
-							<source src="assets/loopy_plot.mp4" type="video/mp4">
-							Your browser does not support the video tag.
-						</video>
-					</p>
-         
-			</div>
+		<span style="color:salmon;">Plotter Drawings</span><br><br>
 
 
-        
-        <img src="assets/strip.JPG" class="zoom_slide" alt="">
-        <div class="caption">
-        <h3>narrow_strip</h3>
-        <p>
-        Plotter Drawing<br>
-        Ink on Stonehenge paper<br>
-        16.5"x16.5", 2021
-        </p>
-        </div>
+    <span class="img-toggle" onclick="toggle_group('grass')">GRASS</span>
+    <span class="img-toggle" onclick="toggle_group('squiggles')">SQUIGGLES</span>
+    <span class="img-toggle" onclick="toggle_group('dashes')">DASHES</span>
+    <span id="toggle" onclick="toggle_text()">MORE INFO</span><br><br>
 
-        <img src="assets/large_scribble.JPG" class="zoom_slide" alt="">
-        <div class="caption">
-        <h3>large_gesture</h3>
-        <p>
-        Plotter Drawing<br>
-        Ink on Stonehenge paper<br>
-        16.5"x16.5", 2021
-        </p>
-        </div>
+		<div  class="blog-post" id="long-text" style="display:none;">
+<!--  -->
+			<img style="width:50%;" alt="" src="assets/grass_plot2.jpg">
+      <div class="caption">
+      <b>My Plotter</b><br><br>
+      I recently designed, built, and programmed my own drawing machine in order
+      to get closer to the materiality of computation. It may not be as efficient
+      as some of the commercial options out there, but I really enjoy using it!
+      <br><br><br>
+      <b>Purchasing</b><br><br>
+      Although I don't list prices on this site, the drawings here are available for purchase.
+      Each drawing is a unique piece and is not part of an edition in the conventional sense.
+      <br><br>
+      Unavailable pieces are labelled with a red dot <img width="10px"src="../assets/redCircle.png"><br><br>
+      Please inquire at <code>grunskm</code>&#64;<span>gmail</span>&#46;com for more info.
 
-        <img src="assets/multi_scribble.JPG" class="zoom_slide" alt="">
-        <div class="caption">
-        <h3>repeated_gesture</h3>
-        <p>
-        Plotter Drawing<br>
-        Ink on Stonehenge paper<br>
-        16.5"x16.5", 2021
-        </p>
-        </div>
-        <img src="assets/worm_grid.JPG" class="zoom_slide" alt="">
-        <div class="caption">
-        <h3>worm_grid</h3>
-        <p>
-        Plotter Drawing<br>
-        Ink on Stonehenge paper<br>
-        16.5"x16.5", 2021
-        </p>
-        </div>
-        <img src="assets/dash_rect.JPG" class="zoom_slide" alt="">
-        <div class="caption">
-        <h3>dashed_rect</h3>
-        <p>
-        Plotter Drawing<br>
-        Ink on Stonehenge paper<br>
-        16.5"x16.5", 2021
-        </p>
-        </div>
-        <img src="assets/mackerel.JPG" class="zoom_slide" alt="">
-        <div class="caption">
-        <h3>mackerel</h3>
-        <p>
-        Plotter Drawing<br>
-        Ink on Stonehenge paper<br>
-        16.5"x16.5", 2021
-        </p>
-        </div>
-        <img src="assets/scribble_matrix.JPG" class="zoom_slide" alt="">
-        <div class="caption">
-        <h3>scribble_matrix</h3>
-        <p>
-        Plotter Drawing<br>
-        Ink on Stonehenge paper<br>
-        16.5"x16.5", 2021
-        </p>
-        </div>
-        <img src="assets/scribble_matrix_red.JPG" class="zoom_slide" alt="">
-        <div class="caption">
-        <h3>sign_matrix_red</h3>
-        <p>
-        Plotter Drawing<br>
-        Ink on Stonehenge paper<br>
-        16.5"x16.5", 2021
-        </p>
-        </div>
-        <img src="assets/crop_circles.JPG" class="zoom_slide" alt="">
-        <div class="caption">
-        <h3>two_circles</h3>
-        <p>
-        Plotter Drawing<br>
-        Ink on Stonehenge paper<br>
-        16.5"x16.5", 2021
-        </p>
-        </div>
-        <img src="assets/perscription.JPG" class="zoom_slide" alt="">
-        <div class="caption">
-        <h3>written_feedback</h3>
-        <p>
-        Plotter Drawing<br>
-        Ink on Stonehenge paper<br>
-        16.5"x16.5", 2021
-        </p>
-        </div>
+      <br><br>
+      </div>
+			<!-- <img class="zoom_slide" alt="" src="assets/arm_detail.jpg">
+			<video class="zoom_slide" controls>
+				<source src="assets/loopy_plot.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video> -->
 
 		</div>
+
+    <div id="grass" class="img-group">
+      <img src="assets/strip.JPG" class="zoom_slide" alt="">
+      <div class="caption">
+      <h3>narrow_strip</h3>
+      <p>
+      Plotter Drawing<br>
+      Ink on Stonehenge paper<br>
+      16.5"x16.5", 2021
+      </p>
+      </div>
+      <img src="assets/crop_circles.JPG" class="zoom_slide" alt="">
+      <div class="caption">
+      <h3>two_circles</h3>
+      <p>
+      Plotter Drawing<br>
+      Ink on Stonehenge paper<br>
+      16.5"x16.5", 2021
+      </p><img width="10px"src="../assets/redCircle.png">
+      </div>
+    </div>
+
+    <div id="squiggles" class="img-group">
+      <img src="assets/perscription.JPG" class="zoom_slide" alt="">
+      <div class="caption">
+      <h3>written_feedback</h3>
+      <p>
+      Plotter Drawing<br>
+      Ink on Stonehenge paper<br>
+      16.5"x16.5", 2021
+      </p>
+      </div>
+      <img src="assets/scribble_matrix.JPG" class="zoom_slide" alt="">
+      <div class="caption">
+      <h3>scribble_matrix</h3>
+      <p>
+      Plotter Drawing<br>
+      Ink on Stonehenge paper<br>
+      16.5"x16.5", 2021
+      </p>
+      </div>
+      <img src="assets/scribble_matrix_red.JPG" class="zoom_slide" alt="">
+      <div class="caption">
+      <h3>sign_matrix_red</h3>
+      <p>
+      Plotter Drawing<br>
+      Ink on Stonehenge paper<br>
+      16.5"x16.5", 2021
+      </p>
+      </div>
+      <img src="assets/large_scribble.JPG" class="zoom_slide" alt="">
+      <div class="caption">
+      <h3>large_gesture</h3>
+      <p>
+      Plotter Drawing<br>
+      Ink on Stonehenge paper<br>
+      16.5"x16.5", 2021
+      </p>
+      </div>
+      <img src="assets/multi_scribble.JPG" class="zoom_slide" alt="">
+      <div class="caption">
+      <h3>repeated_gesture</h3>
+      <p>
+      Plotter Drawing<br>
+      Ink on Stonehenge paper<br>
+      16.5"x16.5", 2021
+      </p>
+      </div>
+    </div>
+
+    <div id="dashes" class="img-group">
+      <img src="assets/dash_rect.JPG" class="zoom_slide" alt="">
+      <div class="caption">
+      <h3>dashed_rect</h3>
+      <p>
+      Plotter Drawing<br>
+      Ink on Stonehenge paper<br>
+      16.5"x16.5", 2021
+      </p>
+      </div>
+      <img src="assets/mackerel.JPG" class="zoom_slide" alt="">
+      <div class="caption">
+      <h3>mackerel</h3>
+      <p>
+      Plotter Drawing<br>
+      Ink on Stonehenge paper<br>
+      16.5"x16.5", 2021
+      </p>
+      </div>
+    </div>
+		</div>
   </div>
+  <!-- <img src="assets/worm_grid.JPG" class="zoom_slide" alt="">
+  <div class="caption">
+  <h3>worm_grid</h3>
+  <p>
+  Plotter Drawing<br>
+  Ink on Stonehenge paper<br>
+  16.5"x16.5", 2021
+  </p>
+  </div> -->
+
   </body>
 </html>
