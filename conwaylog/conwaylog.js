@@ -3,16 +3,22 @@ let space;
 let dark;
 let off;
 let canvas;
+let crackle;
+let sound = false;
 
 let pattern = [];
+
+function preload(){
+	crackle = loadSound("snip.mp3");
+}
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   frameRate(15);
   noStroke();
   
-	dark = color(100,20,30);
-	light = color(255,130,10);
+	dark = color(30,0,0);
+	light = color(255,160,10);
 	resize();
 
   for(e=0;e<divs;e++){
@@ -25,11 +31,23 @@ function setup() {
       pattern[e].push(tempV);
     }
   }
-  drawGrid();
+ // drawGrid();
+}
+
+function mousePressed(){
+	if(sound==false){
+		sound = true;
+	}else{
+		sound = false;
+	}
 }
 
 function draw(){
-  
+	if(random()<0.05 && sound==true){
+		crackle.play();
+	}
+  dark = color(noise(frameCount*0.25)*40,0,0);
+	background(dark);
   for(e=1;e<divs-1;e++){
     for(i=1;i<divs-1;i++){
       let Nsum = sumAdj(i,e);
@@ -46,11 +64,21 @@ function draw(){
       }else if(pattern[e][i] >0.5){
         pattern[e][i] = 0;
       }
+
+      let x = i*space+off;
+      let y = e*space;
       
+      if(pattern[i][e]<0.5){
+        fill(dark);
+      }else{
+        fill(light);
+      }
+      
+      rect(x,y,space+1,space+1);
     }
   }
   
-  drawGrid();
+ // drawGrid();
 }
 
 function drawGrid(){
