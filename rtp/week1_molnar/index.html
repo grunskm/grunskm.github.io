@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SFPC: RTP Week 1</title>
+
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
@@ -56,13 +59,13 @@
       This piece was a really interesting challenge to reproduce.
       The basic structure is a 12x12 grid with two square bracket shapes that are rotated/translated in what appears to be a random pattern and cropped by the underlying grid.
       <br><br>
-      There are a few complications added to this idea, starting with a rotational symmetry around the central point of the canvas.
-      The rotation of each set of brackets is also puzzling.
-      They are mostly all within a narrow range that creates a very specific central negative shape, but occasionally there are outliers.
-      There are also a few instances where the shape has inverted chirality.
+      There are a few complications added to this idea, including the rotational symmetry around the central point of the canvas, and
+      the independent rotation of each set of brackets.
+      The amount of rotation for almost all brackets is within a narrow range that creates a specific negative shape between each pair, but occasionally there are outliers.
+      There are also a few instances where the shape is flipped so that it points in the opposite direction.
       <br><br>
-      Codewise, the most interesting challenge for me was cropping the shape of the brackets according to their bounding boxes.
-      I ended up writing a line function that checked for collision over its span while pushing vertices into a polyshape.
+      In the code the most interesting challenge for me was cropping the shape of the brackets according to the grid.
+      I ended up writing a function that checks for collision over the span between points of each bracket, pushing vertices into a polyshape as it goes.
       The other major challenge was fiddling with the rotation parameters to simulate the specific patterns found in this piece.
       There are so many possibilities with this idea, it was hard to narrow down to something that had a real resemblance to the original.
 
