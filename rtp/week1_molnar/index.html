@@ -6,17 +6,21 @@
     <title>SFPC: RTP Week 1</title>
 
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+      *{
+        box-sizing:border-box;
+      }
 
       html, body{
           padding:0px;
           margin:0px;
           font-family: 'Roboto', sans-serif;
+          font-weight: 300;
           font-size:1.1em;
         }
       .container{
         display:block;
-        box-sizing:border-box;
         width:60%;
         min-width:900px;
         min-height:900px;
@@ -57,21 +61,33 @@
 
     <p>
       This piece was a really interesting challenge to reproduce.
-      The basic structure is a 12x12 grid with two square bracket shapes that are rotated/translated in what appears to be a random pattern and cropped by the underlying grid.
+      The basic structure is a 12x12 grid with two square bracket
+      shapes that are rotated/translated in what appears to be a
+      random pattern and cropped by the underlying grid.
       <br><br>
-      There are a few complications added to this idea, including the rotational symmetry around the central point of the canvas, and
+      There are a few complications added to this idea, including the
+      rotational symmetry around the central point of the canvas, and
       the independent rotation of each set of brackets.
-      The amount of rotation for almost all brackets is within a narrow range that creates a specific negative shape between each pair, but occasionally there are outliers.
-      There are also a few instances where the shape is flipped so that it points in the opposite direction (I chose to ignore this).
+      The amount of rotation for almost all brackets is within a narrow
+      range that creates a specific negative shape between each pair.
+      Occasionally there are outliers, but I had trouble finding the
+      pattern that they follow.There are also a few instances where
+      the shape is flipped so that it points in the opposite direction
+      (I chose to ignore this).
       <br><br>
-      In the code, the most interesting challenge for me was cropping the shape of the brackets according to the grid.
-      I ended up writing a function that checks for collision over the span between points of each bracket, pushing vertices into a polyshape as it goes.
-      The other major challenge was fiddling with the rotation parameters to simulate the specific patterns found in this piece.
-      There are so many possibilities with this idea, it was hard to narrow down to something that had a real resemblance to the original.
+      In the code, the most interesting challenge for me was cropping the
+      shape of the brackets according to the grid.
+      I ended up writing a function that checks for collision over the span
+      between the points of each bracket, pushing vertices into a polyshape as it goes.
+      The other major challenge was fiddling with the rotation parameters of each set of brackets
+      to get closer to the specific shapes in the work.
+      There are so many possibile arrangements of this pattern it was difficult to narrow down
+      an image that had a real resemblance to the original.
 
     </p>
-
-    <a href="repro.html" target="new">** live sketch ** </a><span>(click to save)</span><br><br>
-    <a href="https://editor.p5js.org/PTTScreen/sketches/lX_yt5UD8" target="new">** code **</a>
+    <div style="text-align:center;">
+    <a style="display:inline-block; margin-top:10px; padding:0.5em;border:dashed 0.5px;"  href="repro.html" target="new">live sketch</a> <br>
+    <a style="display:inline-block; margin-top:10px; padding:0.5em;border:dashed 0.5px;" href="https://editor.p5js.org/PTTScreen/sketches/lX_yt5UD8" target="new"> code</a>
+  </div>
   </body>
 </html>
