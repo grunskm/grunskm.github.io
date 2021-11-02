@@ -62,9 +62,9 @@
       There are a few complications added to this idea, including the rotational symmetry around the central point of the canvas, and
       the independent rotation of each set of brackets.
       The amount of rotation for almost all brackets is within a narrow range that creates a specific negative shape between each pair, but occasionally there are outliers.
-      There are also a few instances where the shape is flipped so that it points in the opposite direction.
+      There are also a few instances where the shape is flipped so that it points in the opposite direction (I chose to ignore this).
       <br><br>
-      In the code the most interesting challenge for me was cropping the shape of the brackets according to the grid.
+      In the code, the most interesting challenge for me was cropping the shape of the brackets according to the grid.
       I ended up writing a function that checks for collision over the span between points of each bracket, pushing vertices into a polyshape as it goes.
       The other major challenge was fiddling with the rotation parameters to simulate the specific patterns found in this piece.
       There are so many possibilities with this idea, it was hard to narrow down to something that had a real resemblance to the original.
