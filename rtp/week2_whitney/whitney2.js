@@ -18,7 +18,7 @@ function setup() {
 }
 
 function draw(){
-  background(20,180);
+  background(5,180);
   for(t=0;t<rings;t++){
     ring[t].show();
   }
