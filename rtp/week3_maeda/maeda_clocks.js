@@ -69,8 +69,8 @@ function clock1(){
   let size = height*0.1;
   let scale = 0.005;
 
-  view(width*0.33,height/2,-30);
-  view(width*0.66,height/2, 30);
+  view(width*0.3,height/2,-30);
+  view(width*0.7,height/2, 30);
 
 
   function view(X,Y,OFF){
