@@ -21,15 +21,13 @@ function draw(){
   if(frameCount%30==0){
     updateTime();
   }
-
-  background(100);
   clock[1]();
 }
 
 function clock0(){
   let size = height*0.1;
   let vert = height*1.85;
-
+  background(20);
   translate(width/2,-height);
   push();
   rotate(sin(frameCount*0.025)*PI*0.05);
@@ -69,6 +67,7 @@ function clock1(){
   let size = height*0.1;
   let scale = 0.005;
 
+	background(100);
   view(width*0.3,height/2,-30);
   view(width*0.7,height/2, 30);
 
@@ -88,7 +87,7 @@ function clock1(){
       rotate(map(time.getHours(),0,24,0,TAU));
       fill(0);
       if(hour.length==1){
-        charRect(0,-s*0.6,char[hour[0]],s);
+        charRect(-s/2,-s*0.6,char[hour[0]],s);
       }else{
         charRect(-s,-s*0.6,char[hour[0]],s);
         charRect(0,-s*0.6,char[hour[1]],s);
@@ -131,7 +130,7 @@ function clock1(){
 
 function updateTime(){
   time = new Date();
-  hour = Array.from(String(time.getHours()), Number);
+  hour = Array.from(String(time.getHours()%12), Number);
   min = Array.from(String(time.getMinutes()), Number);
   sec = Array.from(String(time.getSeconds()), Number);
 }
