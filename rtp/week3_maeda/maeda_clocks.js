@@ -1,13 +1,14 @@
 
 let clock = [clock0, clock1];
-let char;
+let fig;
 let time;
 let hour;
 let min;
 let sec;
+let currentClock = 0;
 
 function preload(){
-  char = loadJSON("chars.json");
+  fig = loadJSON("chars.json");
 }
 
 function setup(){
@@ -21,44 +22,53 @@ function draw(){
   if(frameCount%30==0){
     updateTime();
   }
-  clock[1]();
+  clock[currentClock]();
 }
 
 function clock0(){
   let size = height*0.1;
   let vert = height*1.85;
+	let frq = 0.04;
+	let amp = 0.09;
   background(20);
-  translate(width/2,-height);
+
   push();
-  rotate(sin(frameCount*0.025)*PI*0.05);
+	translate(width*0.4,-height);
+
+	if(sin(frameCount*frq)>0){
+  	rotate(sin(frameCount*frq)*PI*amp);
+	}
 
   if(hour.length==1){
-    charDots(-1*size-size*0.2,vert,char[hour[0]],size);
+    charDots(-1*size-size*0.2,vert,fig[hour[0]],size);
   }else{
-    charDots(-2*size-size*0.2,vert,char[hour[0]],size);
-    charDots(-1*size-size*0.2,vert,char[hour[1]],size);
+    charDots(-2*size-size*0.2,vert,fig[hour[0]],size);
+    charDots(-1*size-size*0.2,vert,fig[hour[1]],size);
   }
   if(frameCount%120<60){
     point(-size*0.1,vert+size*0.2);
     point(-size*0.1,vert+size*0.8);
   }
   if(min.length==2){
-    charDots(0*size+size*0.2,vert,char[min[0]],size);
-    charDots(1*size+size*0.2,vert,char[min[1]],size);
+    charDots(0*size+size*0.2,vert,fig[min[0]],size);
+    charDots(1*size+size*0.2,vert,fig[min[1]],size);
   }else{
-    charDots(0*size+size*0.2,vert,char[0],size);
-    charDots(1*size+size*0.2,vert,char[min[0]],size);
+    charDots(0*size+size*0.2,vert,fig[0],size);
+    charDots(1*size+size*0.2,vert,fig[min[0]],size);
   }
 
   pop();
   push();
-  rotate(-1*sin(frameCount*0.025)*PI*0.05);
+  translate(width*0.6,-height);
+	if(sin(frameCount*frq)<0){
+  	rotate(sin(frameCount*frq)*PI*amp);
+	}
   if(time.getHours()>12){
-    charDots(-size/2,vert,char[11],size);//P
-    charDots(size/2,vert,char[10],size);//M
+    charDots(-size/2,vert,fig[11],size);//P
+    charDots(size/2,vert,fig[10],size);//M
   }else{
-    charDots(-size/2,vert,char[12],size);//A
-    charDots(size/2,vert,char[10],size);//M
+    charDots(-size/2,vert,fig[12],size);//A
+    charDots(size/2,vert,fig[10],size);//M
   }
   pop();
 }
@@ -87,10 +97,10 @@ function clock1(){
       rotate(map(time.getHours(),0,24,0,TAU));
       fill(0);
       if(hour.length==1){
-        charRect(-s/2,-s*0.6,char[hour[0]],s);
+        charRect(-s/2,-s*0.6,fig[hour[0]],s);
       }else{
-        charRect(-s,-s*0.6,char[hour[0]],s);
-        charRect(0,-s*0.6,char[hour[1]],s);
+        charRect(-s,-s*0.6,fig[hour[0]],s);
+        charRect(0,-s*0.6,fig[hour[1]],s);
       }
     pop();
     push();
@@ -101,11 +111,11 @@ function clock1(){
       rotate(map(time.getMinutes(),0,60,0,TAU));
       fill(255);
       if(min.length==2){
-        charRect(-s,-s*0.6,char[min[0]],s);
-        charRect(0,-s*0.6,char[min[1]],s);
+        charRect(-s,-s*0.6,fig[min[0]],s);
+        charRect(0,-s*0.6,fig[min[1]],s);
       }else{
-        charRect(-s,-s*0.6,char[0],s);
-        charRect(0,-s*0.6,char[min[0]],s);
+        charRect(-s,-s*0.6,fig[0],s);
+        charRect(0,-s*0.6,fig[min[0]],s);
       }
     pop();
     push();
@@ -117,11 +127,11 @@ function clock1(){
       fill(255,0,0);
       point(0,0);
       if(sec.length==2){
-        charRect(-s,-s*0.6,char[sec[0]],s);
-        charRect(0,-s*0.6,char[sec[1]],s);
+        charRect(-s,-s*0.6,fig[sec[0]],s);
+        charRect(0,-s*0.6,fig[sec[1]],s);
       }else{
-        charRect(-s,-s*0.6,char[0],s);
-        charRect(0,-s*0.6,char[sec[0]],s);
+        charRect(-s,-s*0.6,fig[0],s);
+        charRect(0,-s*0.6,fig[sec[0]],s);
       }
 
     pop();
@@ -167,3 +177,15 @@ function charRect(X,Y,D,S){
   }
 
 }
+
+function mousePressed(){
+	currentClock++;
+
+	if(currentClock>=clock.length){
+		currentClock=0;
+	}
+
+}
+
+
+
