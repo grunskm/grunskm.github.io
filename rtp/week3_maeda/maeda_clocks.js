@@ -1,5 +1,5 @@
 
-let clock = [clock0, clock1];
+let clock = [clock0, clock1, clock2];
 let fig;
 let time;
 let hour;
@@ -12,10 +12,11 @@ function preload(){
 }
 
 function setup(){
-  createCanvas(windowHeight*1.4,windowHeight*0.8);
+  createCanvas(windowHeight*1.5,windowHeight*0.8);
   updateTime();
   background(100);
   stroke(200);
+	noCursor();
 }
 
 function draw(){
@@ -138,6 +139,121 @@ function clock1(){
   }
 }
 
+function clock2(){
+
+	let scale = 0.005;
+// 	if(mouseX>0){
+//   	scale = map(mouseX,0,width,0,0.02);
+// 	}
+
+	background(0);
+  view(width*0.3,height/2,-30);
+  view(width*0.7,height/2, 30);
+
+
+  function view(X,Y,OFF){
+		
+		push();
+		translate(X,Y);
+		//ellipse(0,0,40,40);
+
+		let r = height*0.45;
+		let angStep = TAU/30;
+	  let z;
+		let s;
+		let off;
+		let orbitR = frameCount*0.0125;
+
+		let chars = [];
+
+		if(min.length==1){
+			chars.push(fig[min[0]]);
+			chars.push(fig[0]);
+		}else{
+			chars.push(fig[min[1]]);
+			chars.push(fig[min[0]]);
+		}
+
+		if(hour.length==1){
+			chars.push(fig[hour[0]]);
+		}else{
+			chars.push(fig[hour[0]]);
+			chars.push(fig[hour[1]]);
+		}
+
+		if(frameCount%120<60){
+			for(t=1;t<3;t++){
+				let inset = orbitR+(TAU*0.335)*(TAU/5);
+				let a1 = inset;
+				let a2 = inset+angStep;
+
+				z = 50+(t*100);
+				s = 1/(1+z*scale);
+				off = OFF*s;
+
+				let x1 = off+sin(a1)*r*s;
+				let y1 = cos(a1)*r*s;
+				let x2 = off+sin(a2)*r*s;
+				let y2 = cos(a2)*r*s;
+
+				z = 100+(t*100);
+				s = 1/(1+z*scale);
+				off = OFF*s;
+
+				let x3 = off+sin(a2)*r*s;
+				let y3 = cos(a2)*r*s;
+				let x4 = off+sin(a1)*r*s;
+				let y4 = cos(a1)*r*s;
+
+				quad(x1,y1,x2,y2,x3,y3,x4,y4);
+			}
+		}
+
+		for(w=0;w<3;w++){
+			let data = chars[w];
+
+			let inset = orbitR+w*(TAU/5);
+			if(w==2){
+				inset = orbitR+(w+0.5)*(TAU/5);
+			}
+
+			for(q=0;q<5;q++){
+				for(a=0;a<7;a++){
+
+					if(data[(4-q)*7+a]>0){
+
+						let a1 = inset+angStep*q;
+						let a2 = inset+angStep*(q+1);
+
+						z = map(a,0,7,100,400);
+						s = 1/(1+z*scale);
+						off = OFF*s;
+
+						let x1 = off+sin(a1)*r*s;
+						let y1 = cos(a1)*r*s;
+						let x2 = off+sin(a2)*r*s;
+						let y2 = cos(a2)*r*s;
+
+						z = map(a+1,0,7,100,400);
+						s = 1/(1+z*scale);
+						off = OFF*s;
+
+						let x3 = off+sin(a2)*r*s;
+						let y3 = cos(a2)*r*s;
+						let x4 = off+sin(a1)*r*s;
+						let y4 = cos(a1)*r*s;
+
+						stroke(255);
+
+						quad(x1,y1,x2,y2,x3,y3,x4,y4);
+					}
+				}
+			}
+		}
+		pop();
+  }
+}
+
 function updateTime(){
   time = new Date();
   hour = Array.from(String(time.getHours()%12), Number);
@@ -177,7 +293,6 @@ function charRect(X,Y,D,S){
   }
 
 }
-
 function mousePressed(){
 	currentClock++;
 
