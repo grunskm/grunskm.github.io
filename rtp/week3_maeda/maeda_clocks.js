@@ -259,6 +259,11 @@ function updateTime(){
   hour = Array.from(String(time.getHours()%12), Number);
   min = Array.from(String(time.getMinutes()), Number);
   sec = Array.from(String(time.getSeconds()), Number);
+
+	if(time.getHours()%12==0){
+		hour = [1,2];
+	}
+
 }
 function charDots(X,Y,D,S){
   let data = D;
