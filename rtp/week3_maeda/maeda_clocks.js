@@ -336,10 +336,11 @@ function cubeClock(){
 
 		if(hour.length==1){
 			for(let v=0;v<35;v++){
-				this.hourFace.push(fig[hour[0]][v]);
+				this.hourFace.push(fig[0][v]);
+				
 			}
 			for(let v=0;v<35;v++){
-				this.hourFace.push(fig[0][v]);
+				this.hourFace.push(fig[hour[0]][v]);
 			}
 		}else{
 			for(let v=0;v<35;v++){
@@ -354,7 +355,7 @@ function cubeClock(){
 	function gridPlane(){
 		this.rows = 10;
 		this.cols = 7;
-		this.rectSize = 200;
+		this.rectSize = height*0.2;
 		this.scale = 0.005;
 		this.data;
 
