@@ -1,63 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SFPC: RTP Week 2</title>
-
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
-
-      *{
-        box-sizing:border-box;
+    *{
+      margin:0px;
+      padding:0px;
+      box-sizing:border-box;
+    }
+    html,body{
+      width:100%;
+      height:100%;
+      background:rgb(40,40,40);
+    }
+      canvas{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
       }
-
-      html, body{
-          padding:0px;
-          margin:0px;
-          font-family: 'Roboto', sans-serif;
-          font-weight: 300;
-          font-size:1.1em;
-        }
-      .container{
-        display:block;
-        width:60%;
-        min-width:900px;
-        min-height:900px;
-        margin:auto;
-        padding:5%;
-        background: rgb(20,20,20);
-        color: rgb(240,240,240);
-      }
-      a{
-        text-decoration:none;
-        color: rgb(240,240,240);
-      }
-      a:hover{
-        color:rgb(256,234,90);
-      }
-      /*  DESKTOP  */
-      @media only screen and (max-width: 900px){
-        .container{
-          width:100%;
-          min-width:0px;
-        }
-      }
-
     </style>
   </head>
-  <body style="background:rgb(40,40,40);">
-    <div class="container">
-    <h2>
-      Week 2 - John Whitney<br>
-    </h2>
-    <p>
-      description
+  <body>
 
-    </p>
-    <div style="text-align:center;">
-    <a style="display:inline-block; margin-top:10px; padding:0.5em;border:dashed 0.5px;"  href="repro.html" target="new">live sketch</a> <br>
-    <a style="display:inline-block; margin-top:10px; padding:0.5em;border:dashed 0.5px;" href="https://editor.p5js.org/PTTScreen/sketches/lX_yt5UD8" target="new"> code</a>
-  </div>
+      <script src="whitney2.js"></script>
+
   </body>
 </html>
