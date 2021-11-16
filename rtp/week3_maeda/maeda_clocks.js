@@ -18,6 +18,8 @@ function setup(){
   updateTime();
   background(100);
   stroke(200);
+
+	cube = new cubeClock();
 	//noCursor();
 }
 
@@ -154,7 +156,7 @@ function clock2(){
 
 
   function view(X,Y,OFF){
-		
+
 		push();
 		translate(X,Y);
 		//ellipse(0,0,40,40);
@@ -179,8 +181,8 @@ function clock2(){
 		if(hour.length==1){
 			chars.push(fig[hour[0]]);
 		}else{
-			chars.push(fig[hour[0]]);
 			chars.push(fig[hour[1]]);
+			chars.push(fig[hour[0]]);
 		}
 
 		if(frameCount%120<60){
@@ -210,12 +212,13 @@ function clock2(){
 				quad(x1,y1,x2,y2,x3,y3,x4,y4);
 			}
 		}
+		let len = 2+hour.length;
 
-		for(w=0;w<3;w++){
+		for(w=0;w<len;w++){
 			let data = chars[w];
 
 			let inset = orbitR+w*(TAU/5);
-			if(w==2){
+			if(w>=2){
 				inset = orbitR+(w+0.5)*(TAU/5);
 			}
 
@@ -256,81 +259,198 @@ function clock2(){
   }
 }
 
-// function clock3(){
-// 
-// 	let scale = 0.005;
-// 
-// 	background(0);
-//   view(width*0.3,height/2,-30);
-//   view(width*0.7,height/2, 30);
-// 
-//   function view(X,Y,OFF){
-// 		let 
-// 
-// 		setTime();
-// 		push();
-// 		translate(X,Y);
-// 
-// 		
-// 
-// 
-// 		pop();
-// 
-// 		function setTime(){
-// 		let secFace = [];
-// 		let minFace = [];
-// 		let hourFace = [];
-// 
-// 		if(sec.length==1){
-// 			secFace.push(fig[sec[0]]);
-// 			secFace.push(fig[0]);
-// 			}else{
-// 			secFace.push(fig[sec[1]]);
-// 			secFace.push(fig[sec[0]]);
-// 		}
-// 
-// 		if(min.length==1){
-// 			minFace.push(fig[min[0]]);
-// 			minFace.push(fig[0]);
-// 			}else{
-// 			minFace.push(fig[min[1]]);
-// 			minFace.push(fig[min[0]]);
-// 		}
-// 
-// 		if(hour.length==1){
-// 			hourFace.push(fig[hour[0]]);
-// 			}else{
-// 			hourFace.push(fig[hour[0]]);
-// 			hourFace.push(fig[hour[1]]);
-// 		}
-// 
-// 	}
-// 
-// 		function gridPlane(CHAR,XANG,YANG,ZANG){
-// 			let rows = 7;
-// 			let cols = 5;
-// 			let rectSize = 100;
-// 			let wSpace = rectSize/rows;
-// 			let hSpace = rectSize/cols;
-// 
-// 			let vertex = [];
-// 
-// 			for(xx=0;xx<rows;xx++){
-// 				for(yy=0;yy<cols;yy++){
-// 					vertex.push({
-// 						x: xx;
-// 						y: yy;
-// 						z: 1;
-// 					});
-// 				}
-// 			}
-// 
-// 
-// 
-// 
-// 		}
-// 	}
-// }
+function clock3(){
+	cube.setTime();
+	cube.view(width*0.5,height/2,0);
+
+
+}
+
+function cubeClock(){
+	this.secFace;
+	this.minFace;
+	this.hourFace;
+
+	this.grid = [];
+
+	this.grid[0] = new gridPlane();
+	this.grid[0].x_rotate(TAU/4);
+	this.grid[1] = new gridPlane();
+	this.grid[1].y_rotate(TAU/4);
+	this.grid[2] = new gridPlane();
+	this.grid[2].z_rotate(TAU/4);
+
+  this.view = function(X,Y,OFF){
+		background(40);
+		push();
+		translate(X,Y);
+
+		for(let g=0;g<this.grid.length;g++){
+			this.grid[g].x_rotate(sin(100+frameCount*0.005)*0.01);
+		//	this.grid[g].z_rotate(sin(200+frameCount*0.005)*0.01);
+			this.grid[g].y_rotate(sin(frameCount*0.005)*0.01);
+		}
+		this.grid[0].show(this.hourFace, color(0));
+		this.grid[1].show(this.minFace, color(255));
+		this.grid[2].show(this.secFace, color(255,0,0));
+
+		pop();
+	}
+
+	this.setTime = ()=>{
+		this.secFace = [];
+		this.minFace = [];
+		this.hourFace = [];
+
+		if(sec.length==1){
+				for(let v=0;v<35;v++){
+					this.secFace.push(fig[sec[0]][v]);
+				}
+				for(let v=0;v<35;v++){
+					this.secFace.push(fig[0][v]);
+				}
+			}else{
+				for(let v=0;v<35;v++){
+					this.secFace.push(fig[sec[0]][v]);
+				}
+				for(let v=0;v<35;v++){
+					this.secFace.push(fig[sec[1]][v]);
+				}
+		}
+
+		if(min.length==1){
+				for(let v=0;v<35;v++){
+					this.minFace.push(fig[min[0]][v]);
+				}
+				for(let v=0;v<35;v++){
+					this.minFace.push(fig[0][v]);
+				}
+			}else{
+				for(let v=0;v<35;v++){
+					this.minFace.push(fig[min[0]][v]);
+				}
+				for(let v=0;v<35;v++){
+					this.minFace.push(fig[min[1]][v]);
+				}
+		}
+
+		if(hour.length==1){
+			for(let v=0;v<35;v++){
+				this.hourFace.push(fig[hour[0]][v]);
+			}
+			for(let v=0;v<35;v++){
+				this.hourFace.push(fig[0][v]);
+			}
+		}else{
+			for(let v=0;v<35;v++){
+				this.hourFace.push(fig[hour[0]][v]);
+			}
+			for(let v=0;v<35;v++){
+				this.hourFace.push(fig[hour[1]][v]);
+			}
+		}
+	}
+
+	function gridPlane(){
+		this.rows = 10;
+		this.cols = 7;
+		this.rectSize = 200;
+		this.scale = 0.005;
+		this.data;
+
+		this.vertex = [];
+
+		for(xx=0;xx<this.rows;xx++){
+			for(yy=0;yy<this.cols;yy++){
+
+				let x1 = map(xx,0,this.rows,-1,1);
+				let y1 = map(yy,0,this.cols,-1,1);
+				let x2 = map(xx+1,0,this.rows,-1,1);
+				let y2 = map(yy,0,this.cols,-1,1);
+				let x3 = map(xx+1,0,this.rows,-1,1);
+				let y3 = map(yy+1,0,this.cols,-1,1);
+				let x4 = map(xx,0,this.rows,-1,1);
+				let y4 = map(yy+1,0,this.cols,-1,1);
+
+				this.vertex.push([
+					{x:x1, y:y1, z: 1},
+					{x:x2, y:y2, z: 1},
+					{x:x3, y:y3, z: 1},
+					{x:x4, y:y4, z: 1}
+				]);
+			}
+		}
+
+		this.show = function(data,col){
+			let k = 0;
+			for(let i=0; i<2; i++){
+				for(let e=0; e<5; e++){
+					for(let o=0; o<7; o++){
+
+						let index = (i*35)+(e*7)+o;
+
+						if(data[index]>0){
+							let s1 = 1/(1+(this.vertex[k][0].z*this.scale));
+							let x1 = this.vertex[k][0].x*this.rectSize*s1;
+							let y1 = this.vertex[k][0].y*this.rectSize*s1;
+
+							let s2 = 1/(1+(this.vertex[k][1].z*this.scale));
+							let x2 = this.vertex[k][1].x*this.rectSize*s2;
+							let y2 = this.vertex[k][1].y*this.rectSize*s2;
+
+							let s3 = 1/(1+(this.vertex[k][2].z*this.scale));
+							let x3 = this.vertex[k][2].x*this.rectSize*s2;
+							let y3 = this.vertex[k][2].y*this.rectSize*s2;
+
+							let s4 = 1/(1+(this.vertex[k][3].z*this.scale));
+							let x4 = this.vertex[k][3].x*this.rectSize*s2;
+							let y4 = this.vertex[k][3].y*this.rectSize*s2;
+							fill(col);
+							stroke(col);
+							quad(x1,y1,x2,y2,x3,y3,x4,y4);
+						}
+						k++;
+					}
+				}
+			}
+		}
+
+		this.y_rotate = (inc)=>{
+			let vec = this.vertex;
+				for(d=0;d<vec.length;d++){
+					for(f=0;f<4;f++){
+						let dist = sqrt(pow(vec[d][f].x,2)+pow(vec[d][f].z,2));
+						let ang = atan2(vec[d][f].x,vec[d][f].z)+inc;
+						vec[d][f].x = sin(ang)*dist;
+						vec[d][f].z = cos(ang)*dist;
+					}
+				}
+		}
+		this.x_rotate = (inc)=>{
+			let vec = this.vertex;
+			for(d=0;d<vec.length;d++){
+				for(f=0;f<4;f++){
+					let dist = sqrt(pow(vec[d][f].y,2)+pow(vec[d][f].z,2));
+					let ang = atan2(vec[d][f].y,vec[d][f].z)+inc;
+					vec[d][f].y = sin(ang)*dist;
+					vec[d][f].z = cos(ang)*dist;
+				}
+			}
+		}
+
+		this.z_rotate = (inc)=>{
+			let vec = this.vertex;
+			for(d=0;d<vec.length;d++){
+				for(f=0;f<4;f++){
+					let dist = sqrt(pow(vec[d][f].y,2)+pow(vec[d][f].x,2));
+					let ang = atan2(vec[d][f].y,vec[d][f].x)+inc;
+					vec[d][f].y = sin(ang)*dist;
+					vec[d][f].x = cos(ang)*dist;
+				}
+			}
+		}
+	}
+}
 
 function updateTime(){
   time = new Date();
@@ -384,6 +504,3 @@ function mousePressed(){
 	}
 
 }
-
-
-
