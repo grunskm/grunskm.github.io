@@ -1,13 +1,15 @@
 
-let clock = [clock0, clock1, clock2];
+let clock = [clock0, clock1, clock2, clock3];
 let fig;
 let time;
 let hour;
 let min;
 let sec;
+let millisec;
 let currentClock = 0;
 
 function preload(){
+	time = new Date();
   fig = loadJSON("chars.json");
 }
 
@@ -16,7 +18,7 @@ function setup(){
   updateTime();
   background(100);
   stroke(200);
-	noCursor();
+	//noCursor();
 }
 
 function draw(){
@@ -254,13 +256,89 @@ function clock2(){
   }
 }
 
+// function clock3(){
+// 
+// 	let scale = 0.005;
+// 
+// 	background(0);
+//   view(width*0.3,height/2,-30);
+//   view(width*0.7,height/2, 30);
+// 
+//   function view(X,Y,OFF){
+// 		let 
+// 
+// 		setTime();
+// 		push();
+// 		translate(X,Y);
+// 
+// 		
+// 
+// 
+// 		pop();
+// 
+// 		function setTime(){
+// 		let secFace = [];
+// 		let minFace = [];
+// 		let hourFace = [];
+// 
+// 		if(sec.length==1){
+// 			secFace.push(fig[sec[0]]);
+// 			secFace.push(fig[0]);
+// 			}else{
+// 			secFace.push(fig[sec[1]]);
+// 			secFace.push(fig[sec[0]]);
+// 		}
+// 
+// 		if(min.length==1){
+// 			minFace.push(fig[min[0]]);
+// 			minFace.push(fig[0]);
+// 			}else{
+// 			minFace.push(fig[min[1]]);
+// 			minFace.push(fig[min[0]]);
+// 		}
+// 
+// 		if(hour.length==1){
+// 			hourFace.push(fig[hour[0]]);
+// 			}else{
+// 			hourFace.push(fig[hour[0]]);
+// 			hourFace.push(fig[hour[1]]);
+// 		}
+// 
+// 	}
+// 
+// 		function gridPlane(CHAR,XANG,YANG,ZANG){
+// 			let rows = 7;
+// 			let cols = 5;
+// 			let rectSize = 100;
+// 			let wSpace = rectSize/rows;
+// 			let hSpace = rectSize/cols;
+// 
+// 			let vertex = [];
+// 
+// 			for(xx=0;xx<rows;xx++){
+// 				for(yy=0;yy<cols;yy++){
+// 					vertex.push({
+// 						x: xx;
+// 						y: yy;
+// 						z: 1;
+// 					});
+// 				}
+// 			}
+// 
+// 
+// 
+// 
+// 		}
+// 	}
+// }
+
 function updateTime(){
   time = new Date();
   hour = Array.from(String(time.getHours()%12), Number);
   min = Array.from(String(time.getMinutes()), Number);
   sec = Array.from(String(time.getSeconds()), Number);
 
-	if(time.getHours()%12==0){
+	if(time.getHours()%12===0){
 		hour = [1,2];
 	}
 
