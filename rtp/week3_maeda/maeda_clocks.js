@@ -24,7 +24,7 @@ function setup(){
 }
 
 function draw(){
-  if(frameCount%30==0){
+  if(frameCount%15==0){
     updateTime();
   }
   clock[currentClock]();
@@ -304,10 +304,10 @@ function cubeClock(){
 
 		if(sec.length==1){
 				for(let v=0;v<35;v++){
-					this.secFace.push(fig[sec[0]][v]);
+					this.secFace.push(fig[0][v]);
 				}
 				for(let v=0;v<35;v++){
-					this.secFace.push(fig[0][v]);
+					this.secFace.push(fig[sec[0]][v]);
 				}
 			}else{
 				for(let v=0;v<35;v++){
@@ -337,7 +337,7 @@ function cubeClock(){
 		if(hour.length==1){
 			for(let v=0;v<35;v++){
 				this.hourFace.push(fig[0][v]);
-				
+
 			}
 			for(let v=0;v<35;v++){
 				this.hourFace.push(fig[hour[0]][v]);
