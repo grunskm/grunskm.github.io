@@ -2,11 +2,16 @@
 
 let frame = [];
 let tempVert = [];
-let source;
+let backg;
+let source = [];
+let img = 0;
 let inputEnabled = true;
 
 function preload(){
-	source = loadImage("source.png");
+	source.push(loadImage("source.png"));
+	source.push(loadImage("plant.JPG"));
+	source.push(loadImage("yellow.JPG"));
+	backg = loadImage("background.png");
 }
 
 function setup(){
@@ -18,6 +23,7 @@ function setup(){
 function draw(){
 	if(inputEnabled == true){
 		background(0);
+		image(backg,0,0,height,height);
 		instructions();
 
 		for(t=0;t<frame.length;t++){
@@ -29,8 +35,10 @@ function draw(){
 		cross(mouseX,mouseY);
 	}else{
 		background(200);
+		image(backg,0,0,height,height);
 		for(i=0;i<frame.length;i++){
 			frame[i].show();
+		//	source[img].loadPixels();
 			frame[i].update();
 		}
 	}
@@ -48,7 +56,7 @@ function keyPressed(){
 		return false;
 	}
 
-	if(keyCode == ENTER){
+	if(keyCode == ENTER && tempVert.length>2){
 		frame.push(new WindowFrame(tempVert));
 		print(frame);
 		tempVert = [];
@@ -59,6 +67,17 @@ function keyPressed(){
 		print(frame);
 		tempVert = [];
 	}
+
+	if(keyCode == UP_ARROW){
+		img++;
+		if(img>=source.length){
+			img = 0;
+			for(i=0;i<frame.length;i++){
+				frame[i].reseed();
+			}
+		}
+	}
+
 }
 
 function mousePressed(){
@@ -74,8 +93,8 @@ function mousePressed(){
 function WindowFrame(POINTS){
 	this.pos = POINTS;
 
-	this.sample = {x:random(0.1,0.9),y:random(0.1,0.9)};
-	this.dir = {x:random(-0.0001,0.0001),y:random(-0.0001,0.0001)};
+	this.sample = {x:random(10,source[img].width-10),y:random(10,source[img].height-10)};
+	this.dir = {x:0,y:1};
 	this.fill = color(255,0,0);
 
 	this.show = function(){
@@ -103,21 +122,24 @@ function WindowFrame(POINTS){
 	this.update = function(){
 		this.sample.x += this.dir.x;
 		this.sample.y += this.dir.y;
-		if(this.sample.x<0.1 || this.sample.x>0.9){
+		if(this.sample.x<5 || this.sample.x>source[img].width-5){
 			this.dir.x*=-1;
 		}
-		if(this.sample.y<0.1 || this.sample.y>0.9){
+		if(this.sample.y<5 || this.sample.y>source[img].height-5){
 			this.dir.y*=-1;
 		}
-		this.fill = source.get(this.sample.x*source.width,this.sample.y*source.height);
+		this.fill = source[img].get(this.sample.x,this.sample.y);
+		//this.fill = pixels[(this.sample.y*source[img].width+this.sample.x)];
 
 	}
-
+	this.reseed = function(){
+		this.sample = {x:random(10,source[img].width-10),y:random(10,source[img].height-10)};
+	}
 }
 
-window.onresize = ()=>{
-
-}
+// window.onresize = ()=>{
+//
+// }
 
 function cross(X,Y){
 	push();
