@@ -8,16 +8,16 @@ let img = 0;
 let inputEnabled = true;
 
 function preload(){
-	source.push(loadImage("source.png"));
-	source.push(loadImage("plant.JPG"));
-	source.push(loadImage("yellow.JPG"));
+	source.push(loadImage("img0.png"));
+	source.push(loadImage("img1.png"));
+	source.push(loadImage("img2.png"));
 	backg = loadImage("background.png");
 }
 
 function setup(){
 	createCanvas(windowWidth,windowHeight);
 	noStroke();
-	noCursor();
+	//noCursor();
 }
 
 function draw(){
@@ -27,7 +27,7 @@ function draw(){
 		instructions();
 
 		for(t=0;t<frame.length;t++){
-			frame[t].showVert();
+			frame[t].showVert(100);
 		}
 		for(i=0;i<tempVert.length;i++){
 			greenCross(tempVert[i].x,tempVert[i].y);
@@ -38,7 +38,6 @@ function draw(){
 		image(backg,0,0,height,height);
 		for(i=0;i<frame.length;i++){
 			frame[i].show();
-		//	source[img].loadPixels();
 			frame[i].update();
 		}
 	}
@@ -72,9 +71,9 @@ function keyPressed(){
 		img++;
 		if(img>=source.length){
 			img = 0;
-			for(i=0;i<frame.length;i++){
-				frame[i].reseed();
-			}
+		}
+		for(i=0;i<frame.length;i++){
+			frame[i].reseed();
 		}
 	}
 
@@ -93,13 +92,16 @@ function mousePressed(){
 function WindowFrame(POINTS){
 	this.pos = POINTS;
 
-	this.sample = {x:random(10,source[img].width-10),y:random(10,source[img].height-10)};
-	this.dir = {x:0,y:1};
+	this.sample = {
+		x:floor(random(10,source[img].width-10)),
+		y:floor(random(10,source[img].height-10))};
+	this.dir = {x:1,y:1};
 	this.fill = color(255,0,0);
 
 	this.show = function(){
 		push();
 			fill(this.fill);
+			//fill(120,0,0);
 			beginShape();
 				for(e=0;e<this.pos.length;e++){
 					vertex(this.pos[e].x,this.pos[e].y);
@@ -108,7 +110,8 @@ function WindowFrame(POINTS){
 		pop();
 	}
 
-	this.showVert = function(){
+	this.showVert = function(FILL){
+		fill(FILL,200);
 		push();
 			beginShape();
 				for(i=0;i<this.pos.length;i++){
@@ -120,6 +123,7 @@ function WindowFrame(POINTS){
 	}
 
 	this.update = function(){
+
 		this.sample.x += this.dir.x;
 		this.sample.y += this.dir.y;
 		if(this.sample.x<5 || this.sample.x>source[img].width-5){
@@ -128,12 +132,17 @@ function WindowFrame(POINTS){
 		if(this.sample.y<5 || this.sample.y>source[img].height-5){
 			this.dir.y*=-1;
 		}
-		this.fill = source[img].get(this.sample.x,this.sample.y);
-		//this.fill = pixels[(this.sample.y*source[img].width+this.sample.x)];
-
+		source[img].loadPixels();
+		let index = (this.sample.x+(this.sample.y*source[img].width))*4;
+		this.fill = color(
+			source[img].pixels[index],
+			source[img].pixels[index+1],
+			source[img].pixels[index+2]);
 	}
 	this.reseed = function(){
-		this.sample = {x:random(10,source[img].width-10),y:random(10,source[img].height-10)};
+		this.sample = {
+			x:floor(random(10,source[img].width-10)),
+			y:floor(random(10,source[img].height-10))};
 	}
 }
 
@@ -143,8 +152,8 @@ function WindowFrame(POINTS){
 
 function cross(X,Y){
 	push();
-		stroke(255);
-		strokeWeight(2);
+		stroke(0,0,255);
+		strokeWeight(1);
 		line(X-30,Y,X+30,Y);
 		line(X,Y-30,X,Y+30);
 	pop();
@@ -152,7 +161,7 @@ function cross(X,Y){
 function redCross(X,Y){
 	push();
 		stroke(255,0,0);
-		strokeWeight(2);
+		strokeWeight(1);
 		line(X-20,Y-20,X+20,Y+20);
 		line(X-20,Y+20,X+20,Y-20);
 	pop();
@@ -160,7 +169,7 @@ function redCross(X,Y){
 function greenCross(X,Y){
 	push();
 		stroke(0,255,0);
-		strokeWeight(2);
+		strokeWeight(1);
 		line(X-20,Y-20,X+20,Y+20);
 		line(X-20,Y+20,X+20,Y-20);
 	pop();

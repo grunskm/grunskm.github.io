@@ -1,34 +1,34 @@
 
 let frame = [];
 let tempVert = [];
+let backg;
 let source = [];
+let currentImg = 0;
 let inputEnabled = true;
-let currentImg = 1;
 
 function preload(){
-	source.push(loadImage("img0.png"));
-	source.push(loadImage("img1.png"));
-	source.push(loadImage("img2.png"));
-	source.push(loadImage("img3.png"));
-	source.push(loadImage("img4.png"));
-	source.push(loadImage("img5.png"));
+ source.push(loadImage("img0.png"));
+ source.push(loadImage("img1.png"));
+ source.push(loadImage("img2.png"));
+ source.push(loadImage("img3.png"));
+ source.push(loadImage("img4.png"));
+ source.push(loadImage("img5.png"));
 
 }
 
 function setup(){
-	createCanvas(windowWidth,windowHeight);
-	frameRate(30);
-	noStroke();
-	noCursor();
+ createCanvas(windowWidth,windowHeight);
+ noStroke();
+ //noCursor();
 }
 
 function draw(){
-	if(inputEnabled == true){
-		background(0);
-		instructions();
+ if(inputEnabled == true){
+   background(0);
+   instructions();
 
-		for(t=0;t<frame.length;t++){
-			frame[t].showVert();
+   for(t=0;t<frame.length;t++){
+     frame[t].showVert(100);
 		}
 		for(i=0;i<tempVert.length;i++){
 			greenCross(tempVert[i].x,tempVert[i].y);
@@ -93,7 +93,7 @@ function WindowFrame(POINTS){
 	this.pos = POINTS;
 
 	this.sample = {x:floor(random(5,source[currentImg].width-5)),y:floor(random(5,source[currentImg].height-5))};
-	this.dir = {x:1,y:1.2};
+	this.dir = {x:1,y:1};
 	this.fill = color(255,0,0);
 
 	this.show = function(){
@@ -109,6 +109,7 @@ function WindowFrame(POINTS){
 
 	this.showVert = function(){
 		push();
+		fill(100,50);
 			beginShape();
 				for(i=0;i<this.pos.length;i++){
 					vertex(this.pos[i].x,this.pos[i].y);
@@ -127,8 +128,13 @@ function WindowFrame(POINTS){
 		if(this.sample.y<1 || this.sample.y>source[currentImg].height-5){
 			this.dir.y*=-1;
 		}
-		this.fill = source[currentImg].get(this.sample.x,this.sample.y);
-
+		source[currentImg].loadPixels();
+		let index = (this.sample.x+(this.sample.y*source[currentImg].width))*4;
+		this.fill = color(
+			source[currentImg].pixels[index],
+			source[currentImg].pixels[index+1],
+			source[currentImg].pixels[index+2]);
+		//this.fill = source[currentImg].get(this.sample.x,this.sample.y);
 	}
 	this.resample = function(){
 		this.sample = {x:floor(random(5,source[currentImg].width-5)),y:floor(random(5,source[currentImg].height-5))};
@@ -136,13 +142,13 @@ function WindowFrame(POINTS){
 
 }
 
-window.onresize = ()=>{
-
-}
+// window.onresize = ()=>{
+//
+// }
 
 function cross(X,Y){
 	push();
-		stroke(255);
+		stroke(200,200,255);
 		strokeWeight(2);
 		line(X-30,Y,X+30,Y);
 		line(X,Y-30,X,Y+30);
