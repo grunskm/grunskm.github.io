@@ -33,6 +33,7 @@ a:visited{
 	border: black dashed 2px;
 	padding:5%;
 	margin-bottom:1em;
+  overflow:hidden;
 }
 #toggle:hover{
   color:chartreuse;
