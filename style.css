@@ -64,6 +64,13 @@ body{
 		top:0;
 		background:yellow;
 	}
+	.view-card{
+		border: dashed 2px;
+		padding:2em;
+		margin:1em;
+		margin-top:0px;
+		text-align: left;
+	}
 }
 /* DESKTOP */
 @media only screen and (min-width: 900px){
@@ -104,19 +111,18 @@ body{
 		background:yellow;
 		margin-right:0px;
 	}
+	.view-card{
+		border: dashed 2px;
+		padding:2em;
+		margin:2em;
+		margin-top:0px;
+		text-align: left;
+	}
 }
 
 .title-link:hover{
 	color:chartreuse;
 	cursor:pointer;
-}
-
-.view-card{
-	border: dashed 2px;
-	padding:2em;
-	margin:2em;
-	margin-top:0px;
-	text-align: left;
 }
 
 .slideshow{

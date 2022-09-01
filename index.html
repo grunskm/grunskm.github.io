@@ -10,7 +10,7 @@
     window.onload = function(){
     	hide('info-card');
     	hide('slideshow');
-    	show('plotter-overview');
+    	show('front-page');
     }
     function toggle(ID){
 
@@ -53,10 +53,9 @@
   <body>
 
   <div class="column" id="nav-col">
-
 		<div class="card" id="title-card">
 			<span style="display:inline-block; padding-bottom:15px"><b>MATTHIS GRUNSKY</b></span><br>
-			<span class="title-link" onclick="toggle('about');show('about')">ABOUT</span> &#9679;
+			<span class="title-link" onclick="toggle('about');show('about-slide')">ABOUT</span> &#9679;
 			<span class="title-link" onclick="toggle('plotter'); show('plotter-overview')">PLOTTER</span> &#9679;
 			<!-- <span class="title-link" onclick="toggle('plaster')">PLASTER</span> &#9679; -->
 			<span class="title-link" onclick="toggle('painting');show('painting-overview')">PAINTING</span> &#9679;
@@ -70,7 +69,7 @@
 			of computer code, systems of spatial representation, and my own propensity for finding meaning in chaos.
 			<br><br>
 			My recent work includes <span onclick="show('plotter-overview')"><b> plotter drawings</b></span>,
-			 <span href="stereoscopic"><b>generative stereoscopic animations</b></span>, and <span href="web"><b>experimental interactive livestreamed video feedback</b></span>.
+			 <span onclick="show('stereo-overview')"><b>generative stereoscopic animations</b></span>, and <span onclick="show('browser-overview')"><b>experimental interactive livestreamed video feedback</b></span>.
 			<br><br>
 
 			I am currently based out of Winnipeg, Manitoba, Canada, on Treaty One Territory where I teach drawing, painting and creative coding at the University of Manitoba,
@@ -96,7 +95,7 @@
 		</div>
 		<div style="display:none;"  class="card , info-card" id="browser">
 
-      Engaging with network connections and communal interactivity are things that stand out to me as unique and important aspects of browser-based artworks.
+      <!-- Engaging with network connections and communal interactivity are things that stand out to me as unique and important aspects of browser-based artworks. -->
 
 		</div>
     <div style="display:none;"  class="card , info-card" id="stereo">
@@ -109,9 +108,11 @@
 
 
   </div><div class="column" id="view-col">
-
-    <div style="display:none;" class="slideshow" id="about">
-      <img title="Coil studies in studio, 2022" class="slide" src="images/coils_instudio_web.JPG" alt="coil_june13">
+    <div style="display:none;" class="slideshow" id="about-slide">
+      <img title="Coil studies in studio, 2022" class="slide" src="images/coils_instudio_web.JPG" alt="">
+    </div>
+    <div style="display:none;" class="slideshow" id="front-page">
+      <img title="A Fine Line, 2021" class="slide" src="images/a_fine_line.jpg" alt="">
 
     </div>
     <div style="display:none;" class="slideshow" id="plotter-overview">
@@ -197,8 +198,8 @@
         <img title="Student work, 2021" src="images/flower(8).png" width="48%" style="margin-right:4%"><img style="vertical-align:top"src="images/flower(2).png" title="Student work, 2021" width="48%">
         <h3>Coding Sketchbook</h3>
         Coding Sketchbook is a 3000 level studio course that covers the fundamentals of creative coding with a focus on formal drawing elements (line, value, repetition, movement, etc).
-        It was offered as a special topics class at the UM School of Art in fall 2021.
-        In addition to learning to program in JavaScript with p5.js, students are required to keep a weekly progress journal/blog in the form of a handcoded HTML website.
+        It was offered as a special topics class at the University of Manitoba School of Art in the fall of 2021.
+        In addition to learning to make experimental artworks in JavaScript using p5.js, students are required to keep a weekly progress journal/blog in the form of a handcoded HTML website.
 
       </div>
       <div class="view-card">
