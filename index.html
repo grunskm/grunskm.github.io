@@ -1,160 +1,328 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-36211356-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-36211356-3');
-    </script>
-
     <meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Matthis Grunsky</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" type="text/javascript"></script>
-    <script>
-    function toggle_text(){
-      let text = document.getElementById('long-text');
-      let toggle = document.getElementById('toggle');
 
-      if(toggle.innerText =='ABOUT'){
-        console.log("expand");
-        text.style.display = 'block';
-        toggle.innerText = "COLLAPSE";
+    <script>
+    window.onload = function(){
+    	hide('info-card');
+    	hide('slideshow');
+    	show('plotter-overview');
+    }
+    function toggle(ID){
+
+      let div = document.getElementById(ID);
+			console.log(div);
+      if(div.style.display == 'none'){
+				hide("info-card");
+        fadeIn(div);
       }else{
-        console.log("COLLAPSE");
-        text.style.display = 'none';
-        toggle.innerText = "ABOUT";
+        //div.style.display = 'none';
+			  //fadeOut(div);
       }
     }
+
+    function show(ID){
+    	hide("slideshow");
+    	let div = document.getElementById(ID);
+    	div.style.display = 'block';
+    }
+
+    function hide(DIVS){
+			let vis = document.getElementsByClassName(DIVS);
+			for(let i=0;i<vis.length;i++){
+				vis[i].style.display = 'none';
+			}
+    }
+    function fadeIn(DIV){
+
+    	DIV.style.display='block';
+    }
+    function fadeOut(DIV){
+
+    	DIV.style.display='none';
+    }
+
     </script>
+
   </head>
 
-  <body id="body">
-    <div id="overlay">
-      <!-- <div id="backdrop"></div> -->
-      <img src="" id="zoom-slide">
+  <body>
+
+  <div class="column" id="nav-col">
+
+		<div class="card" id="title-card">
+			<span style="display:inline-block; padding-bottom:15px"><b>MATTHIS GRUNSKY</b></span><br>
+			<span class="title-link" onclick="toggle('about');show('about')">ABOUT</span> &#9679;
+			<span class="title-link" onclick="toggle('plotter'); show('plotter-overview')">PLOTTER</span> &#9679;
+			<!-- <span class="title-link" onclick="toggle('plaster')">PLASTER</span> &#9679; -->
+			<span class="title-link" onclick="toggle('painting');show('painting-overview')">PAINTING</span> &#9679;
+      <span class="title-link" onclick="toggle('browser');show('browser-overview')">BROWSER</span> &#9679;
+      <span class="title-link" onclick="toggle('stereo');show('stereo-overview')">STEREO</span> &#9679;
+      <span class="title-link" onclick="toggle('teaching'); show('teaching-overview')">TEACHING</span>
+
+		</div>
+		<div style="display:none;"  class="card , info-card" id="about">
+			I use computational systems to produce drawings and paintings that explore the aesthetics
+			of computer code, systems of spatial representation, and my own propensity for finding meaning in chaos.
+			<br><br>
+			My recent work includes <span onclick="show('plotter-overview')"><b> plotter drawings</b></span>,
+			 <span href="stereoscopic"><b>generative stereoscopic animations</b></span>, and <span href="web"><b>experimental interactive livestreamed video feedback</b></span>.
+			<br><br>
+
+			I am currently based out of Winnipeg, Manitoba, Canada, on Treaty One Territory where I teach drawing, painting and creative coding at the University of Manitoba,
+      and maintain an independent artistic practice with support from the Canada Council for the Arts.
+			I was previously based in Vancouver, BC, and am originally from Halifax, NS.
+			<br>
+			<br>
+			Get in touch with me at <code>grunskm</code>&#64;<span>gmail</span>&#46;com if you want to drop by for a studio visit
+			and talk creative coding, pen plotting, painting, stereoscopics, or anything else!
+
+		</div>
+		<div style="display:none;"  class="card , info-card" id="painting">
+			I've been working with the motif of 'random' dots since my BFA grad show in 2012 at NSCAD University.
+      Functioning as a kind of meta-composition, the dots are stand-ins for subject matter while other material aspects of the work are modified.
+      Over the years I've experimented with various ideas including colour, canvas structure, found composition, and most recently stereoscopy.
+      Pre-dating my interest in computation, this body of work represents my earliest foray into systems-based artwork.
+		</div>
+		<div style="display:none;"  class="card , info-card" id="plotter">
+      Moving away from the LCD screen as its primary substrate, I'm interested in the many alternative material possibilities that plotting opens up for digitally generated art.
+      Enabling more direct engagment with conventional art materials like paper and ink, plotting also allows for some truely novel approaches to drawing/printmaking that I've only just begun to explore.
+      Through the manipulation of line, my plotter drawings approach topics like the generation of value, the depiction of perspectival space, and the simulation of human gesture.
+      I build and program my plotters myself, giving me greater control over the specific relationships between my code and the finished drawings.
+		</div>
+		<div style="display:none;"  class="card , info-card" id="browser">
+
+      Engaging with network connections and communal interactivity are things that stand out to me as unique and important aspects of browser-based artworks.
+
+		</div>
+    <div style="display:none;"  class="card , info-card" id="stereo">
     </div>
-    <div id="content-body">
-      <div id="nav_stack">
-        <a href="plotter/"><div class="nav_item">Plotter Drawings &#8857;</div></a>
-        <a href="painting/"><div class="nav_item">Paintings &#8857;</div></a>
-        <a href="stereoscopic/"><div class="nav_item">Stereo Work &#8857;</div></a>
-        <a href="plaster/"><div class="nav_item">Plaster Casts &#8857;</div></a>
-        <a href="screen/"><div class="nav_item">Other Stuff &#8857;</div></a>
-        <!-- <a href="research/"><div class="nav_item">Research &#8857;</div></a>
-        <a href="teaching/"><div class="nav_item">Teaching &#8857;</div></a> -->
-        <div id="title_block">Matthis Grunsky <span id="indicator">></span></div>
+    <div style="display:none;"  class="card , info-card" id="teaching">
+
+      My teaching practice is centered around exploring the relationship between visual language and digital technologies, and exposing students to the language of computation through a fine art studio context.
+      I've recently developed a series of courses for a variety of age ranges and backgrounds that aim to equip students with computational knowledge that they can take with them to their own artistic practices.
+    </div>
+
+
+  </div><div class="column" id="view-col">
+
+    <div style="display:none;" class="slideshow" id="about">
+      <img title="Coil studies in studio, 2022" class="slide" src="images/coils_instudio_web.JPG" alt="coil_june13">
+
+    </div>
+    <div style="display:none;" class="slideshow" id="plotter-overview">
+      <img class="slide" title="Coil, 2022" src="images/coil_june13_2_web.jpg" alt="">
+      <img class="slide" title="Lifesaver, 2022" src="images/lifesaver_v1_web.JPG" alt="">
+      <img class="slide" title="Cloud Grid, 2022" src="images/grid_cloud_web.jpg" alt="">
+      <img class="slide" title="Fragments, 2022" src="images/crush_v1_web.JPG" alt="">
+      <img class="slide" title="Ligatures, 2022" src="images/circles_web.jpg" alt="coil_june13">
+      <img class="slide" title="Gulls, 2022" src="images/gulls.png" alt="coil_june13">
+      <img class="slide" title="Value Study, 2022" src="images/rings_web.jpg" alt="coil_june13">
+    </div>
+    <div style="display:none;" class="slideshow" id="painting-overview">
+      <img class="slide"
+           src="images/trapp_depth.jpg"
+           title="Depth_10, 2021"
+           alt="">
+      <img class="slide"
+           title="First Place, 2019"
+           src="images/first_place_web.jpg"
+           alt="first_place">
+
+      <img class="slide"
+           src="images/BFAgrad_front_web.jpg"
+           title="BFA Grad Show, 2012, NSCAD University"
+           alt="bfa_grad_exhibition">
+
+      <img class="slide"
+           title="BFA Grad Show, 2012, NSCAD University"
+           src="images/BFAgrad_reflections_web.jpg"
+           alt="bfa_grad_exhibition">
+     <img class="slide"
+          src="images/web_uvula.jpg"
+          title="Uvula, acrylic on canvas, 2019"
+          alt="">
+
+      <img class="slide"
+					 src="images/ghosts_install_03_web.jpg"
+					 title="Ghosts, Charles H Scott Gallery, 2016"
+					 alt="">
+
+     <img class="slide"
+					 src="images/ghost1_web.jpg"
+					 title="Ghost 1, 4'x4', plywood, housepaint, 2016"
+					 alt="">
+       <img class="slide"
+            src="images/web_finger.jpg"
+            title='Finger, 48"x48", acrylic on canvas, 2019'
+            alt="">
+    </div>
+    <div style="display:none;" class="slideshow" id="browser-overview">
+       <!-- <img class="slide"
+            src="images/web_finger.jpg"
+            title="'"
+            alt=""> -->
+        <div class="view-card">
+          <h3>Cursor Echo</h3>
+          <iframe class="slide" width="560" height="340" src="https://www.youtube.com/embed/ogiWi5UQCAA" title="Cursor Echo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+          <i>Cursor Echo</i> is an interactive livestreamed video feedback loop.
+          As viewers engage with the work, their mouse movements are observed and recorded in a YouTube livestream.
+          Over time the information is distorted and lost through video compression and instabilities in the network connection.
+          Cursor Echo was most recetly exhibited at <a href="https://www.publicaccessmemories.com/">Public Access Memories Gallery</a> in Spetember of 2022.
+        </div>
+    </div>
+    <div style="display:none;" class="slideshow" id="stereo-overview">
+        <div class="view-card">
+          <img width="100%" src="images/schoolinglines.png" alt="">
+          <h3>Schooling Lines</h3>
+          Generative stereoscopic animation<br>
+          JavaScript program (p5.js)<br>
+          Dimensions variable, 2019<br>
+          <a href="schoolinglines">View artwork</a>
+        </div>
+        <div class="view-card">
+          <img width="100%" src="images/stereoscope_detail.jpg" alt="">
+          <h3>Stereoscope</h3>
+          Viewer for frames from schooling lines<br>
+          Poplar, acrylic lenses<br>
+          Approx 6"x6", 2021<br>
+        </div>
+    </div>
+    <div style="display:none;" class="slideshow" id="teaching-overview">
+      <div class="view-card">
+        <img title="Student work, 2021" src="images/flower(8).png" width="48%" style="margin-right:4%"><img style="vertical-align:top"src="images/flower(2).png" title="Student work, 2021" width="48%">
+        <h3>Coding Sketchbook</h3>
+        Coding Sketchbook is a 3000 level studio course that covers the fundamentals of creative coding with a focus on formal drawing elements (line, value, repetition, movement, etc).
+        It was offered as a special topics class at the UM School of Art in fall 2021.
+        In addition to learning to program in JavaScript with p5.js, students are required to keep a weekly progress journal/blog in the form of a handcoded HTML website.
+
       </div>
-      <div id="mob_nav_stack">
-        <a href="../plotter"><div class="nav_item" style="margin-top:1em">Plotter Drawings &#8857;</div></a>
-        <a href="painting/"><div class="nav_item">Paintings &#8857;</div></a>
-        <a href="stereoscopic/"><div class="nav_item">Stereo Work &#8857;</div></a>
-        <a href="plaster/"><div class="nav_item">Plaster Casts &#8857;</div></a>
-        <a href="screen/"><div class="nav_item">Other Stuff &#8857;</div></a>
-        <!-- <a href="research/"><div class="nav_item">Research &#8857;</div></a>
-        <a href="teaching/"><div class="nav_item">Teaching &#8857;</div></a> -->
-        <div id="mob_title_block">Matthis Grunsky <span id="mob_indicator">></span></div>
+      <div class="view-card">
+        <img title="Instructional sketch, 2022" src="images/drawntocode.png" width="100%"><br>
+        <h3>Drawn to Code</h3>
+        Drawn to Code is a beginner workshop for teenagers interested in experimenting with creative coding.
+        The course covers a variety of ideas fundamental to programming with a focus on experimentation and visual exploration.
+        Students work in the <a href="https://editor.p5js.org/">p5.js Web Editor</a> where they can save their work and share it with friends.
       </div>
-
-      <div class="blog-column" id="left-column">
-        <div class="blog-post">
-          <!-- &#127859;&#127859;&#127859; -->
-          <span><b>MATTHIS GRUNSKY</b></span>          <a href="https://www.instagram.com/grunskm/" target="blank">  <img style=" float:right; width:30px; opacity:20%;" src="assets/insta.png" alt=""></a>
-                    <a href="https://twitter.com/grunskm" target="blank"><img style="margin-right:0.5em;float:right; width:30px; opacity:20%;" src="assets/twitter.jpeg" alt=""></a>
-
-
-          <div id="long-text" style="display:none;">
-            <br>
-            I use computational systems to produce drawings and paintings that explore the aesthetics
-            of computer code, the natural world, and our propensity for finding beauty in chaotic information.
-            <br>
-            I'm currently making <a href="plotter"><b>computational drawings</b></a> using a pen plotter
-            and experimenting with browser-based <a href="stereoscopic"><b>stereoscopic animation</b></a>.
-            <br><br>
-
-            As of July 2021, I am living on Treaty One Territoy in Winnipeg, MB and teaching at the University of Manitoba.
-            I was previously based in Vancouver BC, and am originally from Halifax NS.
-            <br>
-            <br>
-            Get in touch with me at <code>grunskm</code>&#64;<span>gmail</span>&#46;com if you want to chat about
-            drawing with code, pen plotting, painting, stereoscopy, (or anything else really).
-          <br>
-          </div><br>
-          <div id="toggle" onclick="toggle_text()">ABOUT</div>
-
-        </div>
-        <div class="blog-post">
-            <img src="assets/a_fine_line.jpg" class="blog-image">
-            <div class="blog-text">
-            <h3>A Fine Line @ Trapp Projects</h3>
-            A selection of my recent work was included in 'A Fine Line', an exhibition which ran from June 12 to 26 at Trapp Projects in Vancouver.
-            <br><br>
-            Documentation of the show can be accessed at the <a href="https://www.trappprojects.com/exhibitions-1#/a-fine-line-matthis-grunsky-me-sparks/" target="blank"><b>Trapp Projects Website</b></a> <br>
-            </div>
-          </div>
-          <div class="blog-post">
-            <img class="blog-image" src="schoolinglines/schoolinglines.png" alt="">
-            <div class="blog-text">
-              <a href="stereoscopic">
-              <h2>Stereoscopic Work
-              </h2>
-            </a>
-            </div>
-          </div>
-          <div class="blog-post">
-
-            <img class="blog-image" src="painting/images/2019_colour/web_first_place_square.jpg" alt="">
-            <div class="blog-text">
-              <a href="/painting">
-              <h2>Paintings
-              </h2>
-              </a>
-            </div>
-          </div>
-      </div><div class="blog-column">
-
-        <div class="blog-post">
-          <img class="blog-image" src="plotter/newimage.jpg" alt="">
-          <div class="blog-text">
-            <a href="/plotter">
-            <h2>Plotter Drawings
-            </h2>
-            </a>
-          </div>
-        </div>
-
-        <div class="blog-post">
-          <img class="blog-image" src="assets/todo.gif" alt="">
-          <div class="blog-text">
-            <h2>To-Do-To-Do
-            </h2>
-            <p>
-            Presented by Number 3 Gallery as part of their SPAM monthly newsletter, To-Do-To-Do is a
-            website collaboration between myself and M.E. Sparks.
-            The project features a series of smaller web pages looking at different forms of list making.
-            </p>
-          </div>
-          <a href="https://to-do-to-do.github.io/to-do/" target="blank" style="float:right;">
-            <b>Visit Site</b>
-          </a>
-        </div>
-
-        <div class="blog-post">
-          <img class="blog-image" src="plaster/images/web_star.jpg" alt="">
-          <div class="blog-text">
-            <a href="plaster">
-            <h2>Plaster
-            </h2>
-          </a>
-          </div>
-        </div>
+      <div class="view-card" style="margin-bottom:50%">
+        <img title="Student work, 2020" src="images/crobson01.jpg" width="100%"><br>
+        <h3>Painting Through the Screen</h3>
+        Painting Through the Screen is a 3000 level studio painting course that was offered as a special topics class at NSCAD University in fall 2019 and winter 2020.
+        The course looks at the relationship between painting practice and the digital screen, exploring topics such as image compression and glitch artifacts, computational systems of visual production, and the digital screen as a framing device.
+        This class was co-developed and co-taught with M.E. Sparks.
       </div>
     </div>
+
+
+  	<div style="display:none;" class="slideshow" id="front-slide">
+  		<img class="slide" src="images/grid_cloud_web.jpg" title="Front Image, 2019, Pinhole Photograph" alt="frontImage">
+
+  	</div>
+  	<div style="display:none;" class="slideshow" id="BFAgrad2012">
+  		<img class="slide" src="images/BFAgrad_front_web.jpg" title="BFA Grad Show, 2012, NSCAD University" alt="bfa_grad_exhibition">
+  		<img class="slide" src="images/BFAgrad_rev_web.jpg" alt="bfa_grad_exhibition">
+  		<img class="slide" src="images/BFAgrad_reflections_web.jpg" alt="bfa_grad_exhibition">
+  		<img class="slide" src="images/BFAgrad_reflections_ang_web.jpg" title='6105 (I,II,III), 60"x60", acrylic on canvas,2012' alt="painting">
+  		<img class="slide" src="images/BFAgrad_6105_web.jpg" title='6105 (I,II,III), 60"x60", acrylic on canvas,2012' alt="painting">
+
+  	</div>
+  	<div style="display:none;" class="slideshow" id="coils2022">
+  		<img class="slide" src="images/coil_june13_2_web.jpg" alt="coil_june13">
+  		<img class="slide" src="images/coil_june13_2_web.jpg" alt="coil_june13">
+  	</div>
+  	<div style="display:none;" class="slideshow" id="grids2022">
+  		<img class="slide" src="images/cloud.jpg" alt="coil_june13">
+  		<img class="slide" src="images/grid_cloud_web.jpg" alt="coil_june13">
+  		<img class="slide" src="images/gulls.png" alt="coil_june13">
+  		<img class="slide" src="images/rings_web.jpg" alt="coil_june13">
+  	</div>
+  	<div style="display:none;" class="slideshow" id="lifesavers2022">
+  		<img class="slide" src="images/lifesaver1_web.jpg" alt="coil_june13">
+  		<img class="slide" src="images/lifesaver2_web.jpg" alt="coil_june13">
+  		<img class="slide" src="images/lifesaver3_web.jpg" alt="coil_june13">
+  		<img class="slide" src="images/lifesaver4_web.jpg" alt="coil_june13">
+  	</div>
+  	<div style="display:none;" class="slideshow" id="colours2019">
+  		<img class="slide" src="images/first_place_web.jpg" alt="first_place">
+  		<img class="slide" src="images/first_place_web.jpg" alt="first_place">
+  	</div>
+  	<div style="display:none;" class="slideshow" id="ghosts2016">
+      <img class="slide"
+					 src="images/ghosts_install_03_web.jpg"
+					 title="'Ghosts', Charles H Scott Gallery, 2016"
+					 alt="">
+
+			<img class="slide"
+					 src="images/ghosts_install_04_web.jpg"
+					 title="'Ghosts', Charles H Scott Gallery, 2016"
+					 alt="">
+
+			<img class="slide"
+					 src="images/ghost1_web.jpg"
+					 title="'Ghost 1', 4'x4', plywood, housepaint, 2016"
+					 alt="">
+
+			<img class="slide"
+					 src="images/ghost2_web.jpg"
+					 title="'Ghost 2', 4'x4', plywood, housepaint, 2016"
+					 alt="">
+    </div>
+  	<div style="display:none;" class="slideshow" id="pattern2018">
+  		<img class="slide"
+  				 src="images/plaster_right_shoe_web.jpg"
+  				 title="'Right Shoe Contour', cast plaster, tissue paper, ink, 2019"
+  				 alt="cast plaster tile">
+
+  		<img class="slide"
+  		     src="images/plaster_sac_a_odures_web.jpg"
+  		     title="'Sac A Odures', cast plaster, tissue paper, ink, 2019"
+  		     alt="cast plaster tile">
+
+  		<img class="slide"
+  		     src="images/plaster_chunk_web.jpg"
+  		     title="'Chunk', cast plaster, tissue paper, ink, 2019"
+  		     alt="cast plaster tile">
+
+  		<img class="slide"
+  		     src="images/plaster_notch_web.jpg"
+  		     title="'Notch', cast plaster, tissue paper, ink, 2019"
+  		     alt="cast plaster tile">
+  	</div>
+  	<div style="display:none;" class="slideshow" id="sidewalk2015">
+  		<img class="slide"
+  				 src="images/plaster_right_shoe_web.jpg"
+  				 title="'Right Shoe Contour', cast plaster, tissue paper, ink, 2019"
+  				 alt="cast plaster tile">
+
+  		<img class="slide"
+  		     src="images/plaster_sac_a_odures_web.jpg"
+  		     title="'Sac A Odures', cast plaster, tissue paper, ink, 2019"
+  		     alt="cast plaster tile">
+
+  		<img class="slide"
+  		     src="images/plaster_chunk_web.jpg"
+  		     title="'Chunk', cast plaster, tissue paper, ink, 2019"
+  		     alt="cast plaster tile">
+
+  		<img class="slide"
+  		     src="images/plaster_notch_web.jpg"
+  		     title="'Notch', cast plaster, tissue paper, ink, 2019"
+  		     alt="cast plaster tile">
+  	</div>
+
+
+  </div>
+
+<!--
+  	<img class="slide"
+  			 src=""
+  			 title=""
+  			 alt="">
+ -->
+
   </body>
 </html>
