@@ -1,0 +1,79 @@
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html{
+  height:100%;
+  background:black;
+}
+
+body{
+  height:100%;
+  overflow:hidden;
+  cursor: cell;
+}
+
+#poem{
+
+}
+
+@media only screen and (min-width: 768px){ /*desktop */
+	#backgroundimage {
+		width:100%;
+		height:100%;
+		position:fixed;
+		z-index: -10;
+	}
+}
+@media only screen and (max-width: 768px){ /*mobile */
+	#backgroundimage {
+		height:100%;
+		position:fixed;
+		z-index: -10;
+	}
+}
+
+#outputwrapper {
+      display:block;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      color: #000099;
+      font-size: 2.5em;
+      font-family: courier;
+      position: fixed;
+      padding:1em;
+
+    }
+
+
+
+    .X:hover{
+/*     		transform: skew(-10deg); */
+    		transform: rotate(-100deg);
+
+    	}
+
+
+      a:visited{
+        color:#000066;
+        text-decoration:none;
+      }
+
+      a{
+        color:#000066;
+        text-decoration:none;
+      }
+
+      .X {
+      	position:fixed;
+      	right:.4em;
+      	top:0;
+      	font-family: courier;
+      	text-decoration:none;
+      	font-size: 4em;
+        color:#000066;
+      	}

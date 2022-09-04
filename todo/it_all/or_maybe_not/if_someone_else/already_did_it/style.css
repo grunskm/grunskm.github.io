@@ -1,0 +1,42 @@
+*{
+  box-sizing: border-box;
+  padding:0px;
+  margin:0px;
+}
+html{
+  width:100%;
+}
+@media only screen and (min-width: 768px){ /*desktop */
+  .column{
+    vertical-align:top;
+    display:inline-block;
+    width:49.5%;
+    background-color: yellow;
+  }
+
+}
+@media only screen and (max-width: 768px){ /*mobile */
+  .column{
+    vertical-align:top;
+    display:inline-block;
+    width:100%;
+    background-color: yellow;
+  }
+
+}
+
+.slide{
+  width:100%;
+  padding: 10%;
+  padding-top:5%;
+}
+
+body{
+  background-color: yellow;
+  width:95%;
+  max-width:1500px;
+  margin:auto;
+}
+#column1{
+  padding-top:100px;
+}
