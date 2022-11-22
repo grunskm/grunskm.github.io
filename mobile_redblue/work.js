@@ -9,6 +9,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   mobile = new Wire();
   blendMode(MULTIPLY);
+  noStroke();
 }
 
 function draw() {
@@ -18,15 +19,17 @@ function draw() {
 	//angt = mouseX*0.005;
 	rot2+=0.001;
 	
-  translate(30,0);
-	fill(255,0,0);
-	stroke(255,0,0);
-	mobile.show(0,0,50,0,-30);
+	fill(255);
+	//stroke(0);
+	mobile.show(0,0,50,0,0);
 	
-	translate(-30,0);
-	fill(0,0,255);
-	stroke(0,0,255);
-	mobile.show(0,0,50,0,30);
+	fill(255,0,0);
+	//stroke(255,0,0);
+	mobile.show(0,0,50,0,-50);
+	
+	fill(0,255,255);
+	//stroke(0,255,255);
+	mobile.show(0,0,50,0,50);
 
 
 }

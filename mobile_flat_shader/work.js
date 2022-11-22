@@ -5,32 +5,41 @@ let scale = 0.003;
 let angt = 0;
 let rot2 = 0;
 
+let theShader;
+let shaderTexture;
+
+function preload(){
+	theShader = loadShader('sine.vert','sine.frag');
+}
+
+
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+	pixelDensity(2);
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  shaderTexture = createGraphics(500,500,WEBGL);
   mobile = new Wire();
   blendMode(MULTIPLY);
 }
 
 function draw() {
   //background(10);
+  shaderTexture.shader(theShader);
+  theShader.setUniform('u_resolution', [width, height]);
+//   theShader.setUniform('mouse_pos', [mouseX, height-mouseY]);
+//   theShader.setUniform('u_frame', [frameCount*0.005]);
+//   theShader.setUniform('u_mod', [random(),random(),random(),random(),random()]);
+  shaderTexture.rect(0,0,width,height);
+  texture(shaderTexture);
   clear();
-  push();
-	translate(width*0.5,height/2);
 
 	rot2 += 0.001;
 
 	mobile.calculate(0,0,200);
 
-  translate(width*0.2,0);
 	fill(255,0,0);
 	stroke(255,0,0);
 	mobile.show(30);
-	
-	translate(-width*0.4,0);
-	//fill(255,255,0);
-	stroke(255,0,0);
-	mobile.show(-30);
-	pop();
+
 }
 
 class Wire{
@@ -122,6 +131,8 @@ class Wire{
 		//	stroke(100);
       line(x1,y1,x2,y2);
      //	stroke(255,0,0);
+     	//fill(255);
+      texture(shaderTexture);
      	beginShape();
 				for(let i=2;i<=this.circ+2;i++){
 					let s = 1/(1+(this.pos[i].z)*scale);
@@ -137,7 +148,7 @@ class Wire{
       strokeWeight(1);
       line(x1,y1,x2,y2);
       
-      noStroke();
+
     	beginShape();
 				for(let i=1;i<this.circ;i++){
 					  let index = this.pos.length-i;
