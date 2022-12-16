@@ -4,7 +4,7 @@ let rows, cols;
 let flag = 1;
 
 function setup(){
-	createCanvas(400,500);
+	createCanvas(800,600);
 	background(50);
 	rows = height/cell_size;
 	cols = width/cell_size;
