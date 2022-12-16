@@ -2,9 +2,11 @@ let cell = [];
 let cell_size = 20;
 let rows, cols;
 let flag = 1;
+let game_state = 0;
+let mine_count = 0;
 
 function setup(){
-	createCanvas(800,600);
+	createCanvas(300,400);
 	background(50);
 	rows = height/cell_size;
 	cols = width/cell_size;
@@ -19,7 +21,7 @@ function setup(){
 				// allow hidden edges to be empty
 				val = -1;
 			}else{
-				if(random()<0.15){mine = true;}
+				if(random()<0.15){mine = true; mine_count++;}
 			}
 			cell.push(new Cell(x,y,cell_size,mine,val));
 		}
@@ -33,11 +35,26 @@ function setup(){
 }
 
 function draw(){
-	
 	for(let i=0;i<cell.length;i++){
 		if(i%cols!=0 && i%cols!=cols-1 && i>cols && i<cell.length-cols){
 			cell[i].show();
+			if( cell[i].mouseCollide() == true && mouseIsPressed){
+				cell[i].hover();
+			}
 		}
+	}
+	if(game_state==1){
+		push();
+		textSize(30);
+		fill(255,0,0);
+		text("GAME OVER",width*0.4,height*0.4);
+		pop();
+	}else if(game_state == 2){
+		push();
+		textSize(30);
+		fill(0,255,0);
+		text("YOU WIN",width*0.4,height*0.4);
+		pop();
 	}
 }
 
@@ -57,6 +74,7 @@ function keyPressed(){
 }
 
 function mouseReleased(){
+	let remaining = (cols-2)*(rows-2);
 	for(let i=0;i<cell.length;i++){
 		if(i%cols!=0 && i%cols!=cols-1 && i>cols && i<cell.length-cols){
 			if( cell[i].mouseCollide() == true){
@@ -65,9 +83,19 @@ function mouseReleased(){
 				}else{
 					cell[i].reveal(i);
 				}
-				//break;
 			}
 		}
+		if(cell[i].mine == true && cell[i].hidden == false){
+			game_state = 1;
+		}
+		if(cell[i].hidden==false){
+			remaining--;
+		}
+	}
+	print(remaining);
+	if(remaining <= mine_count){
+		game_state = 2;
+		// win!
 	}
 }
 
@@ -110,6 +138,12 @@ class Cell{
 			text(this.value,this.x+this.size*0.25,this.y+this.size*0.75);
 		}
 		pop();
+	}
+	
+	hover(){
+		fill(200);
+		stroke(230);
+		rect(this.x+1,this.y+1,this.size-2,this.size-2);
 	}
 	
 	mouseCollide(){
