@@ -19,7 +19,7 @@ function setup(){
 				// allow hidden edges to be empty
 				val = -1;
 			}else{
-				if(random()<0.2){mine = true;}
+				if(random()<0.15){mine = true;}
 			}
 			cell.push(new Cell(x,y,cell_size,mine,val));
 		}
