@@ -23,8 +23,9 @@ function setup(){
 	angleMode(DEGREES);
 	w = windowHeight*0.3;
 	noCursor();
-	stroke(0);
-	noFill();
+	//stroke(0);
+	noStroke();
+	//noFill();
 	currentMX = 0;
   currentMY = 0;
 
@@ -47,11 +48,12 @@ function setup(){
 	}
 	
 	ground = new Surface(0,100,0,w,w,50);
+		fill(random(0,255),random(0,255),random(0,255));
 
 }
 
 function draw(){
-	background(100);
+	//background(100);
 
 	let	mouseXdiff = currentMX-mouseX;
 	let mouseYdiff = mouseY-currentMY;	
@@ -84,6 +86,10 @@ function draw(){
 // 
 // }
 
+function mousePressed(){
+	fill(random(0,255),random(0,255),random(0,255));
+}
+
 class Surface{
 
 	constructor(X,Y,Z,W,D,H){
@@ -101,18 +107,19 @@ class Surface{
 	show(XPOS, OFF){
 		push();
 		translate(XPOS,height/2);
-		fill(255);
-		beginShape();
-		for(let i=0;i<4;i++){
-			let r_pos = this.points[i];
-			
-			let s = 1/(1+r_pos.z*scale);
-			let x = (r_pos.x+OFF)*s;
-			let y = r_pos.y*s;
-			vertex(x,y);
-		}
-		endShape(CLOSE);
-		fill(0);
+	//	fill(255);
+	//noFill();
+// 	beginShape();
+// 		for(let i=0;i<4;i++){
+// 			let r_pos = this.points[i];
+// 			
+// 			let s = 1/(1+r_pos.z*scale);
+// 			let x = (r_pos.x+OFF)*s;
+// 			let y = r_pos.y*s;
+// 			vertex(x,y);
+// 		}
+// 		endShape(CLOSE);
+		//fill(255);
 		for(let i=0;i<gum.length;i++){
 			beginShape();
 			for(let e=0;e<gum[i].length;e++){
