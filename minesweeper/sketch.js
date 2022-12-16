@@ -6,7 +6,7 @@ let game_state = 0;
 let mine_count = 0;
 
 function setup(){
-	createCanvas(300,400);
+	createCanvas(500,400);
 	background(50);
 	rows = height/cell_size;
 	cols = width/cell_size;
