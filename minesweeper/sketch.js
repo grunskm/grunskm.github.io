@@ -58,9 +58,6 @@ function draw(){
 	}
 }
 
-function mousePressed(){
-	// change cell colour as depressed
-}
 
 function keyPressed(){
 	if(keyCode==SHIFT){
@@ -154,12 +151,13 @@ class Cell{
 	
 	reveal(P){
 		
-		if(this.value<0 || this.flagged == true){return;}
+		if(this.value<0 || this.flagged == true || this.hidden == false){return;}
 		
 		this.hidden = false;
 		
-		if(this.value!=0 || this.mine==true){return}
+		if(this.value!=0 || this.mine==true){return;}
 		
+		print("check squares");
 		//recursive revealing empty squares
 		let y = floor(P/cols)-1;
 		let x = P%cols-1;
