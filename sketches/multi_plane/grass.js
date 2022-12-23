@@ -9,7 +9,6 @@ let currentMY;
 
 let scale = 0.002;
 
-let blank = true;
 
 function setup(){
 	createCanvas(windowWidth,windowHeight);
@@ -26,8 +25,6 @@ function setup(){
 
 function mousePressed(){
 
-	blank = false;
-
 	if(ground.length == 0){
 		currentMX = mouseX;
  		currentMY = mouseY;
@@ -40,14 +37,6 @@ function mousePressed(){
 	
 function draw(){
 	background(100);
-	
-		if(blank==true){
-		push();
-			fill(255);
-			noStroke();
-			text('CLICK TO START',width/2,height/2);
-		pop();
-	}
 
 	let	mouseXdiff = currentMX-mouseX;
 	let mouseYdiff = mouseY-currentMY;	
