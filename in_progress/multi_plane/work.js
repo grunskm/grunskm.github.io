@@ -25,13 +25,7 @@ function setup(){
 function draw(){
 
 	background(230);
-	if(blank==true){
-		push();
-			fill(255);
-			stroke(255);
-			text('CLICK TO START',width/2,height/2);
-		pop();
-	}
+
 	
 	//view.reorder();
 	
