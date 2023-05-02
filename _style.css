@@ -14,14 +14,16 @@ html, body{
   margin:0px;
   padding:0px;
   width:100%;
+  height:100%;
   background:rgb(240,240,240);
 }
 body{
-	max-width:800px;
+	max-width:1500px;
 	margin:auto;
 	background:white;
 }
 
+/* navigation + titles */
 
 .column{
 	display:inline-block;
@@ -29,38 +31,93 @@ body{
 	margin:0%;
 /* 	background:white; */
 }
+/* MOBILE */
+@media only screen and (max-width: 900px){
+	body{
+		height:auto;
+	}
+	#nav-col{
+		width:100%;
+	}
+	#view-col{
+		height:100%;
+		width:100%;
+		text-align:center;
+	}
+	#title-card{
+		margin:1em;
+	}
+	.card{
+		border: dashed 2px;
+		padding:2em;
+		margin: 1em;
+	}
 
-#view-col{
-	height:100%;
-	width:100%;
-	text-align:center;
+	.info-card{
+		opacity:1;
+		max-height: 72%;
+		overflow:auto;
+	}
+	.link-card{
+		padding:1em;
+		position:sticky;
+		top:0;
+		background:yellow;
+	}
+	.view-card{
+		border: dashed 2px;
+		padding:2em;
+		margin:1em;
+		margin-top:0px;
+		text-align: left;
+	}
 }
-#title-card{
-	margin:1em;
-}
-.card{
-	border: dashed 2px;
-	padding:2em;
-	margin: 1em;
-}
+/* DESKTOP */
+@media only screen and (min-width: 900px){
+	#nav-col{
+		height:100%;
+		width:30%;
+	}
+	#view-col{
+		height:100%;
+		width:70%;
+		/* max-width:1000px; */
+		text-align:center;
+		padding-top:2em;
+		overflow:auto;
+	}
+	#title-card{
+			margin-right:0px;
+			margin-top:2em;
+	}
+	.card{
+		border: dashed 2px;
+		padding:2em;
+		margin: 1em;
+		margin-left:2em;
+		margin-top:0px;
+	}
 
-.info-card{
-	opacity:1;
-	max-height: 72%;
-	overflow:auto;
-}
-.link-card{
-	padding:1em;
-	position:sticky;
-	top:0;
-	background:yellow;
-}
-.view-card{
-	border: dashed 2px;
-	padding:2em;
-	margin:1em;
-	margin-top:0px;
-	text-align: left;
+	.info-card{
+		opacity:1;
+		max-height: 72%;
+		overflow:auto;
+		margin-right:0px;
+	}
+	.link-card{
+		padding:1em;
+		position:sticky;
+		top:0;
+		background:yellow;
+		margin-right:0px;
+	}
+	.view-card{
+		border: dashed 2px;
+		padding:2em;
+		margin:2em;
+		margin-top:0px;
+		text-align: left;
+	}
 }
 
 .title-link:hover{
@@ -78,4 +135,3 @@ body{
 	max-width:95%;
 	margin-bottom:2em;
 }
-

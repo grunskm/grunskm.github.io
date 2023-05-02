@@ -15,6 +15,7 @@ html, body{
   padding:0px;
   width:100%;
   background:rgb(240,240,240);
+  text-align:center;
 }
 body{
 	max-width:800px;
@@ -22,59 +23,28 @@ body{
 	background:white;
 }
 
-
-.column{
-	display:inline-block;
-	vertical-align:top;
-	margin:0%;
-/* 	background:white; */
-}
-
-#view-col{
-	height:100%;
-	width:100%;
-	text-align:center;
-}
-#title-card{
-	margin:1em;
-}
-.card{
-	border: dashed 2px;
-	padding:2em;
-	margin: 1em;
-}
-
-.info-card{
-	opacity:1;
-	max-height: 72%;
-	overflow:auto;
-}
-.link-card{
-	padding:1em;
-	position:sticky;
-	top:0;
-	background:yellow;
-}
-.view-card{
-	border: dashed 2px;
-	padding:2em;
-	margin:1em;
-	margin-top:0px;
-	text-align: left;
-}
-
 .title-link:hover{
 	color:chartreuse;
 	cursor:pointer;
 }
 
-.slideshow{
+#slideshow{
 	height:100%;
 	width:100%;
 }
 
 .slide{
 	max-height:70%;
+
 	max-width:95%;
+}
+.caption{
 	margin-bottom:2em;
+	padding-left:2.5%;
+	text-align:left;
+}
+
+.writing{
+	padding:10%;
+	text-align:left;
 }
