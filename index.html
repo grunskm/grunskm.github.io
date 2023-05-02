@@ -6,352 +6,61 @@
     <title>Matthis Grunsky</title>
     <link rel="stylesheet" href="style.css">
 
-    <script>
-    window.onload = function(){
-    	hide('info-card');
-    	hide('slideshow');
-    	show('front-page');
-    }
-    function toggle(ID){
-
-      let div = document.getElementById(ID);
-			console.log(div);
-      if(div.style.display == 'none'){
-				hide("info-card");
-        fadeIn(div);
-      }else{
-        //div.style.display = 'none';
-
-      }
-    }
-
-    function show(ID){
-    	hide("slideshow");
-    	let div = document.getElementById(ID);
-    	div.style.display = 'block';
-    }
-
-    function hide(DIVS){
-			let vis = document.getElementsByClassName(DIVS);
-			for(let i=0;i<vis.length;i++){
-				vis[i].style.display = 'none';
-			}
-    }
-    function fadeIn(DIV){
-
-    	DIV.style.display='block';
-    }
-    function fadeOut(DIV){
-
-    	DIV.style.display='none';
-    }
-
-    </script>
-
   </head>
 
   <body>
 
-  <div class="column" id="nav-col">
-		<div class="card" id="title-card">
-			<span style="display:inline-block; padding-bottom:15px"><b>MATTHIS GRUNSKY</b></span><br>
-			<span class="title-link" onclick="toggle('about');show('about-slide')">ABOUT</span> &#9679;
-			<span class="title-link" onclick="toggle('plotter'); show('plotter-overview')">PLOTTER</span> &#9679;
-			<!-- <span class="title-link" onclick="toggle('plaster')">PLASTER</span> &#9679; -->
-			<span class="title-link" onclick="toggle('painting');show('painting-overview')">PAINTING</span> &#9679;
-      <span class="title-link" onclick="toggle('browser');show('browser-overview')">BROWSER</span> &#9679;
-      <span class="title-link" onclick="toggle('stereo');show('stereo-overview')">STEREO</span> &#9679;
-      <span class="title-link" onclick="toggle('teaching'); show('teaching-overview')">TEACHING</span>
+  <div class="column" id="view-col">
+  	<span style="display:inline-block; padding-bottom:15px; padding-top:15px"><b>MATTHIS GRUNSKY</b></span><br>
 
-		</div>
-		<div style="display:none;"  class="card , info-card" id="about">
-			I use computational systems to produce drawings and paintings that explore the aesthetics
-			of computer code, systems of spatial representation, and my own propensity for finding meaning in chaos.
-			<br><br>
-			My recent work includes <span onclick="show('plotter-overview')"><b> plotter drawings</b></span>,
-			 <span onclick="show('stereo-overview')"><b>generative stereoscopic animations</b></span>, and <span onclick="show('browser-overview')"><b>experimental interactive livestreamed video feedback</b></span>.
-			<br><br>
-
-			I am currently based out of Winnipeg, Manitoba, Canada, on Treaty One Territory where I teach drawing, painting and creative coding at the University of Manitoba,
-      and maintain an independent artistic practice with support from the Canada Council for the Arts.
-			I was previously based in Vancouver, BC, and am originally from Halifax, NS.
-			<br>
-			<br>
-			Get in touch with me at <code>grunskm</code>&#64;<span>gmail</span>&#46;com if you want to drop by for a studio visit
-			and talk creative coding, pen plotting, painting, stereoscopics, or anything else!
-
-		</div>
-		<div style="display:none;"  class="card , info-card" id="painting">
-			I've been working with the motif of 'random' dots since my BFA grad show in 2012 at NSCAD University.
-      For me, the dots are stand-ins for subject matter while other formal and material aspects of the work become the focus.
-      I've experimented with various ideas including colour, canvas structure, found composition, and most recently stereoscopy.
-      Pre-dating my interest in computation, this body of work represents my earliest foray into systems-based artwork.
-		</div>
-		<div style="display:none;"  class="card , info-card" id="plotter">
-      Moving away from the LCD screen as its primary substrate, I'm interested in the many alternative material possibilities that plotting opens up for digitally generated art.
-      Enabling more direct engagment with conventional art materials like paper and ink, plotting also allows for some truely novel approaches to drawing/printmaking that I've only just begun to explore.
-      Through the manipulation of line, my plotter drawings approach topics like the generation of value, the depiction of perspectival space, and the simulation of human gesture.
-      I build and program my plotters myself, giving me greater control over the specific relationships between my code and the finished drawings.
-		</div>
-		<div style="display:none;"  class="card , info-card" id="browser">
-
-      <!-- Engaging with network connections and communal interactivity are things that stand out to me as unique and important aspects of browser-based artworks. -->
-
-		</div>
-    <div style="display:none;"  class="card , info-card" id="stereo">
-    </div>
-    <div style="display:none;"  class="card , info-card" id="teaching">
-
-      My teaching practice is centered around exploring the relationship between visual language and digital technologies, and exposing students to the language of computation through a fine art studio context.
-      I've recently developed a series of courses for a variety of age ranges and backgrounds that aim to equip students with computational knowledge that they can take with them to their own artistic practices.
-    </div>
+    <div class="slideshow">
+      <img title="A Fine Line, 2021" class="slide" src="images/a_fine_line.jpg" alt="">
+ 			<img class="slide" src="images/trapp_depth.jpg" title="Depth_10, 2021" alt="">
+ 			<img class="slide" src="images/schoolinglines.png" alt="">
+ 			<img class="slide" title="Coil, 2022" src="images/coil_june13_2_web.jpg" loading="lazy" alt="">
+ 			<img class="slide" src="images/plaster_right_shoe_web.jpg" title="'Right Shoe Contour', cast plaster, tissue paper, ink, 2019" alt="cast plaster tile">
 
 
-  </div><div class="column" id="view-col">
-  
-    <div style="display:none;" class="slideshow" id="front-page">
-      <img title="A Fine Line, 2021" class="slide" src="images/a_fine_line.jpg" loading="urgent" alt="">
-    </div>
-  
-    <div style="display:none;" class="slideshow" id="about-slide">
-      <img title="Coil studies in studio, 2022" class="slide" src="images/coils_instudio_web.JPG" loading="lazy" alt="">
-    </div>
+      <img title="Coil studies in studio, 2022" class="slide" src="images/coils_instudio_web.JPG" alt="">
+      <img class="slide" title="First Place, 2019" src="images/first_place_web.jpg" alt="first_place">
 
-    <div style="display:none;" class="slideshow" id="plotter-overview">
-      <img class="slide" title="Coil, 2022" src="images/coil_june13_2_web.jpg" loading="lazy" alt="">
-      <img class="slide" title="Lifesaver, 2022" src="images/lifesaver_v1_web.JPG" loading="lazy" alt="">
-      <img class="slide" title="Cloud Grid, 2022" src="images/grid_cloud_web.jpg" loading="lazy" alt="">
-      <img class="slide" title="Fragments, 2022" src="images/crush_v1_web.JPG" loading="lazy" alt="">
-      <img class="slide" title="Ligatures, 2022" src="images/circles_web.jpg" loading="lazy" alt="coil_june13">
-      <img class="slide" title="Gulls, 2022" src="images/gulls.png" alt="coil_june13">
-      <img class="slide" title="Value Study, 2022" src="images/rings_web.jpg" loading="lazy" alt="coil_june13">
-    </div>
-    <div style="display:none;" class="slideshow" id="painting-overview">
-      <img class="slide"
-           src="images/trapp_depth.jpg"
-           title="Depth_10, 2021"
-           loading="lazy" 
-           alt="">
-      <img class="slide"
-           title="First Place, 2019"
-           src="images/first_place_web.jpg"
-           loading="lazy" 
-           alt="first_place">
-
-      <img class="slide"
-           src="images/BFAgrad_front_web.jpg"
-           title="BFA Grad Show, 2012, NSCAD University"
-           loading="lazy" 
-           alt="bfa_grad_exhibition">
-
-      <img class="slide"
-           title="BFA Grad Show, 2012, NSCAD University"
-           src="images/BFAgrad_reflections_web.jpg"
-           loading="lazy" 
-           alt="bfa_grad_exhibition">
-     <img class="slide"
-          src="images/web_uvula.jpg"
-          title="Uvula, acrylic on canvas, 2019"
-          loading="lazy" 
-          alt="">
-
-      <img class="slide"
-					 src="images/ghosts_install_03_web.jpg"
-					 title="Ghosts, Charles H Scott Gallery, 2016"
-					 loading="lazy" 
-					 alt="">
-
-     <img class="slide"
-					 src="images/ghost1_web.jpg"
-					 title="Ghost 1, 4'x4', plywood, housepaint, 2016"
-					 loading="lazy" 
-					 alt="">
-       <img class="slide"
-            src="images/web_finger.jpg"
-            title='Finger, 48"x48", acrylic on canvas, 2019'
-            loading="lazy" 
-            alt="">
-    </div>
-    <div style="display:none;" class="slideshow" id="browser-overview">
-        <div class="view-card">
-
-          <iframe class="slide" width="560" height="340" src="https://www.youtube.com/embed/ogiWi5UQCAA"title="Cursor Echo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
-          <h3>Cursor Echo</h3>
-          <i>Cursor Echo</i> is an interactive livestreamed video feedback loop.
-          As viewers engage with the work, their mouse movements are observed and recorded in a YouTube livestream.
-          Over time the information is distorted and lost through video compression and instabilities in the network connection.
-          Cursor Echo was most recetly exhibited at <a href="https://www.publicaccessmemories.com/">Public Access Memories Gallery</a> in Spetember of 2022.
-        </div>
-        <div class="view-card">
-
-          <img title="To Do: to do" src="images/todo.png" style=""loading="lazy"alt=""><br>
-          <h3>To-Do:To-Do</h3>
-          <i>To-Do:To-Do</i> is a website collaboration between myself and M.E. Sparks.
-          The project features a series of small hand-coded websites that explore the act of list making as a mechanism for dealing with uncertainty.
-
-          <a href="todo">View Project</a>
-        </div>
-    </div>
-    <div style="display:none;" class="slideshow" id="stereo-overview">
-        <div class="view-card">
-          <img width="100%" src="images/schoolinglines.png" loading="lazy" alt="">
-          <h3>Schooling Lines</h3>
-          Generative stereoscopic animation<br>
-          JavaScript program (p5.js)<br>
-          Dimensions variable, 2019<br>
-          <a href="schoolinglines">View artwork</a>
-        </div>
-        <div class="view-card">
-          <img width="100%" src="images/stereoscope_detail.jpg" loading="lazy"alt="">
-          <h3>Stereoscope</h3>
-          Viewer for frames from schooling lines<br>
-          Poplar, acrylic lenses<br>
-          Approx 6"x6", 2021<br>
-        </div>
-    </div>
-    <div style="display:none;" class="slideshow" id="teaching-overview">
-      <div class="view-card">
-        <img title="Student work, 2021" src="images/flower(8).png" width="48%" style="margin-right:4%" loading="lazy"><img style="vertical-align:top"src="images/flower(2).png" loading="lazy" title="Student work, 2021" width="48%">
-        <h3>Coding Sketchbook</h3>
-        Coding Sketchbook is a 3000 level undergraduate studio course that covers the fundamentals of creative coding with a focus on formal drawing elements (line, value, repetition, movement, etc).
-        It was offered as a special topics class at the University of Manitoba School of Art in the fall of 2021.
-        In addition to learning to make experimental artworks in JavaScript using p5.js, students are required to keep a weekly progress journal/blog in the form of a handcoded HTML website.
-
-      </div>
-      <div class="view-card">
-        <img title="Instructional sketch, 2022" src="images/drawntocode.png" width="100%" loading="lazy"><br>
-        <h3>Drawn to Code</h3>
-        Drawn to Code is a beginner workshop for teenagers interested in experimenting with creative coding.
-        The course covers a variety of ideas fundamental to programming with a focus on experimentation and visual exploration.
-        Students work in the <a href="https://editor.p5js.org/">p5.js Web Editor</a> where they can save their work and share it with friends.
-      </div>
-      <div class="view-card" style="margin-bottom:50%">
-        <img title="Student work, 2020" src="images/crobson01.jpg" width="100%" loading="lazy"><br>
-        <h3>Painting Through the Screen</h3>
-        Painting Through the Screen is a 3000 level studio painting course that was offered as a special topics class at NSCAD University in fall 2019 and winter 2020.
-        The course looks at the relationship between painting practice and the digital screen, exploring topics such as image compression and glitch artifacts, computational systems of visual production, and the digital screen as a framing device.
-        This class was co-developed and co-taught with M.E. Sparks.
-      </div>
-    </div>
-
-
-  	<div style="display:none;" class="slideshow" id="front-slide">
-  		<img class="slide" src="images/grid_cloud_web.jpg" title="Front Image, 2019, Pinhole Photograph" loading="lazy"alt="frontImage">
-
-  	</div>
-  	<div style="display:none;" class="slideshow" id="BFAgrad2012">
-  		<img class="slide" src="images/BFAgrad_front_web.jpg" title="BFA Grad Show, 2012, NSCAD University" loading="lazy"alt="bfa_grad_exhibition">
-  		<img class="slide" src="images/BFAgrad_rev_web.jpg" loading="lazy"alt="bfa_grad_exhibition">
-  		<img class="slide" src="images/BFAgrad_reflections_web.jpg"loading="lazy" alt="bfa_grad_exhibition">
+      <img class="slide" src="images/BFAgrad_front_web.jpg" title="BFA Grad Show, 2012, NSCAD University" alt="bfa_grad_exhibition">
+      <img class="slide" title="BFA Grad Show, 2012, NSCAD University" src="images/BFAgrad_reflections_web.jpg" alt="bfa_grad_exhibition">
   		<img class="slide" src="images/BFAgrad_reflections_ang_web.jpg" title='6105 (I,II,III), 60"x60", acrylic on canvas,2012' loading="lazy"alt="painting">
   		<img class="slide" src="images/BFAgrad_6105_web.jpg" title='6105 (I,II,III), 60"x60", acrylic on canvas,2012'loading="lazy" alt="painting">
 
-  	</div>
-  	<div style="display:none;" class="slideshow" id="coils2022">
-  		<img class="slide" src="images/coil_june13_2_web.jpg" loading="lazy"alt="coil_june13">
-  		<img class="slide" src="images/coil_june13_2_web.jpg" loading="lazy"alt="coil_june13">
-  	</div>
-  	<div style="display:none;" class="slideshow" id="grids2022">
-  		<img class="slide" src="images/cloud.jpg"loading="lazy" alt="coil_june13">
-  		<img class="slide" src="images/grid_cloud_web.jpg" loading="lazy" alt="coil_june13">
-  		<img class="slide" src="images/gulls.png" loading="lazy"alt="coil_june13">
-  		<img class="slide" src="images/rings_web.jpg" loading="lazy"alt="coil_june13">
-  	</div>
-  	<div style="display:none;" class="slideshow" id="lifesavers2022">
-  		<img class="slide" src="images/lifesaver1_web.jpg" loading="lazy"alt="coil_june13">
-  		<img class="slide" src="images/lifesaver2_web.jpg" loading="lazy"alt="coil_june13">
-  		<img class="slide" src="images/lifesaver3_web.jpg" loading="lazy"alt="coil_june13">
-  		<img class="slide" src="images/lifesaver4_web.jpg" loading="lazy"alt="coil_june13">
-  	</div>
-  	<div style="display:none;" class="slideshow" id="colours2019">
-  		<img class="slide" src="images/first_place_web.jpg" loading="lazy"alt="first_place">
-  		<img class="slide" src="images/first_place_web.jpg" loading="lazy"alt="first_place">
-  	</div>
-  	<div style="display:none;" class="slideshow" id="ghosts2016">
-      <img class="slide"
-					 src="images/ghosts_install_03_web.jpg"
-					 title="'Ghosts', Charles H Scott Gallery, 2016"
-					 loading="lazy"
-					 alt="">
-
-			<img class="slide"
-					 src="images/ghosts_install_04_web.jpg"
-					 title="'Ghosts', Charles H Scott Gallery, 2016"
-					 loading="lazy"
-					 alt="">
-
-			<img class="slide"
-					 src="images/ghost1_web.jpg"
-					 title="'Ghost 1', 4'x4', plywood, housepaint, 2016"
-					 loading="lazy"
-					 alt="">
-
-			<img class="slide"
-					 src="images/ghost2_web.jpg"
-					 title="'Ghost 2', 4'x4', plywood, housepaint, 2016"
-					 loading="lazy"
-					 alt="">
-    </div>
-  	<div style="display:none;" class="slideshow" id="pattern2018">
-  		<img class="slide"
-  				 src="images/plaster_right_shoe_web.jpg"
-  				 title="'Right Shoe Contour', cast plaster, tissue paper, ink, 2019"
-  				 loading="lazy"
-  				 alt="cast plaster tile">
-
-  		<img class="slide"
-  		     src="images/plaster_sac_a_odures_web.jpg"
-  		     title="'Sac A Odures', cast plaster, tissue paper, ink, 2019"
-  		     loading="lazy"
-  		     alt="cast plaster tile">
-
-  		<img class="slide"
-  		     src="images/plaster_chunk_web.jpg"
-  		     title="'Chunk', cast plaster, tissue paper, ink, 2019"
-  		     loading="lazy"
-  		     alt="cast plaster tile">
-
-  		<img class="slide"
-  		     src="images/plaster_notch_web.jpg"
-  		     title="'Notch', cast plaster, tissue paper, ink, 2019"
-  		     loading="lazy"
-  		     alt="cast plaster tile">
-  	</div>
-  	<div style="display:none;" class="slideshow" id="sidewalk2015">
-  		<img class="slide"
-  				 src="images/plaster_right_shoe_web.jpg"
-  				 title="'Right Shoe Contour', cast plaster, tissue paper, ink, 2019"
-  				 loading="lazy"
-  				 alt="cast plaster tile">
-
-  		<img class="slide"
-  		     src="images/plaster_sac_a_odures_web.jpg"
-  		     title="'Sac A Odures', cast plaster, tissue paper, ink, 2019"
-  		     loading="lazy"
-  		     alt="cast plaster tile">
-
-  		<img class="slide"
-  		     src="images/plaster_chunk_web.jpg"
-  		     title="'Chunk', cast plaster, tissue paper, ink, 2019"
-  		     loading="lazy"
-  		     alt="cast plaster tile">
-
-  		<img class="slide"
-  		     src="images/plaster_notch_web.jpg"
-  		     title="'Notch', cast plaster, tissue paper, ink, 2019"
-  		     loading="lazy"
-  		     alt="cast plaster tile">
-  	</div>
+      <img class="slide" src="images/web_uvula.jpg" title="Uvula, acrylic on canvas, 2019" alt="">
+      <img class="slide" src="images/web_finger.jpg" title='Finger, 48"x48", acrylic on canvas, 2019' alt="">
+      
+      <img class="slide" title="Lifesaver, 2022" src="images/lifesaver_v1_web.JPG" alt="">
+      <img class="slide" title="Cloud Grid, 2022" src="images/grid_cloud_web.jpg" alt="">
+      <img class="slide" title="Fragments, 2022" src="images/crush_v1_web.JPG" alt="">
+      <img class="slide" title="Ligatures, 2022" src="images/circles_web.jpg" alt="coil_june13">
+      <img class="slide" title="Gulls, 2022" src="images/gulls.png" alt="coil_june13">
+      <img class="slide" title="Value Study, 2022" src="images/rings_web.jpg" alt="coil_june13">
+      
+      <img class="slide" src="images/ghosts_install_03_web.jpg" title="Ghosts, Charles H Scott Gallery, 2016" alt="">
+      <img class="slide" src="images/ghost1_web.jpg" title="Ghost 1, 4'x4', plywood, housepaint, 2016" alt="">
+      <img class="slide" src="images/ghosts_install_03_web.jpg" title="'Ghosts', Charles H Scott Gallery, 2016" alt="">
+			<img class="slide" src="images/ghosts_install_04_web.jpg" title="'Ghosts', Charles H Scott Gallery, 2016" alt="">
+			
+      <img class="slide" src="images/lifesaver1_web.jpg" alt="coil_june13">
+  		<img class="slide" src="images/lifesaver2_web.jpg" alt="coil_june13">
+  		<img class="slide" src="images/lifesaver3_web.jpg" alt="coil_june13">
+  		<img class="slide" src="images/lifesaver4_web.jpg" alt="coil_june13">
+  		<img class="slide" src="images/cloud.jpg" alt="coil_june13">
+  		<img class="slide" src="images/grid_cloud_web.jpg"  alt="coil_june13">
+  		<img class="slide" src="images/gulls.png" alt="coil_june13">
+  		<img class="slide" src="images/rings_web.jpg" alt="coil_june13">
+  		<img class="slide" src="images/plaster_right_shoe_web.jpg" title="'Right Shoe Contour', cast plaster, tissue paper, ink, 2019" alt="cast plaster tile">
+  		<img class="slide" src="images/plaster_sac_a_odures_web.jpg" title="'Sac A Odures', cast plaster, tissue paper, ink, 2019" alt="cast plaster tile">
+  		<img class="slide" src="images/plaster_chunk_web.jpg" title="'Chunk', cast plaster, tissue paper, ink, 2019" alt="cast plaster tile">
+  		<img class="slide" src="images/plaster_notch_web.jpg" title="'Notch', cast plaster, tissue paper, ink, 2019" alt="cast plaster tile">
+  		<img class="slide" src="images/plaster_sac_a_odures_web.jpg" title="'Sac A Odures', cast plaster, tissue paper, ink, 2019" alt="cast plaster tile">
+  		<img class="slide" src="images/plaster_chunk_web.jpg" title="'Chunk', cast plaster, tissue paper, ink, 2019" alt="cast plaster tile">
+  		<img class="slide" src="images/plaster_notch_web.jpg" title="'Notch', cast plaster, tissue paper, ink, 2019" alt="cast plaster tile">
 
 
   </div>
-
-<!--
-  	<img class="slide"
-  			 src=""
-  			 title=""
-  			 alt="">
- -->
-
   </body>
 </html>
