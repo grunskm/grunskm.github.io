@@ -23,13 +23,23 @@ body{
 	background:white;
 }
 
+.title-link{
+  text-align:right;
+  padding-top:2em;
+  padding-right:2.5%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
+ 
+}
 .title-link:hover{
 	color:chartreuse;
 	cursor:pointer;
 }
 
 #slideshow{
-	padding-top:5em;
+	padding-top:1em;
 	height:100%;
 	width:100%;
 }
