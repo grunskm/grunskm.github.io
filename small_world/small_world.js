@@ -12,6 +12,7 @@ let c_ang_x, c_ang_y;
 let seed=0;
 let prev_x = 0;
 let prev_y = 0;
+let mobile = false;
 
 function setup(){
 	createCanvas(windowWidth,windowHeight);
@@ -20,10 +21,15 @@ function setup(){
 	strokeCap(ROUND);
 	noCursor();
 	resize();
+	stroke(0);
 
 }
 
 function draw(){
+
+	if(windowWidth!=width){
+		resize();
+	}
 
 	background(230);
 	if(landscape == true){
@@ -35,7 +41,7 @@ function draw(){
 		view.show(height*0.7,-width/2, 40);
 	}
 
-	if(landscape == true){
+	if(mobile == false){
 		if(mouseIsPressed){
 			seed += dist(prev_x,prev_y,mouseX,mouseY)*0.0025;
 		}else{
@@ -57,12 +63,8 @@ function draw(){
 
 }
 function touchStarted(){
-	if(landscape == true){
-
-	}else{
 		prev_x = mouseX;
 		prev_y = mouseY;
-	}
 }
 
 class View{
@@ -154,7 +156,7 @@ class Coil{
 			let proj_y = y*s;
 
 			strokeWeight(this.weight*s);
-		  stroke(0);//	stroke(map(s,0,1,255,0));
+		//  stroke(0);//	stroke(map(s,0,1,255,0));
 			line(oldx,oldy,proj_x,proj_y);
 			oldx = proj_x;
 			oldy = proj_y;
@@ -162,26 +164,25 @@ class Coil{
 	}
 }
 
+
 function resize(){
+	resizeCanvas(windowWidth,windowHeight);
 	if(width/height<1){
 		landscape = false;
 		print("portrait");
+		mobile = true;
 	}else{
 		landscape = true;
 		print("landscape");
+
 	}
-
-	resizeCanvas(windowWidth,windowHeight);
 	view.resize();
-
 }
 
 window.onresize = ()=>{
 	resize();
 }
 
-// function lerp(A,B,T){
-// 	return A+(B-A)*T
-// }
+
 
 
