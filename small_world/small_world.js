@@ -124,7 +124,7 @@ class Coil{
 		}else{//portrait
 			this.r = height*0.5;
 			this.z = 0;
-			this.weight = 10;
+			this.weight = height*0.005;
 			this.waviness = height*0.5;
 		}
 	}
