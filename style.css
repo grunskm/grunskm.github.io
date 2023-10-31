@@ -46,13 +46,13 @@ body{
 
 .slide{
 	max-height:70%;
-
 	max-width:95%;
 }
 .caption{
 	margin-bottom:2em;
 	padding-left:2.5%;
 	text-align:left;
+	max-width:97.5%;
 }
 
 .writing{

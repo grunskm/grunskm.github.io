@@ -109,15 +109,17 @@ class Coil{
 		this.waviness = 700;
 		this.weight = 5;
 		
-		this.pos;
+		this.pos=[];
 
 	}
 	progress(){
-		this.pos = {
-			z : noise(seed+this.zseed+(i*0.005))*(this.waviness)+this.z-(this.waviness/2),
-			x : noise(seed+this.xseed+(i*0.005))*(this.waviness)+this.x-(this.waviness/2),
-			y : noise(seed+this.yseed+(i*0.005))*(this.waviness)+this.y-(this.waviness/2)
-		};
+		for(let i=0;i<;i++){
+			this.pos = {
+				z : noise(seed+this.zseed+(i*0.005))*(this.waviness)+this.z-(this.waviness/2),
+				x : noise(seed+this.xseed+(i*0.005))*(this.waviness)+this.x-(this.waviness/2),
+				y : noise(seed+this.yseed+(i*0.005))*(this.waviness)+this.y-(this.waviness/2)
+			};
+		}
 	}
 	
 	show(OFF){
