@@ -10,7 +10,7 @@ let nums = [
 0.007655058815766031, 0.00861935100356585, 0.001625494918899669, 0.006211573360531657, 0.005443251466642351, 0.002203401637627903, 0.004286729139140091, 0.003700400719641234, 0.006671704131174448, 0.00691153703028416, 0.007811381040041536, 0.008823331134931563, 0.007507301833880587, 0.002449936983379344, 0.008672932841651089, 0.004206434091959687, 0.002608380397041759, 0.004684579372486889, 0.002338168447174316, 0.002648575681496868];
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
   stroke(0);
   strokeWeight(2);
   noFill();
@@ -26,20 +26,23 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background(123, 122, 158);
+  
   let t = timeSet+millis();
   
   squiggle(x,y,t,offset);
 
 }
 
-function squiggle(X,Y,T){
+function squiggle(X,Y,T,OFF){
   //ellipse(X,Y,sin(T*0.005)*10+60);
   
-  beginShape();
-  for(let i=0;i<500;i++){
+  let px;
+  let py;
+  
+  for(let i=0;i<100;i++){
     
-    let a = T+i;
+    let a = T+(i*sin(T*0.001)*10);
     
     let x = 
         cos(a*nums[0])*20+
@@ -59,14 +62,20 @@ function squiggle(X,Y,T){
         cos(a*nums[10])*20+
         sin(a*nums[11])*20;
     
-    x = x+X;
-    y = y+Y;
-    
     let s = 1/(1+z*fov);
     
-    curveVertex(x,y);
+    x = ((x+OFF)*s)+X;
+    y = (y*s)+Y;
+    if(i!=0){
+      strokeWeight(10*s);
+      stroke(222*s, 224*s, 65*s);
+      line(px,py,x,y);
+    }
+    
+    px = x;
+    py = y;
   }
-  endShape();
+
   
 }
 
@@ -80,9 +89,7 @@ function keyPressed(){
     x -= sp;
   }else if(keyCode==RIGHT_ARROW){
     x += sp;
-  }
-  
-  if(keyCode == 9){
+  }else if(keyCode == 9){
     offset *= -1; //toggle left/right
     print(offset);
   }
