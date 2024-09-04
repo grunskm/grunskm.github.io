@@ -1,6 +1,6 @@
 
 let offset = 40;
-let r = 40;
+let r = 80;
 let timeSet;
 let fov = 0.005;
 
@@ -46,7 +46,7 @@ function squiggle(X,Y,T,OFF){
   
   for(let i=0;i<10;i++){
     
-    let a = T*0.5;//(i*sin(T*0.001)*10);
+    let a = T*0.01;//(i*sin(T*0.001)*10);
     let k = i%nums.length;
     let x = 
         cos(a*nums[k+0])*r+
@@ -66,7 +66,7 @@ function squiggle(X,Y,T,OFF){
         cos(a*nums[k+10])*r+
         sin(a*nums[k+11])*r;
     
-    let s = 1/(1+(z+200)*fov);
+    let s = 1/(1+(z+100)*fov);
     
     x = ((x+OFF)*s)+X;
     y = (y*s)+Y;
