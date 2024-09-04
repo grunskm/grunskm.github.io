@@ -100,4 +100,6 @@ function keyPressed(){
 
 function mousePressed(){
 	resizeCanvas(windowWidth,windowHeight);
+	x = width/2;
+  y = height/2;
 }
