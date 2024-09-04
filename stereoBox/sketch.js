@@ -44,39 +44,41 @@ function squiggle(X,Y,T,OFF){
   let px;
   let py;
   
-  for(let i=0;i<100;i++){
+  for(let i=0;i<10;i++){
     
-    let a = T*0.5+(i*10);//(i*sin(T*0.001)*10);
-    
+    let a = T*0.5;//(i*sin(T*0.001)*10);
+    let k = i%nums.length;
     let x = 
-        cos(a*nums[0])*r+
-        sin(a*nums[1])*r+
-        cos(a*nums[2])*r+
-        sin(a*nums[3])*r;
+        cos(a*nums[k+0])*r+
+        sin(a*nums[k+1])*r+
+        cos(a*nums[k+2])*r+
+        sin(a*nums[k+3])*r;
     
     let y = 
-        sin(a*nums[4])*r+
-        cos(a*nums[5])*r+
-        sin(a*nums[6])*r+
-        cos(a*nums[7])*r;
+        sin(a*nums[k+4])*r+
+        cos(a*nums[k+5])*r+
+        sin(a*nums[k+6])*r+
+        cos(a*nums[k+7])*r;
     
     let z = 
-        cos(a*nums[8])*r+
-        sin(a*nums[9])*r+
-        cos(a*nums[10])*r+
-        sin(a*nums[11])*r;
+        cos(a*nums[k+8])*r+
+        sin(a*nums[k+9])*r+
+        cos(a*nums[k+10])*r+
+        sin(a*nums[k+11])*r;
     
     let s = 1/(1+(z+200)*fov);
     
     x = ((x+OFF)*s)+X;
     y = (y*s)+Y;
-    if(i!=0){
-
-      line(px,py,x,y);
-    }
     
-    px = x;
-    py = y;
+    ellipse(x,y,50*s);
+//     if(i!=0){
+// 
+//       line(px,py,x,y);
+//     }
+//     
+//     px = x;
+//     py = y;
   }
 
   
