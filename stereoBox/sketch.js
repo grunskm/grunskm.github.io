@@ -1,3 +1,4 @@
+
 let offset = 40;
 let timeSet;
 let fov = 0.005;
@@ -95,4 +96,8 @@ function keyPressed(){
   }
   
   return false;
+}
+
+function mousePressed(){
+	resizeCanvas(windowWidth,windowHeight);
 }
