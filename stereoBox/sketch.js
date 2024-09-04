@@ -68,8 +68,8 @@ function squiggle(X,Y,T,OFF){
     x = ((x+OFF)*s)+X;
     y = (y*s)+Y;
     if(i!=0){
-      strokeWeight(10*s);
-      stroke(222*s, 224*s, 65*s);
+      strokeWeight(5*s);
+      stroke(222, 224, 65);
       line(px,py,x,y);
     }
     
