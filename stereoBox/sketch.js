@@ -1,6 +1,6 @@
 
 let offset = 40;
-let r = 50;
+let r = 30;
 let timeSet;
 let fov = 0.005;
 
