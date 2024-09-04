@@ -12,7 +12,9 @@ let nums = [
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  stroke(0);
+  strokeWeight(1);
+  //stroke(222, 224, 65);
+  stroke(255);
   strokeWeight(2);
   noFill();
   
@@ -27,7 +29,7 @@ function setup() {
 }
 
 function draw() {
-  background(123, 122, 158);
+  background(0);
   
   let t = timeSet+millis();
   
@@ -68,8 +70,7 @@ function squiggle(X,Y,T,OFF){
     x = ((x+OFF)*s)+X;
     y = (y*s)+Y;
     if(i!=0){
-      strokeWeight(5*s);
-      stroke(222, 224, 65);
+
       line(px,py,x,y);
     }
     
