@@ -46,7 +46,7 @@ function squiggle(X,Y,T,OFF){
   
   for(let i=0;i<100;i++){
     
-    let a = T+(i*sin(T*0.001)*10);
+    let a = T+(i*5);//(i*sin(T*0.001)*10);
     
     let x = 
         cos(a*nums[0])*r+
