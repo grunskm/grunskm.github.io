@@ -1,9 +1,10 @@
 
 let offset = 0;
 let off_amt = 40;
-let r = 200;
+let r = 100;
 let timeSet;
 let fov = 0.002;
+let z_off = 0;
 
 let date = new Date(); 
 
@@ -57,7 +58,7 @@ function squiggle(X,Y,T,OFF){
   
   for(let i=0;i<20;i++){
     
-    let a = T*0.1+(i*15);//(i*sin(T*0.001)*10);
+    let a = T*0.01+(i*150);//(i*sin(T*0.001)*10);
    // let k = i;
     let x = 
          cos(a*nums[0])*r+
@@ -71,15 +72,17 @@ function squiggle(X,Y,T,OFF){
 			 sin(a*nums[6])*r+
 			 cos(a*nums[7])*r;
     
-    let z = 100;
-           //cos(a*nums[i+2])*r+r;//+
-//         sin(a*nums[k+9])*r+
-//         cos(a*nums[k+10])*r+
-//         sin(a*nums[k+11])*r;
+    let z =
+        cos(a*nums[2])*r+
+        sin(a*nums[9])*r+
+        cos(a*nums[1])*r+
+        sin(a*nums[11])*r;
     
-    let s = 1/(1+(z*fov));
+    let s = 1/(1+((z+z_off)*fov));
     
-    x = ((x+offset)*s)+X;
+    let off = offset*off_amt;
+    
+    x = ((x+off)*s)+X;
     y = (y*s)+Y;
     
     ellipse(x,y,50*s);
@@ -114,10 +117,10 @@ function keyPressed(){
     x += sp;
   }else if(keyCode == 81){
   	//q
-    offset  = -30;
+    offset  = -1;
   }else if(keyCode == 69){
   	//e
-  	offset = 30;
+  	offset = 1;
   }else if(keyCode == 87){
   	//w
   	offset = 0;
@@ -135,6 +138,18 @@ function keyPressed(){
   }else if(keyCode == 88){
     //x
   	off_amt -= 5;
+  }else if( keyCode == 68){
+  	//d
+  	z_off += 100;
+  }else if(keyCode == 67){
+  	z_off -= 100;
+  	//c
+  }else if( keyCode == 70){
+  	r += 20;
+  	//f
+  }else if(keyCode == 86){
+  	//v
+  	r -= 20;
   }
   
   return false;
