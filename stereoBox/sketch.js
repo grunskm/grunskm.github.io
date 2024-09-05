@@ -1,7 +1,7 @@
 
 let offset = 0;
 let off_amt = 40;
-let r = 80;
+let r = 200;
 let timeSet;
 let fov = 0.002;
 
@@ -124,17 +124,17 @@ function keyPressed(){
   }else if(keyCode == 65){
   	//a
   	//adj fov
-  	fov += 0.0001;
+  	fov += 0.0005;
   }else if(keyCode == 83){
   	//s
   	// adj fov
-  	fov -= 0.0001;
+  	fov -= 0.0005;
   }else if( keyCode == 90){
   	//z
-  	r += 5;
+  	off_amt += 5;
   }else if(keyCode == 88){
     //x
-  	r -= 5;
+  	off_amt -= 5;
   }
   
   return false;
