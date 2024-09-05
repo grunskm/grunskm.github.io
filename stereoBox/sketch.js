@@ -36,7 +36,15 @@ function draw() {
   let t = timeSet+millis();
   
   squiggle(x,y,t);
-
+  
+  push();
+		fill(255);
+		noStroke();
+		text("offset: "+offset,50,50);
+		text("off_amt: "+off_amt,50,100);
+		text("fov: "+round(fov,5),50,150);
+		text("rad: "+r,50,200);
+	pop();
 }
 
 function squiggle(X,Y,T,OFF){
