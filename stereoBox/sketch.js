@@ -1,8 +1,9 @@
 
-let offset = 40;
+let offset = 0;
+let off_amt = 40;
 let r = 80;
 let timeSet;
-let fov = 0.005;
+let fov = 0.002;
 
 let date = new Date(); 
 
@@ -34,7 +35,7 @@ function draw() {
   
   let t = timeSet+millis();
   
-  squiggle(x,y,t,offset);
+  squiggle(x,y,t);
 
 }
 
@@ -44,7 +45,7 @@ function squiggle(X,Y,T,OFF){
   let px;
   let py;
   
-  for(let i=0;i<10;i++){
+  for(let i=1;i<10;i++){
     
     let a = T*0.01;//(i*sin(T*0.001)*10);
     let k = i%nums.length;
@@ -68,7 +69,7 @@ function squiggle(X,Y,T,OFF){
     
     let s = 1/(1+(z+100)*fov);
     
-    x = ((x+OFF)*s)+X;
+    x = ((x+offset)*s)+X;
     y = (y*s)+Y;
     
     ellipse(x,y,50*s);
@@ -94,9 +95,29 @@ function keyPressed(){
     x -= sp;
   }else if(keyCode==RIGHT_ARROW){
     x += sp;
-  }else if(keyCode == 9){
-    offset *= -1; //toggle left/right
-    print(offset);
+  }else if(keyCode == 81){
+  	//q
+    offset  = -30;
+  }else if(keyCode == 69){
+  	//e
+  	offset = 30;
+  }else if(keyCode == 87){
+  	//w
+  	offset = 0;
+  }else if(keyCode == 65){
+  	//a
+  	//adj fov
+  	fov += 0.0001;
+  }else if(keyCode == 83){
+  	//s
+  	// adj fov
+  	fov -= 0.0001;
+  }else if( keyCode == 90){
+  	//z
+  	r += 5;
+  }else if(keyCode == 88){
+    //x
+  	r -= 5;
   }
   
   return false;
