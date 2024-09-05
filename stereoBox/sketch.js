@@ -10,7 +10,9 @@ let date = new Date();
 let x,y;
 
 let nums = [
-0.007655058815766031, 0.00861935100356585, 0.001625494918899669, 0.006211573360531657, 0.005443251466642351, 0.002203401637627903, 0.004286729139140091, 0.003700400719641234, 0.006671704131174448, 0.00691153703028416, 0.007811381040041536, 0.008823331134931563, 0.007507301833880587, 0.002449936983379344, 0.008672932841651089, 0.004206434091959687, 0.002608380397041759, 0.004684579372486889, 0.002338168447174316, 0.002648575681496868];
+0.00765, 0.00861, 0.00162, 0.00621, 0.00544, 0.00220, 0.00428, 0.00370, 0.00667, 
+0.00691, 0.00781, 0.00882, 0.00750, 0.00244, 0.00867, 0.00420, 0.00260, 0.00468, 
+0.00233, 0.00264];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -53,34 +55,41 @@ function squiggle(X,Y,T,OFF){
   let px;
   let py;
   
-  for(let i=1;i<10;i++){
+  for(let i=0;i<20;i++){
     
-    let a = T*0.01;//(i*sin(T*0.001)*10);
-    let k = i%nums.length;
+    let a = T*0.1+(i*15);//(i*sin(T*0.001)*10);
+   // let k = i;
     let x = 
-        cos(a*nums[k+0])*r+
-        sin(a*nums[k+1])*r+
-        cos(a*nums[k+2])*r+
-        sin(a*nums[k+3])*r;
+         cos(a*nums[0])*r+
+         sin(a*nums[1])*r+
+         cos(a*nums[2])*r+
+         sin(a*nums[3])*r;
     
     let y = 
-        sin(a*nums[k+4])*r+
-        cos(a*nums[k+5])*r+
-        sin(a*nums[k+6])*r+
-        cos(a*nums[k+7])*r;
+       sin(a*nums[4])*r+
+			 cos(a*nums[5])*r+
+			 sin(a*nums[6])*r+
+			 cos(a*nums[7])*r;
     
-    let z = 
-        cos(a*nums[k+8])*r+
-        sin(a*nums[k+9])*r+
-        cos(a*nums[k+10])*r+
-        sin(a*nums[k+11])*r;
+    let z = 100;
+           //cos(a*nums[i+2])*r+r;//+
+//         sin(a*nums[k+9])*r+
+//         cos(a*nums[k+10])*r+
+//         sin(a*nums[k+11])*r;
     
-    let s = 1/(1+(z+100)*fov);
+    let s = 1/(1+(z*fov));
     
     x = ((x+offset)*s)+X;
     y = (y*s)+Y;
     
     ellipse(x,y,50*s);
+    
+    push()
+    fill(255);
+    noStroke();
+    text(i,x,y);
+    pop();
+    
 //     if(i!=0){
 // 
 //       line(px,py,x,y);
