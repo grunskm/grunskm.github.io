@@ -85,23 +85,3 @@ a:visited{
 color:black;
 text-decoration:none;
 }
-
-.more-info-button{
-	display:block;
-	text-align:right;
-	margin-top:1em;
-}
-
-.more-info-button:hover{
-	filter: drop-shadow(2px 3px 2px chartreuse);
-}
-
-.link-icon{
-	position: relative;
-	width: 3em;
-	top:5px;
-	
-}
-.link-icon:hover{
-	filter: drop-shadow(2px 3px 2px chartreuse);
-}

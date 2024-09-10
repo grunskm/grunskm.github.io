@@ -62,7 +62,7 @@ body{
 
 #spinner{
 	position:fixed;
-	left:40px;
+	left:30px;
 	top: 50px;
 	transform: rotate(-15deg);
 
@@ -78,7 +78,9 @@ color:chartreuse;
 	right:-30px;
 	top: -20px;
 }
-
+a{
+color:inherit;
+}
 a:visited{
 color:inherit;
 }
