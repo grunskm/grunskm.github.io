@@ -34,8 +34,12 @@ body{
  
 }
 .title-link:hover{
+/* 
 	color:chartreuse;
+ */
 	cursor:pointer;
+	filter: drop-shadow(2px 3px 2px chartreuse);
+
 }
 
 #slideshow{
@@ -69,7 +73,11 @@ body{
 
 }
 #spinner:hover{
+/* 
 color:chartreuse;
+ */
+filter: drop-shadow(2px 3px 2px chartreuse);
+
 }
 
 #cloud{

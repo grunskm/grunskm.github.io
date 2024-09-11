@@ -35,7 +35,7 @@ body{
  
 }
 .title-link:hover{
-	color:chartreuse;
+	filter: drop-shadow(2px 3px 2px chartreuse);
 	cursor:pointer;
 }
 
@@ -66,6 +66,10 @@ body{
 	position:absolute;
 	right:5px;
 	top: 5px;
+	
+}
+#cloud:hover{
+filter: drop-shadow(2px 3px 2px chartreuse);
 }
 
 .menu-item{
@@ -103,5 +107,7 @@ text-decoration:none;
 	
 }
 .link-icon:hover{
+/* 
 	filter: drop-shadow(2px 3px 2px chartreuse);
+ */
 }
