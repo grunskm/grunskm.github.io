@@ -61,34 +61,17 @@ body{
 	text-align:left;
 }
 
-#spinner{
-	position:fixed;
-	left:30px;
-	top: 50px;
-	transform: rotate(-15deg);
-
-
-}
-
-#spinner:hover{
-/* 
-color:chartreuse;
- */
-filter: drop-shadow(2px 3px 2px chartreuse);
-
-}
-
 #cloud{
 	width:11em;
 	position:absolute;
-	right:-30px;
-	top: -20px;
+	right:5px;
+	top: 5px;
 }
 
 .menu-item{
 text-align: left;
 padding:2em;
-
+border-style:solid;
 margin: 0px 20px 20px 20px
 
 }
