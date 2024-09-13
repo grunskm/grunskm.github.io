@@ -71,7 +71,7 @@ body{
 .menu-item{
 text-align: left;
 padding:2em;
-
+border-style:solid;
 margin: 0px 20px 20px 20px
 
 }
