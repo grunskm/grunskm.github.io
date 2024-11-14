@@ -39,36 +39,36 @@ function setup() {
   frame.chop();
   frameRate(30);
   
-  capture = createCapture(VIDEO);
-  capture.hide();
+//   capture = createCapture(VIDEO);
+//   capture.hide();
   
-//   let constraints;
-//   if(mobile){
-// 		constraints = {
-// 			audio:false,
-// 			video:{
-// 				facingMode:{
-// 					exact:"environment"
-// 				}
-// 			}
-// 		}
-// 	}
-// 	else{
-// 		constraints = {
-// 			audio:false,
-// 			video:{
-// 				facingMode:{
-// 					exact:"user"
-// 				}
-// 			}
-// 		}
-// 	}
+  let constraints;
+  if(mobile){
+		constraints = {
+			audio:false,
+			video:{
+				facingMode:{
+					exact:"environment"
+				}
+			}
+		}
+	}
+	else{
+		constraints = {
+			audio:false,
+			video:{
+				facingMode:{
+					exact:"user"
+				}
+			}
+		}
+	}
 	
-// 	capture = createCapture(constraints);
-// 	if(!capture){
-// 		capture = createCapture(VIDEO);
-// 	}
-// 	capture.hide();
+	capture = createCapture(constraints);
+	if(!capture){
+		capture = createCapture(VIDEO);
+	}
+	capture.hide();
 }
 
 function draw() {
