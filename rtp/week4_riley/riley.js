@@ -4,8 +4,11 @@ function setup(){
 	createCanvas(600,600);
 	noStroke();
 	fill(30);
-  background(241,236,233);
 
+}
+
+function draw(){
+  background(241,236,233);
 	let light = color(214,212,215);
 	let dark = color(61,61,61);
 
@@ -13,7 +16,7 @@ function setup(){
 	let wSpace = width/13;
 
 	let y = hSpace/2+10.5;
-	let count = 0;
+	let count = 0 ;
 
 	while(y<height){
 		let inset = wSpace/2;
@@ -23,13 +26,13 @@ function setup(){
 		}
 		let x = inset;
 
-		let tempH = sqrt(pow(y-200,2))*0.18+3;
+		let tempH = sqrt(pow(y-mouseY,2))*0.18+3;
 		if(tempH>hSpace){
 			tempH = hSpace;
 		}
 
 		while(x<width-inset/2){
-			let step = x/wSpace*2.5+count+9;
+			let step = x/wSpace*2.5+count+frameCount*0.1;
 			let tempFill = lerpColor(dark,light,map(sin(step*0.15),-1,1,0,1));
 			fill(tempFill);
 			ellipse(x,y,hSpace,tempH);
@@ -38,9 +41,6 @@ function setup(){
 		y += tempH;
 		count++;
 	}
-
-
-
 }
 
 // function draw(){
