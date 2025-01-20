@@ -46,17 +46,17 @@ function setup() {
   strokeWeight(1);
   noFill();
 
-  let constraints = {
-    audio: false,
-    video: {
-      facingMode: {
-        exact: "environment"
-      }
-    }    
-  };
-  capture = createCapture(constraints);
+//   let constraints = {
+//     audio: false,
+//     video: {
+//       facingMode: {
+//         exact: "environment"
+//       }
+//     }    
+//   };
+//   capture = createCapture(constraints);
 
-  //capture = createCapture(VIDEO); // for laptop 
+  capture = createCapture(VIDEO); // for laptop 
   
   
   capture.hide();
