@@ -1,12 +1,12 @@
 
 let capture;
 let fps = 15;
-let input;
+
 let img;
 let frame;
 let play = false;
 let exportMode = false;
-let preview_height, preview_width;
+let preview_height, preview_width;222
 
 
 //let container = document.getElementById("my-container");
