@@ -16,6 +16,7 @@ html, body{
   width:100%;
   background:rgb(240,240,240);
   text-align:center;
+  
 }
 body{
 	max-width:800px;
@@ -34,12 +35,8 @@ body{
  
 }
 .title-link:hover{
-/* 
-	color:chartreuse;
- */
-	cursor:pointer;
 	filter: drop-shadow(2px 3px 2px chartreuse);
-
+	cursor:pointer;
 }
 
 #slideshow{
@@ -64,31 +61,53 @@ body{
 	text-align:left;
 }
 
-#spinner{
-	position:fixed;
-	left:100px;
-	top: 50px;
-	transform: rotate(-15deg);
-
-
-}
-#spinner:hover{
-/* 
-color:chartreuse;
- */
-filter: drop-shadow(2px 3px 2px chartreuse);
-
-}
-
 #cloud{
 	width:11em;
 	position:absolute;
-	right:-30px;
-	top: -30px;
+	right:5px;
+	top: 5px;
+	
 }
+#cloud:hover{
+filter: drop-shadow(2px 3px 2px chartreuse);
+}
+
+.menu-item{
+text-align: left;
+padding:2em;
+border-style:solid;
+margin: 0px 20px 20px 20px
+
+}
+
 a{
-color:inherit;
+color:black;
+text-decoration:none;
+
 }
 a:visited{
-color:inherit;
+color:black;
+text-decoration:none;
+}
+
+.more-info-button{
+	display:block;
+	text-align:right;
+	margin-top:1em;
+}
+
+.more-info-button:hover{
+	filter: drop-shadow(2px 3px 2px chartreuse);
+}
+
+.link-icon{
+	position: relative;
+	width: 3em;
+	top:5px;
+	
+}
+.link-icon:hover{
+/* 
+	filter: drop-shadow(2px 3px 2px chartreuse);
+ */
 }
