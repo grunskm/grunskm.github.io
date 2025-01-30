@@ -66,7 +66,7 @@ body{
 
 #spinner{
 	position:fixed;
-	left:100px;
+	left:70px;
 	top: 50px;
 	transform: rotate(-15deg);
 
