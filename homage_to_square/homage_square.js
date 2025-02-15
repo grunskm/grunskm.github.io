@@ -11,11 +11,18 @@ function setup() {
     rects.push(new RECT(0,pov,pow(i*7,2),height));
   }
   noStroke();
+  show();
 }
 
 function mousePressed() {
 
-  
+  show();
+
+
+}
+
+function show(){
+
   background(255);
   //   random(255),
   //   random(255),
