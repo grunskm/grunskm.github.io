@@ -36,6 +36,21 @@ function addName(){
   document.getElementById('name').innerText = info.names[0];
   name.value = "";
 }
+
+function finalInfo(){
+  let name = document.getElementById('final-info-name');
+  let attending = document.getElementById('final-info-attending');
+  let guest = document.getElementById('final-info-guests');
+  let bike = document.getElementById('final-info-bike');
+  let note = document.getElementById('final-info-note');
+  
+  name.innerText = info.names[0];
+  attending.innerText =info.attend;
+  guest.innerText = info.names[1];
+  bike.innerText = info.bike;
+  note.innerText = info.note;
+}
+
 function addNameNo(){
   let name = document.getElementById('input_name_no');
   info.names.push(name.value);
@@ -93,5 +108,5 @@ function post(path, params, method='post') {
   form.appendChild(hiddenField);
 
   document.body.appendChild(form);
-  form.submit();
+  //form.submit();
 }

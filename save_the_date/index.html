@@ -81,7 +81,17 @@
         Any questions? <br>
         Please let us know and we'll get back to you soon. <br><br> 
         <textarea type="text" id="input_note" style="height:3em"></textarea><br>
-        <button onclick="addNote(); sendInfo();">Is that everything?</button>
+        <button onclick="addNote();nextMessage();finalInfo()">Is that everything?</button>
+      </p>
+      <p class="message yes hidden">
+        Not quite, could you please take a screenshot of this page and send it to Matthis?<br>
+        Our website is misbehaving and we won't get your info otherwise!<br><br> 
+        <span id="final-info-name">name</span><br>
+        <span id="final-info-attending">attending</span><br>
+        <span id="final-info-guests">guests</span><br>
+        <span id="final-info-bike">rental</span><br>
+        <span id="final-info-note">note</span><br>
+
       </p>
 
       <p class="no hidden">
@@ -90,7 +100,7 @@
         <span id="whats_your_name">What's your name?</span><br>
         <input type="text" id="input_name_no"><br>
         <button onclick="addNameNo();" id="button_no">is my name.</button><br>
-        <button onclick="sendInfo();" class="hidden" id="all_done">Is that everything?</button>
+        <button onclick="" class="hidden" id="all_done">Is that everything?</button>
       </p>
     </div>
   </body>
