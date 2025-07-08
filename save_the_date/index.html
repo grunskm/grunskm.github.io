@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8" />
+    <link rel="icon" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>invite</title>
+    
+    <script src="script.js"></script>
+  
+    <link rel="stylesheet" href="/style.css" />
+  
+  </head>
+  <body>
+    <div id="wrapper">
+      <p class="message">
+        Matthis and M.E. <br> 
+        are getting married<br><br>
+        <button onclick="nextMessage()">OK</button>
+      </p>
+      <p class="message hidden">
+        ...and would love for you to be part of the celebration! <br><br>
+        <button onclick="nextMessage()">Alright! When and where?</button>
+      </p>
+      <p class="message hidden">
+<!--        / When and where?<br><br> -->
+        Saturday, September 20th<br> 2025<br>
+        Winnipeg<br><br>
+        <button onclick="nextMessage()">Let me check my calendar...</button>
+      </p>
+      <p class="message hidden">
+      Do you think you can make it?<br><br>
+      <button onclick="nextMessage(); info.attend = 'yes';"> Yes </button>
+      <button onclick="noMessage(); info.attend = 'no';"> No </button>
+      </p>
+      <p class="message yes hidden">
+        Excellent!<br><br> 
+        What's your name?<br><br>
+        <input type="text" id="input_name"><br>
+        <button onclick="nextMessage(); addName(); ">is my name.</button>
+      </p>
+      <p class="message yes hidden">
+        Thanks <span id="name">bro</span>!<br><br> 
+        Will anyone else be joining you?<br><br>
+        <span class="hidden" id="guestList"></span>
+        <input type="text" id="input_guest">
+        <button onclick="addGuest();">Add person</button><br>
+        <button id="group" class="hidden" onclick="nextMessage();"> That's everyone</button>
+        <br><button id="solo" onclick="nextMessage();"> It's just me!</button>
+      </p>
+      <p class="message yes hidden">
+        Here are a few details about the celebration: <br><br> 
+        (Pen and paper ready?)<br><br>
+        <button onclick="nextMessage()">Hold on a second...</button>
+      </p>
+      <p class="message yes hidden">
+        On the afternoon of September 20th there will be a small ceremony in <a href="https://legacy.winnipeg.ca/publicworks/parks/bruce.stm" target="new">Bruce Park</a>,
+        along the Assiniboine River.  <br><br>
+        <button onclick="nextMessage()">How quaint!</button>
+      </p>
+      <p class="message yes hidden">
+        In the evening, there will be dinner and dancing at <a href="https://barnhammerbrewing.ca/" target="new">Barn Hammer Brewing</a>. <br><br>
+        <button onclick="nextMessage()">Sounds fun!</button>
+      </p>
+      <p class="message yes hidden">
+        Our house, <a href="https://g.co/kgs/qMpfuYn" target="new">530 Telfer St. S</a>, is close to both locations and will be a place to gather throughout the day. <br><br> 
+        <button onclick="nextMessage()">I'll be there!</button>
+      </p>
+      <p class="message yes hidden">
+        We will be renting a small fleet of bicycles to travel to and from Bruce Park.<br><br> 
+        It's a leisurly 15-minute <a href="https://maps.app.goo.gl/JCFsjNNz4YNFL6e1A" target="new">bike ride</a> on (mostly) flat, protected bike paths. <br><br> 
+        <button onclick="nextMessage(); info.bike = 'rental'">I would like to bike and will need a rental</button><br>
+        <button onclick="nextMessage(); info.bike = 'no'">I would prefer not to bike (but can rideshare/carpool)</button><br>
+        <button onclick="nextMessage(); info.bike = 'own'">I'll bring my own bike</button>
+      </p>
+      <p class="message yes hidden">
+        Any questions? <br>
+        Please let us know and we'll get back to you soon. <br><br> 
+        <textarea type="text" id="input_note" style="height:3em"></textarea><br>
+        <button onclick="addNote(); sendInfo();">Is that everything?</button>
+      </p>
+
+      <p class="no hidden">
+        <span id="console">That's okay! &#9829; <br>
+        We know September is a busy time.</span> <br><br>
+        <span id="whats_your_name">What's your name?</span><br>
+        <input type="text" id="input_name_no"><br>
+        <button onclick="addNameNo();" id="button_no">is my name.</button><br>
+        <button onclick="sendInfo();" class="hidden" id="all_done">Is that everything?</button>
+      </p>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+<!--       <form id="info-form">
+        <div id="guest-list">
+          <input type="text">
+        </div>
+        <input type="button" value="Add" onclick="addGuest()">
+      <input type="button" value="Remove" id="remove" style="display:block;" onclick="subGuest()">
+      </form>   -->
