@@ -35,7 +35,7 @@
       <p class="message hidden">
       Do you think you can make it?<br><br>
       <button onclick="nextMessage(); info.attend = 'yes';"> Yes </button>
-      <button onclick="noMessage(); info.attend = 'no';"> No </button>
+      <button onclick=" info.attend = 'no';"> No </button> <!-- noMessage(); -->
       </p>
       <p class="message yes hidden">
         Excellent!<br><br> 
@@ -84,7 +84,7 @@
         <button onclick="addNote();nextMessage();finalInfo()">Is that everything?</button>
       </p>
       <p class="message yes hidden">
-        Not quite, could you please take a screenshot of this page and send it to Matthis?<br>
+        Not quite, could you please take a screenshot of your info and send it to Matthis?<br>
         Our website is misbehaving and we won't get your info otherwise!<br><br> 
         <span id="final-info-name">name</span><br>
         <span id="final-info-attending">attending</span><br>
