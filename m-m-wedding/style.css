@@ -4,7 +4,6 @@
 html,
 body {
   margin: 0px;
-  padding: 0px;
   background: #fcfc42;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -12,5 +11,33 @@ body {
   font-style: normal;
   
   text-align: center; 
+    padding:2%;
+}
+
+h2{
+	font-style: italic;
+}
+
+a{
+	color:tomato;
+
+}
+
+.box{
+
+color:darkslategray;
+width:100%;
+max-width:600px;
+text-align:left;
+margin:auto;
+padding-top: 5em;
+padding-bottom:20%;
+
+
+}
+
+.garden{
+	position:absolute;
+	width:12em;
 }
 

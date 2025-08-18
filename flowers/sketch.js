@@ -20,28 +20,35 @@ function preload(){
 
 function setup(){
 
-	createCanvas(drwg[0].width,drwg[0].height);
+	createCanvas(500,500);
 
 	background(255);
 	let margin = 1000;
 	let x = margin;
 	let y = margin*0.25;
 
-	for(let i=0;i<flower_list.length;i++){
-			clear();
- 			showFlower(drwg[i]);
-			save("flower.png",".png");
-	}
+
 }
 
-// function keyPressed(){
-// 	if(keyCode==DOWN_ARROW){
-// 		save("flowers.png");
-// 	}
-// }
+function keyPressed(){
+	if(keyCode==RIGHT_ARROW){
+		k++;
+	}
+	if(k>=drwg.length){
+		k=0;
+	}
+	clear();
+	showFlower(drwg[k]);
+	save("2_flower.png")
+}
 
 function draw(){
+
+
+
 }
+
+
 
 class Drawing{
 
@@ -80,7 +87,7 @@ function  showFlower(flower){
   endShape();
   fill(255);
   noStroke();
-  text(name,width*0.05,height*0.95);
+ //	 text(name,width*0.05,height*0.95);
   pop();
   
 
