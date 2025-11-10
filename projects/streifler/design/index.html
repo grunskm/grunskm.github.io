@@ -6,46 +6,29 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <title>Leesa Streifler - Test Site</title>
+    <link href="../style.css" rel="stylesheet">
+    <title>Leesa Streifler - Test Site - Exhibition</title>
+
    	<style> 
-   	
-   *{
-      box-sizing:border-box;
-   		padding:0px;
-   		margin:0px;
-   		font-family: "Manrope", sans-serif;
-  		font-optical-sizing: auto;
-  		font-weight: 1em;
- 		 	font-style: normal;
-      		
-   }
-
-   html,body{
-
-   	}
-   	.slide{
-   	width:100%;
-   	}
-   	
-   	.column{
-   		display:inline-block;
-   		vertical-align:top;
-   		//background: lightgrey;
-   	}
-   	
-   	#column_1{
-   	width:30%;
-
-   	}
-   	#column_2{
-   	}
-   	#column_3{
-   	width:70%;
-   	}
-   	
-   	a:hover{
-   		color:orange;
-   	}
+   		.exhibition{
+   			box-sizing:border-box;
+   			background:white;
+   			margin-bottom:30px;
+   			}
+   		.exhibition:hover{
+   			background:lightgrey;
+   		}
+   		.ex_thumb{
+   			width:40%;
+   			vertical-align:bottom;
+   		}
+   		.ex_title{
+   		 box-sizing:border-box;
+   			display:inline-block;
+   			height:100%;
+   			text:red;
+   		}
+   		
    	</style>
 
   </head>
@@ -53,16 +36,42 @@
   <body>
   
   <div class="column" id="column_1">
-		<a><div>Leesa Streifler</div></a>
-		<div class="column" id="column_2">
-			<a><div>Exhibitions</div></a>
-			<a><div>Film</div></a>
-			<a><div>Design</div></a>
-			<a><div>Press</div></a>
+		<a href="../about"><div>Leesa Streifler</div></a><br>
+		<div href="column" id="column_2">
+			<a href="../exhibitions"><div>Exhibitions</div></a>
+			<a href="../film"><div>Film</div></a>
+			<a href="../design"><div>Design</div></a>
+			<a href="../press"><div>Press</div></a>
 		</div>
   </div><div class="column" id="column_3">
-  	<img class="slide" src="test_img.jpg" alt="test_img">
+  
+  <div class="exhibition">
+  	<img class="ex_thumb" src="../test_img.jpg" alt="test_img">
+  	<div class="ex_title">Design Project <br> Location - Date</div>
+  </div>
+  
+  <div class="exhibition">
+  	<img class="ex_thumb" src="../test_img.jpg" alt="test_img">
+  	<div class="ex_title">Design Project <br> Location - Date</div>
+  </div>
+  
+  <div class="exhibition">
+  	<img class="ex_thumb" src="../test_img.jpg" alt="test_img">
+  	<div class="ex_title">Design Project<br> Location - Date</div>
+  </div>
+
+  	
   </div>
 
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+

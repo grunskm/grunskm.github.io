@@ -19,18 +19,20 @@
    	.column{
    		display:inline-block;
    		vertical-align:top;
-   		//background: lightgrey;
+   		
    	}
    	
    	#column_1{
    	width:20%;
 		padding:10px;
+		position:fixed;
    	}
    	#column_2{
 
    	}
    	#column_3{
-   	width:80%;
+   	margin-left:20%;
+   	width:70%;
    	}
    	
    	a{
