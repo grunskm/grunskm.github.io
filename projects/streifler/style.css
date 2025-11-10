@@ -1,0 +1,42 @@
+   *{
+      box-sizing:border-box;
+   		padding:0px;
+   		margin:0px;
+   		font-family: "Manrope", sans-serif;
+  		font-optical-sizing: auto;
+  		font-weight: 1em;
+ 		 	font-style: normal;
+      		
+   }
+
+   html,body{
+
+   	}
+   	.slide{
+   	width:100%;
+   	}
+   	
+   	.column{
+   		display:inline-block;
+   		vertical-align:top;
+   		//background: lightgrey;
+   	}
+   	
+   	#column_1{
+   	width:20%;
+		padding:10px;
+   	}
+   	#column_2{
+
+   	}
+   	#column_3{
+   	width:80%;
+   	}
+   	
+   	a{
+   		text-decoration: none;
+   		color:inherit;
+   	}
+   	a:hover{
+   		color:orange;
+   	}
