@@ -43,6 +43,8 @@ function preload(){
    loadImage("https://cdn.glitch.global/5533276e-d4fb-4e62-8c52-7cd5e01d63f3/icon-13.svg?v=1741472957278"), //save/download
    loadImage("https://cdn.glitch.global/5533276e-d4fb-4e62-8c52-7cd5e01d63f3/icon-14.svg?v=1741472957620")
   ];
+  
+  src_img = loadImage("example_image.jpg");
 }
 
 function set_buttons(){
@@ -54,7 +56,7 @@ function set_buttons(){
   
  // buttonCol = color(100,200,100);
   
-  button[0]  = new Button(capture.width+margin,height*0.85,w*1.5,w*1.5,"CAPTURE",col_0, icon[13]);//tog_src
+  button[0]  = new Button(src_img.width/2+margin,height*0.85,w*1.5,w*1.5,"CAPTURE",col_0, icon[13]);//tog_src
   
   let xoff = -h*3;
   let yoff = h
@@ -99,21 +101,21 @@ function setup() {
   col_4 = color(150,150,150);
 
 
-let constraints = {
-  audio: false,
-  video: {
-    facingMode: {
-      exact: "environment"
-    }
-  }    
-};
-capture = createCapture(constraints);
+// let constraints = {
+//   audio: false,
+//   video: {
+//     facingMode: {
+//       exact: "environment"
+//     }
+//   }    
+// };
+// capture = createCapture(constraints);
 
 
 
   
-  capture.hide();
-  src_img = createImage(0,0);
+ // capture.hide();
+  src_img.resize(width*0.5,0);
   frame = new Frame();
 
   set_buttons();
@@ -122,11 +124,13 @@ capture = createCapture(constraints);
 function draw() {
   background(50);
   
-  if(new_capture==true){
-    image(capture,capture.width*0.5+20,capture.height*0.5+20);
-  }else{
-    image(src_img,src_img.width*0.5+20,src_img.height*0.5+20);
-  }
+//   if(new_capture==true){
+//     image(capture,capture.width*0.5+20,capture.height*0.5+20);
+//   }else{
+//     image(src_img,src_img.width*0.5+20,src_img.height*0.5+20);
+//   }
+
+	image(src_img,src_img.width*0.5+20,src_img.height*0.5+20);
   frame.show(width*0.75,src_img.height/2+margin);
   
   push();
@@ -143,7 +147,7 @@ function touchStarted(){
   let y = mouseY;
   
   if(button[0].hit(x,y) && new_capture == true){
-    src_img = capture.get();
+   // src_img = capture.get();
     new_capture = false;
     frame.full_chop();
     recolour_control_buttons(col_2);
@@ -151,7 +155,7 @@ function touchStarted(){
     button[0].col = col_4;
   }else if(button[0].hit(x,y)){
     new_capture = true;
-    src_img = createImage(0,0);
+    //src_img = createImage(0,0);
     frame.cell = [];
     recolour_control_buttons(col_4);
     recolour_transform_buttons(col_4);
@@ -218,15 +222,15 @@ function keyPressed(){
     st = 1;
   }else if(keyCode == 18){ st = 10;}
   
-  if(keyCode== SHIFT && new_capture == true){
-    src_img = capture.get();
-    new_capture = false;
-    frame.full_chop();
-  }else if(keyCode == SHIFT){
-    new_capture = true;
-    src_img = createImage(0,0);
-    frame.cell = [];
-  }
+//   if(keyCode== SHIFT && new_capture == true){
+//     src_img = capture.get();
+//     new_capture = false;
+//     frame.full_chop();
+//   }else if(keyCode == SHIFT){
+//     new_capture = true;
+//     src_img = createImage(0,0);
+//     frame.cell = [];
+//   }
   
   if(keyCode==90){ // z key
     frame.togglePlayback();
@@ -489,47 +493,28 @@ function recolour_control_buttons(COL){
 
 function save_img(){
   
-  if (src_img.width === 0 || src_img.height === 0) {
-    console.log("No image captured.");
-    return;
-  }
-  
-  src_img.loadPixels();
-  let imgDataURL = src_img.canvas.toDataURL("image/png"); // Base64 format
+//   if (src_img.width === 0 || src_img.height === 0) {
+//     console.log("No image captured.");
+//     return;
+//   }
+//   
+//   src_img.loadPixels();
+ // let imgDataURL = src_img.canvas.toDataURL("image/png"); // Base64 format
 
   // Prepare payload
-  let pack = {
-    img: imgDataURL,  // Base64 encoded image
-    cols: frame.cols,
-    rows: frame.rows,
-    x_off: frame.x_inset,
-    y_off: frame.y_inset,
-    w: frame.w,
-    h: frame.h,
-    alt: "test image"
-  };
-  post("/save_img", pack);
+//   let pack = {
+//     img: imgDataURL,  // Base64 encoded image
+//     cols: frame.cols,
+//     rows: frame.rows,
+//     x_off: frame.x_inset,
+//     y_off: frame.y_inset,
+//     w: frame.w,
+//     h: frame.h,
+//     alt: "test image"
+//   };
+  //post("/save_img", pack);
   
 }
 
-function post(path, params, method='post') {
 
-  const form = document.createElement('form');
-  form.method = method;
-  form.action = path;
-
-  for (const key in params) {
-    if (params.hasOwnProperty(key)) {
-      const hiddenField = document.createElement('input');
-      hiddenField.type = 'hidden';
-      hiddenField.name = key;
-      hiddenField.value = params[key];
-
-      form.appendChild(hiddenField);
-    }
-  }
-
-  document.body.appendChild(form);
-  form.submit();
-}
 
