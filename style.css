@@ -46,4 +46,7 @@ width:50%;
 
 .description{
 	display:inline-block;
+	margin:2em;
+	width:40%;
+	vertical-align:bottom;
 }
