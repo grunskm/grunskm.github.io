@@ -30,11 +30,20 @@ html, body{
 }
 
 .card{
-	height:20vh;
+/* 	height:20vh; */
 	width:100%;
-	border:dotted;
+/* 	border:dotted; */
 }
 #card-column{
 	display:inline-block;
 	width:80%;
+}
+
+.slide{
+width:50%;
+
+}
+
+.description{
+	display:inline-block;
 }
