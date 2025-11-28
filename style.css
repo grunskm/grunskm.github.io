@@ -13,7 +13,8 @@ html, body{
   margin:0px;
   padding:0px;
   width:100%;
-  background:rgb(240,240,240);
+  background:rgb(10,20,20); 
+  color:rgb(210,210,210);
   vertical-align:top;
 }
 
@@ -32,11 +33,14 @@ html, body{
 .card{
 /* 	height:20vh; */
 	width:100%;
+	margin-bottom:2em;
 /* 	border:dotted; */
 }
 #card-column{
 	display:inline-block;
 	width:80%;
+	height:100vh;
+	overflow:scroll;
 }
 
 .slide{
@@ -50,3 +54,21 @@ width:50%;
 	width:40%;
 	vertical-align:bottom;
 }
+
+a{
+	color:rgb(230,210,15);
+	text-decoration:none;
+}
+a:hover{
+	color:rgb(190,100,205);
+}
+/* 
+a:visited{
+	color:rgb(230,210,15);
+}
+ */
+
+
+
+
+
