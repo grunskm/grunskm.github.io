@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
   	<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRZEMZD5F4"></script>
@@ -17,24 +17,23 @@
 
   </head>
 
-  <body>
+  <body class="home-page">
 
 	<div id="nav">
-		<div><a href="">Matthis Grunsky</a></div><br>
-
-<!-- 		<div><a href="">plaster</a></div> -->
-		<div><a href="./paper">paper</a></div>
-		<div><a href="./stereoscopic">stereoscopic</a></div>
-		<div><a href="./painting">painting</a></div>
-		<div><a href="../browser">browser</a></div>
-<!-- 
-		<div><a >courses</a></div>
-		<div><a >workshops</a></div>
- -->
-		<br>
-		<div>!!website under construction!!</div>
-	</div><div id="splash">
-		<img style="height:100vh;" src="images/a_fine_line.jpg" alt="A Fine Line, 2021">
-  </div>		
+		<div class="nav-top">
+			<a class="brand" href="./about.html">Matthis Grunsky</a>
+			<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">Menu</button>
+		</div>
+		<div id="nav-links" class="nav-links">
+			<a href="./paper">paper</a>
+			<a href="./stereoscopic">stereoscopic</a>
+			<a href="./painting">painting</a>
+			<a href="./browser">browser</a>
+		</div>
+	</div>
+	<div id="splash">
+		<img class="hero-image" src="images/a_fine_line.jpg" alt="A Fine Line, 2021">
+  </div>
+  <script src="./nav.js"></script>
   </body>
 </html>

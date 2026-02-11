@@ -20,13 +20,18 @@
   <body>
 
 	<div id="nav">
-		<div><a>Matthis Grunsky</a></div><br>
-		<div><a href="../paper">paper</a></div>
-		<div><a href="../stereoscopic">stereoscopic</a></div>
-		<div><a href="../painting">painting</a></div>
-		<div><a href="../browser">browser</a></div><br>
-		<div>!!website under construction!!</div>
-	</div><div id="card-column">
+		<div class="nav-top">
+			<a class="brand" href="../index.html">Matthis Grunsky</a>
+			<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">Menu</button>
+		</div>
+		<div id="nav-links" class="nav-links">
+			<a href="../paper">paper</a>
+			<a href="../stereoscopic">stereoscopic</a>
+			<a href="../painting">painting</a>
+			<a href="../browser">browser</a>
+		</div>
+	</div>
+	<div id="card-column">
 <!-- 
 		<div class="card">
 			<img src="../images/">
@@ -90,5 +95,7 @@
 		</div>
  -->
   </div>
+  <script src="../nav.js"></script>
+  <script src="../lightbox.js"></script>
   </body>
 </html>
