@@ -11,42 +11,63 @@
   <body>
 
 	<div id="nav">
-		<div><a>Matthis Grunsky</a></div><br>
-		<div><a>Plaster</a></div>
-		<div><a>Paper</a></div>
-		<div><a>Screen</a></div>
-		<div><a href="stereoscopic">Stereoscopic</a></div>
-		<div><a>Painting</a></div>
-		<div><a>Teaching</a></div>
-		<div><a>Writing</a></div>
-	</div><div id="card-column">
+		<div class="nav-top">
+			<a class="brand" href="../index.html">Matthis Grunsky</a>
+			<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">***</button>
+		</div>
+		<div id="nav-links" class="nav-links">
+			<a href="../paper">paper</a>
+			<a href="../stereoscopic">stereo</a>
+			<a href="../painting">paint</a>
+			<a href="../browser">browser</a>
+<!-- 			<a href="../courses">courses</a> -->
+<!-- 			<a href="../shows">install</a> -->
+		</div>
+	</div>
+	<div id="card-column">
 		<div class="card">
 			<img class="slide" src="../images/schoolinglines.png">
 			<p class="description">
 			<i>Painting Through the Screen</i>, 2020<br> Studio painting course focusing on the intersection of painting and the digital screen. 
-			<a href="./painting_through_the_screen/">View Course Details</a>
+			<a>View Course Details</a>
 			</p>
 		</div>
 		<div class="card">
 			<img class="slide" src="./coding-sketchbook/assets/bruish9.png">
 			<p class="description">
 			<i>Coding Sketchbook</i>, 2021<br> Studio drawing course exploring computer code as a creative medium. 
-			<a href="./coding_sketchbook/">View Course Details</a>
+			<a>View Course Details</a>
 			</p>
 		</div>	
 		<div class="card">
-			Perspective on Perspective
+			<img class="slide" src="../images/course_placeholder.svg">
+			<p class="description">
+			<i>Perspective on Perspective</i><br>
+			Course details coming soon.
+			</p>
 		</div>	
 		<div class="card">
-			Painting Systems
+			<img class="slide" src="../images/course_placeholder.svg">
+			<p class="description">
+			<i>Painting Systems</i><br>
+			Course details coming soon.
+			</p>
 		</div>
 		<div class="card">
-			Sketching Time
+			<img class="slide" src="../images/course_placeholder.svg">
+			<p class="description">
+			<i>Sketching Time</i><br>
+			Course details coming soon.
+			</p>
 		</div>
 		<div class="card">
-			Drawn to Code
+			<img class="slide" src="../images/course_placeholder.svg">
+			<p class="description">
+			<i>Drawn to Code</i><br>
+			Course details coming soon.
+			</p>
 		</div>
   </div>
-  <script src="../lightbox.js"></script>
+  <script src="../nav.js"></script>
   </body>
 </html>

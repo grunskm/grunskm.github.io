@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Course Placeholder</title>
+  <desc id="desc">Dark placeholder with yellow border and cross.</desc>
+  <rect width="1200" height="800" fill="#0a1414"/>
+  <rect x="36" y="36" width="1128" height="728" fill="none" stroke="#e6d20f" stroke-width="3"/>
+  <line x1="36" y1="36" x2="1164" y2="764" stroke="#e6d20f" stroke-width="3"/>
+  <line x1="1164" y1="36" x2="36" y2="764" stroke="#e6d20f" stroke-width="3"/>
+</svg>

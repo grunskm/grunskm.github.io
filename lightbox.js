@@ -4,7 +4,12 @@
       return null;
     }
 
-    return eventTarget.closest("#card-column img.slide");
+    const image = eventTarget.closest("#card-column img.slide");
+    if (!image || image.classList.contains("no-lightbox")) {
+      return null;
+    }
+
+    return image;
   };
 
   const createLightbox = () => {
