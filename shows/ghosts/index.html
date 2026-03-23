@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ghosts | Matthis Grunsky</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+      .ghosts-hero{
+        margin:0 0 1.25em;
+      }
+
+      .ghosts-hero-stage{
+        position:relative;
+      }
+
+      .ghosts-hero-image{
+        display:block;
+        width:100%;
+        height:auto;
+      }
+
+      .ghosts-hero-hit{
+        position:absolute;
+        top:0;
+        bottom:0;
+        width:50%;
+        border:0;
+        background:transparent;
+        cursor:pointer;
+      }
+
+      .ghosts-hero-hit.prev{
+        left:0;
+      }
+
+      .ghosts-hero-hit.next{
+        right:0;
+      }
+
+      .ghosts-hero-copy{
+        max-width:72ch;
+        margin:0 auto 2em;
+        padding:0 0.5em;
+        line-height:1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav">
+      <div class="nav-top">
+        <a class="brand" href="../../index.html">Matthis Grunsky</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">***</button>
+      </div>
+      <div id="nav-links" class="nav-links">
+        <a href="../../paper">paper</a>
+        <a href="../../stereoscopic">stereo</a>
+        <a href="../../painting">paint</a>
+        <a href="../../browser">browser</a>
+<!--         <a href="../../courses">courses</a> -->
+<!--         <a href="../../shows">install</a> -->
+      </div>
+    </div>
+
+    <div id="card-column">
+      <div class="ghosts-hero">
+        <div class="ghosts-hero-stage" id="ghosts-hero-stage">
+          <img
+            class="ghosts-hero-image"
+            id="ghosts-hero-image"
+            src="./web_ghosts_install_00.jpg"
+            alt="Ghosts installation view"
+          >
+          <button class="ghosts-hero-hit prev" type="button" aria-label="Previous image"></button>
+          <button class="ghosts-hero-hit next" type="button" aria-label="Next image"></button>
+        </div>
+      </div>
+
+      <div class="ghosts-hero-copy">
+        <p>
+          Add exhibition paragraph text here.
+        </p>
+      </div>
+
+      <div class="card">
+        <img class="slide" src="./ghost1_web.jpg" alt="ghost1_web">
+        <p class="description">
+          <i>Ghosts</i><br>
+          Temporary caption.
+        </p>
+      </div>
+
+      <div class="card">
+        <img class="slide" src="./ghost2_web.jpg" alt="ghost2_web">
+        <p class="description">
+          <i>Ghosts</i><br>
+          Temporary caption.
+        </p>
+      </div>
+    </div>
+
+    <script src="../../nav.js"></script>
+    <script>
+      (function () {
+        const heroImages = [
+          "./web_ghosts_install_00.jpg",
+          "./web_ghosts_install_01.jpg",
+          "./web_ghosts_install_02.jpg"
+        ];
+
+        const heroImage = document.getElementById("ghosts-hero-image");
+        const heroStage = document.getElementById("ghosts-hero-stage");
+        const prev = document.querySelector(".ghosts-hero-hit.prev");
+        const next = document.querySelector(".ghosts-hero-hit.next");
+
+        let index = 0;
+        let touchStartX = 0;
+
+        function render() {
+          heroImage.src = heroImages[index];
+        }
+
+        function goNext() {
+          index = (index + 1) % heroImages.length;
+          render();
+        }
+
+        function goPrev() {
+          index = (index - 1 + heroImages.length) % heroImages.length;
+          render();
+        }
+
+        prev.addEventListener("click", goPrev);
+        next.addEventListener("click", goNext);
+
+        heroStage.addEventListener("touchstart", function (event) {
+          touchStartX = event.changedTouches[0].clientX;
+        }, { passive: true });
+
+        heroStage.addEventListener("touchend", function (event) {
+          const deltaX = event.changedTouches[0].clientX - touchStartX;
+          if (Math.abs(deltaX) < 24) return;
+          if (deltaX > 0) {
+            goPrev();
+          } else {
+            goNext();
+          }
+        }, { passive: true });
+      })();
+    </script>
+    <script src="../../lightbox.js"></script>
+  </body>
+</html>

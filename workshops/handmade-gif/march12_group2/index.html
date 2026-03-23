@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Archived GIFs!</title>
+
+
+<!--     <link rel="stylesheet" href="/style.css" /> -->
+    
+        
+    <style>
+      body{
+        font-family:monospace, courier;
+      }
+      img{
+        margin:10px;
+        height:150px;
+      }
+      .bar-link{
+        display:inline-block;
+        margin:15px;
+        padding:15px;
+        background-color: tomato;
+      }
+
+      #wrapper{
+       margin-top:2%; 
+      }
+    
+    </style>
+    
+    
+  </head>
+  <body>
+
+  <div id="top-bar">
+		<div>
+			March 12 - Group 2 - GIF Archive
+		</div>
+  </div>
+    
+  <div id="wrapper">
+  </div>
+
+  <script>
+    const gifs = [
+      "image_1773340387192.gif",
+      "image_1773340655657.gif",
+      "image_1773341019848.gif",
+      "image_1773341202273.gif",
+      "image_1773341286375.gif",
+      "image_1773341353130.gif",
+      "image_1773341521495.gif",
+      "image_1773341641927.gif",
+      "image_1773341749095.gif",
+      "image_1773341788549.gif",
+      "image_1773342182868.gif",
+      "image_1773342503882.gif",
+      "image_1773342568727.gif",
+      "image_1773342639478.gif",
+      "image_1773342673198.gif",
+      "image_1773343059953.gif",
+      "image_1773343081238.gif",
+      "image_1773343082468.gif",
+      "image_1773343164685.gif",
+      "image_1773343217734.gif",
+      "image_1773343307244.gif",
+      "image_1773343329862.gif",
+      "image_1773343482196.gif",
+      "image_1773343482387.gif",
+      "image_1773343686364.gif",
+      "image_1773344050273.gif",
+      "image_1773344397808.gif",
+      "image_1773344402435.gif",
+      "image_1773344995232.gif",
+      "image_1773345103878.gif",
+      "image_1773345340720.gif",
+      "image_1773345509593.gif"
+    ];
+
+    const wrapper = document.getElementById("wrapper");
+    gifs.forEach((src) => {
+      const img = document.createElement("img");
+      img.alt = "";
+      img.src = src;
+      wrapper.appendChild(img);
+    });
+  </script>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

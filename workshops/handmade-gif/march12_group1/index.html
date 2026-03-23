@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Archived GIFs!</title>
+
+
+<!--     <link rel="stylesheet" href="/style.css" /> -->
+    
+        
+    <style>
+      body{
+        font-family:monospace, courier;
+      }
+      img{
+        margin:10px;
+        height:150px;
+      }
+      .bar-link{
+        display:inline-block;
+        margin:15px;
+        padding:15px;
+        background-color: tomato;
+      }
+
+      #wrapper{
+       margin-top:2%; 
+      }
+    
+    </style>
+    
+    
+  </head>
+  <body>
+
+  <div id="top-bar">
+		<div>
+			March 12 - Group 1 - GIF Archive
+		</div>
+  </div>
+    
+  <div id="wrapper">
+  </div>
+
+  <script>
+    const gifs = [
+      "image_1773322070096.gif",
+      "image_1773324585833.gif",
+      "image_1773326713933.gif",
+      "image_1773328015624.gif",
+      "image_1773328395775.gif",
+      "image_1773328523662.gif",
+      "image_1773328833220.gif",
+      "image_1773328880627.gif",
+      "image_1773328913037.gif",
+      "image_1773328983250.gif",
+      "image_1773329013623.gif",
+      "image_1773329130857.gif",
+      "image_1773329335617.gif",
+      "image_1773329439652.gif",
+      "image_1773329444766.gif",
+      "image_1773329553243.gif",
+      "image_1773329746003.gif",
+      "image_1773329863846.gif",
+      "image_1773330106588.gif",
+      "image_1773330213017.gif",
+      "image_1773330275465.gif",
+      "image_1773330298894.gif",
+      "image_1773330321210.gif",
+      "image_1773330657496.gif",
+      "image_1773330716475.gif",
+      "image_1773330737054.gif",
+      "image_1773330936120.gif",
+      "image_1773330997988.gif",
+      "image_1773331061518.gif",
+      "image_1773331086637.gif",
+      "image_1773331104398.gif",
+      "image_1773331116058.gif",
+      "image_1773331452444.gif",
+      "image_1773331466111.gif",
+      "image_1773331613004.gif",
+      "image_1773331816289.gif",
+      "image_1773331834552.gif",
+      "image_1773331838909.gif",
+      "image_1773331897149.gif",
+      "image_1773332090356.gif",
+      "image_1773332142729.gif",
+      "image_1773332421540.gif",
+      "image_1773332473896.gif",
+      "image_1773332505774.gif",
+      "image_1773332607623.gif",
+      "image_1773332742824.gif",
+      "image_1773332953396.gif",
+      "image_1773333041073.gif",
+      "image_1773333144925.gif",
+      "image_1773333148636.gif",
+      "image_1773333149910.gif",
+      "image_1773333201867.gif",
+      "image_1773333213631.gif",
+      "image_1773333262609.gif",
+      "image_1773333265257.gif",
+      "image_1773333310962.gif",
+      "image_1773333312146.gif",
+      "image_1773333345222.gif",
+      "image_1773333513990.gif",
+      "image_1773333525540.gif",
+      "image_1773333635218.gif",
+      "image_1773333643210.gif"
+    ];
+
+    const wrapper = document.getElementById("wrapper");
+    gifs.forEach((src) => {
+      const img = document.createElement("img");
+      img.alt = "";
+      img.src = src;
+      wrapper.appendChild(img);
+    });
+  </script>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

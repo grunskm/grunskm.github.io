@@ -228,56 +228,57 @@ var item_list = [
   }
 ]
 
+const MARKUP_BASE = "./markup_imgs";
 let mark = [  //short, mid, long for each
-  [ //blank = 0
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fnoting.png?v=1615787382990"
+  [ //blank = 0 (fallback uses bullet0; noting.png is not present locally)
+    `${MARKUP_BASE}/bullet0.png`
   ],
   [//bullet = 1
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fbullet0.png?v=1616017934945",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fbullet1.png?v=1616017937445",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fbullet6.png?v=1616017958262",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fbullet2.png?v=1616017940286",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fbullet3.png?v=1616017942794",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fbullet4.png?v=1616017945918",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fbullet5.png?v=1616017952404"
+    `${MARKUP_BASE}/bullet0.png`,
+    `${MARKUP_BASE}/bullet1.png`,
+    `${MARKUP_BASE}/bullet6.png`,
+    `${MARKUP_BASE}/bullet2.png`,
+    `${MARKUP_BASE}/bullet3.png`,
+    `${MARKUP_BASE}/bullet4.png`,
+    `${MARKUP_BASE}/bullet5.png`
   ],
-  [ //star = 2
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fstar0.png?v=1616009907523",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fstar1.png?v=1616009904238",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fstar2.png?v=1616009901345",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fstar0.png?v=1616009907523",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fstar1.png?v=1616009904238",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fstar2.png?v=1616009901345",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fstar0.png?v=1616009907523"
+  [ //star = 2 (fallback uses bullet set; star PNGs are not present locally)
+    `${MARKUP_BASE}/bullet0.png`,
+    `${MARKUP_BASE}/bullet1.png`,
+    `${MARKUP_BASE}/bullet2.png`,
+    `${MARKUP_BASE}/bullet3.png`,
+    `${MARKUP_BASE}/bullet4.png`,
+    `${MARKUP_BASE}/bullet5.png`,
+    `${MARKUP_BASE}/bullet6.png`
   ],
   [//check = 3
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fcheck0.png?v=1616018415785",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fcheck1.png?v=1616018418087",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fcheck2.png?v=1616018420700",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fcheck3.png?v=1616018423920",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fcheck4.png?v=1616018426510",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fcheck5.png?v=1616018428631",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fcheck6.png?v=1616018432015"
+    `${MARKUP_BASE}/check0.png`,
+    `${MARKUP_BASE}/check1.png`,
+    `${MARKUP_BASE}/check2.png`,
+    `${MARKUP_BASE}/check3.png`,
+    `${MARKUP_BASE}/check4.png`,
+    `${MARKUP_BASE}/check5.png`,
+    `${MARKUP_BASE}/check6.png`
   ],
   [//strike = 4
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fstrike0.png?v=1616020188184",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fstrike2.png?v=1616019905174",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fstrike1.png?v=1616019899063",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fstrike3.png?v=1616019906379",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fstrike4.png?v=1616019909920",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fstrike5.png?v=1616019913259",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fstrike6.png?v=1616019916524"
+    `${MARKUP_BASE}/strike0.png`,
+    `${MARKUP_BASE}/strike2.png`,
+    `${MARKUP_BASE}/strike1.png`,
+    `${MARKUP_BASE}/strike3.png`,
+    `${MARKUP_BASE}/strike4.png`,
+    `${MARKUP_BASE}/strike5.png`,
+    `${MARKUP_BASE}/strike6.png`
   ],
   [//scratch = 5
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fscratch0.png?v=1616020195508",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fscratch1.png?v=1616019713310",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fscratch2.png?v=1616019717084",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fscratch3.png?v=1616019728836",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fscratch4.png?v=1616019737535",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fscratch5.png?v=1616019741566",
-    "https://cdn.glitch.com/d05e28c5-9791-419b-a321-6112658ecf53%2Fscratch6.png?v=1616019745669"
+    `${MARKUP_BASE}/scratch0.png`,
+    `${MARKUP_BASE}/scratch1.png`,
+    `${MARKUP_BASE}/scratch2.png`,
+    `${MARKUP_BASE}/scratch3.png`,
+    `${MARKUP_BASE}/scratch4.png`,
+    `${MARKUP_BASE}/scratch5.png`,
+    `${MARKUP_BASE}/scratch6.png`
   ]
-]; 
+];
 
 window.onload = () => {
 	for (let i = 0; i < item_list.length; i++) {
