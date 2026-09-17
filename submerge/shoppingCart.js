@@ -47,7 +47,7 @@ function draw(){
 class View{
 	
 	constructor(){
-		this.cart = structuredClone(cart_data);;
+		this.cart = structuredClone(cart_data);
 	}
 	
 	rotate(ANG_Y,ANG_X){
